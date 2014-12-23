@@ -1,0 +1,62 @@
+package com.lb.app.privilege.action;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.dom4j.io.OutputFormat;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethod;
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethodType;
+import ch.ralscha.extdirectspring.bean.ExtDirectStoreReadRequest;
+import ch.ralscha.extdirectspring.bean.ExtDirectStoreResult;
+
+import com.lb.app.privilege.model.Sys_Role;
+import com.lb.app.privilege.service.RoleService;
+
+@Service
+public class RoleAction {
+
+	final private static Log log = LogFactory.getLog(RoleAction.class);
+
+	@Autowired
+	RoleService roleService;
+
+	/*@ExtDirectMethod(value = ExtDirectMethodType.STORE_READ)
+	public ExtDirectStoreResult<Role> load(ExtDirectStoreReadRequest request) {
+
+		List<Role> roles = roleService.load();
+
+		log.info("user load action..");
+		int totalSize = roles.size();
+
+		return new ExtDirectStoreResult<Role>(totalSize, roles, true);
+	}*/
+	
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.STORE_READ)
+	public List<Sys_Role> load(ExtDirectStoreReadRequest request) {
+		String role_name = (String)request.getParams().get("name");
+		log.info("search text: " + role_name);
+		List<Sys_Role> roles = roleService.load(role_name);
+		return roles;
+	}
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.STORE_MODIFY)
+	public List<Sys_Role> createOrUpdate(List<Sys_Role> roles) {
+		return roleService.saveOrUpdate(roles);
+	}
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.STORE_MODIFY)
+	public void destroy(List<Sys_Role> roles){
+		roleService.destory(roles);
+	}
+}

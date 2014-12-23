@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<module name="业务模块" html-dir="" java-package="">
+     <queue tasktype="APPFRAME_WORKFLOW"  queueid="QH" threadnum="3" fetchnum="100" start="false"/>
+     <timer tasktype="APPFRAME_WORKFLOW_TIMER" queueid="QH"  threadnum="3" fetchnum="100" start="false"/>
+</module>

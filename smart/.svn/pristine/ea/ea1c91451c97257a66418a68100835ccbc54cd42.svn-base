@@ -1,0 +1,30 @@
+package com.lb.app.common.id;
+
+import java.io.Serializable;
+import java.util.Properties;
+
+import org.hibernate.HibernateException;
+import org.hibernate.dialect.Dialect;
+import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.id.enhanced.TableGenerator;
+import org.hibernate.type.Type;
+
+public class PrefixIDGenerator extends TableGenerator {
+
+	
+	
+	public static final String PREFIX = "prefix";   
+    private String prefix;   
+  
+    public void configure(Type type, Properties params, Dialect d) {   
+        super.configure(type, params, d);          
+        //prefix=PropertiesHelper.getString(PREFIX,params,"");       
+    }   
+  
+    public synchronized Serializable generate(SessionImplementor session, Object obj)  throws HibernateException {   
+        int val = ( (Integer) super.generate(session, obj) ).intValue();   
+        return prefix+val;   
+    }   
+    
+    
+}

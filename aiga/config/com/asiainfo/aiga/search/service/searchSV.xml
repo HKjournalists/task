@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="searchSV" class="com.asiainfo.aiga.search.service.impl.LuceneSearchSVImpl">
+		<property name="requisitionDAO" ref="requisitionDao"></property>
+		<property name="caseDAO" ref="caseDao"></property>
+		<property name="searchDAO" ref="searchDAO"></property>
+	</bean>
+	<bean id="autoCreateIndexThread" class="com.asiainfo.aiga.search.service.AutoCreateIndexThread" init-method=""  destroy-method="destroyMethod">
+		<property name="searchDAO" ref="searchDAO"></property>
+	</bean>
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSBelongOrganize</Name>
+    <Package>com.asiainfo.csc.common.web</Package>
+    <DataSet SetType="SQLDATA">
+        <ValueAttr>organize_id</ValueAttr>
+        <TextAttr>organize_name</TextAttr>
+        <SqlString>select organize_id,(select organize_name from sys_organize where organize_id=a.parent_organize_id)||'һ'||a.organize_name as organize_name from sys_organize a where length(a.code)&gt;=4
+</SqlString>
+        <DataSource>UserDataSource</DataSource>
+    </DataSet>
+</UIDataSrc>

@@ -1,0 +1,34 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/src/com/asiainfo/aiga/service
+svn://20.26.11.20/products
+
+
+
+2014-12-16T03:08:03.536405Z
+1598508
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+interfaces
+dir
+

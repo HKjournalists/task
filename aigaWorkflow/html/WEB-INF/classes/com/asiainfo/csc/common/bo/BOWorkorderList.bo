@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOWorkorderList" mainattr="ORDER_ID">
+        <mapingenty type="table">ALM_WORKORDER_LIST</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ORDER_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">ORDER_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_ID" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">OBJ_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_TYPE" maxlength="4" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">OBJ_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_TAG" maxlength="255" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">OBJ_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_NAME" maxlength="255" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">OBJ_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PHASE_ID" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">PHASE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VM_TASK_NAME" maxlength="128" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">VM_TASK_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_NO" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">LINK_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">LINK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="EXEC_STAFF_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">EXEC_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="EXEC_STAFF_NO" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">EXEC_STAFF_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="EMPLOYEE_NAME" maxlength="200" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">EMPLOYEE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_TIME" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">CREATE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FINISH_TIME" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">FINISH_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ORDER_TYPE" maxlength="4" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ORDER_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="RESULT" maxlength="15" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">RESULT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATUS" maxlength="2" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">STATUS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OPINION" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">OPINION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_STAFF_NAME" maxlength="255" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMIT_STAFF_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_NO_TYPE" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">LINK_NO_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARENT_VM_TASK_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PARENT_VM_TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="COND" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">COND</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CONNECT_POINT" maxlength="500" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CONNECT_POINT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMPLATE_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">TEMPLATE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ADVICE_COMP_TIME" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">ADVICE_COMP_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FACT_COMPLETE_TIME" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">FACT_COMPLETE_TIME</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

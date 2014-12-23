@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 管控规则配置文件 -->
+<MonitorRuleConfig>
+	<MonitorFilter name="onlinefilter">
+		<!-- 配置使用该规则的输出service，可配置多个 -->
+		<postservice>com.ai.appframe.monitor.MonitorPostFactoryDB</postservice>
+		<!-- ruleset可配置多个rule，每个rule间为and关系，即只有满足所有rule的数据才会被记录。
+		多个ruleset之间为or关系。 -->
+		<ruleset name="exceptionset" enable="true">
+			<rule name="executeexceptionrule" remark="监控执行发生异常的操作"
+				class="com.ai.appframe2.monitor.poster.rule.ExecuteExceptionMonitorRule">
+			</rule>
+		</ruleset>
+		<ruleset name="clientipset" enable="true">
+			<rule name="clientiprule" remark="监控指定客户端ip发起的操作"
+				class="com.ai.appframe2.monitor.poster.rule.ClientIpMonitorRule">
+				<param name="ip">127.0.0.1</param>
+				<param name="ip">192.168.0.1</param>
+			</rule>
+		</ruleset>
+		<ruleset name="bizinfoset" enable="true">
+			<rule name="bizinforule" remark="监控满足所配业务信息的操作,对应clientInfo.getAttrList()中的信息"
+				class="com.ai.appframe2.monitor.poster.rule.BizinfoMonitorRule">
+				<param name="BILL_ID">13888888888</param>
+				<param name="SUB_ID">12345678</param>
+			</rule>
+		</ruleset>
+		<ruleset name="ruleset3" enable="true">
+			<rule name="methodtyperule" remark="监控指定方法类型的操作"
+				class="com.ai.appframe2.monitor.poster.rule.MethodTypeMonitorRule">
+				<param name="methodtype">IE</param>
+				<param name="methodtype">JSP</param>
+				<param name="methodtype">ACTION</param>
+				<param name="methodtype">METHOD</param>
+				<param name="methodtype">PROCESS</param>
+				<param name="methodtype">SQL</param>
+				<param name="methodtype">TRANSACTION_START</param>
+				<param name="methodtype">TRANSACTION_ROLLBACK</param>
+				<param name="methodtype">TRANSACTION_COMMIT</param>
+			</rule>
+			<rule name="statementrule" remark="监控指定方法名/SQL/JSP的操作，对应CallInfo中的statement值"
+				class="com.ai.appframe2.monitor.poster.rule.StatementMonitorRule">
+				<param name="statement">com.asiainfo.boss.so.service.impl.OrderSaveHelper.transChannelId</param>
+				<param name="statement">INSERT INTO UCMP_BUSI_CODE_RELATE (UCMP_BUSI_CODE_RELATE_ID,UCMP_INTERFACE_LOG_ID,BUSINESS_ID,CUST_SYS_DONE_CODE)values(UCMP_BUSI_CODE_RELATE$seq.NEXTVAL,?,?,?)</param>
+				<param name="statement">/dsmp/index.jsp</param>
+			</rule>
+		</ruleset>
+		<ruleset name="ruleset4" enable="true">
+			<rule name="opidrule" remark="监控来自指定操作员的操作"
+				class="com.ai.appframe2.monitor.poster.rule.OpidMonitorRule">
+				<param name="opid">123</param>
+				<param name="opid">11234</param>
+			</rule>
+			<rule name="orgidrule" remark="监控来自指定组织的操作"
+				class="com.ai.appframe2.monitor.poster.rule.OrgidMonitorRule">
+				<param name="orgid">456</param>
+				<param name="orgid">458</param>
+			</rule>
+		</ruleset>
+		<ruleset name="costtimeset" enable="falsle">
+			<rule name="costtimerule" remark="监控执行时间超过costtime的操作，单位:秒"
+				class="com.ai.appframe2.monitor.poster.rule.CostTimeMonitorRule">
+				<param name="costtime">3</param>
+			</rule>
+		</ruleset>
+	</MonitorFilter>
+	<MonitorFilter name="offlinefilter">
+		<postservice>com.ai.appframe.monitor.MonitorPostFactoryLog</postservice>
+		<ruleset name="logall" enable="true">
+		</ruleset>
+	</MonitorFilter>
+</MonitorRuleConfig>

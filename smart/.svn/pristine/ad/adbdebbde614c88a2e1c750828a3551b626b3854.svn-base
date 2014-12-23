@@ -1,0 +1,5 @@
+package com.lb.app.automation.model;
+
+public class Auto_Module {
+
+}

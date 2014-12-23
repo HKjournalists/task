@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAlmSubReq" mainattr="SUB_REQ_ID">
+        <mapingenty type="table">ALM_SUB_REQ</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="SUB_REQ_ID" maxlength="20" datatype="Long" type="PK" remark="子需求ID">
+                <mapingcol datatype="NUMBER">SUB_REQ_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_REQ_NAME" maxlength="4000" datatype="String" type="COL" remark="子需求名称">
+                <mapingcol datatype="VARCHAR2">SUB_REQ_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WORK_HOURS" maxlength="2000" datatype="String" type="COL" remark="工时估计">
+                <mapingcol datatype="VARCHAR2">WORK_HOURS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BELONG_SYSTEM" maxlength="4000" datatype="String" type="COL" remark="所属系统">
+                <mapingcol datatype="VARCHAR2">BELONG_SYSTEM</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BELONG_SUB_MODULE" maxlength="4000" datatype="String" type="COL" remark="所属子模块">
+                <mapingcol datatype="VARCHAR2">BELONG_SUB_MODULE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BELONG_SYSTEM_VERSION" maxlength="4000" datatype="String" type="COL" remark="所属系统版本">
+                <mapingcol datatype="VARCHAR2">BELONG_SYSTEM_VERSION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DEPARTMENTS" maxlength="4000" datatype="String" type="COL" remark="所属科室">
+                <mapingcol datatype="VARCHAR2">DEPARTMENTS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PRIORITY" maxlength="4000" datatype="String" type="COL" remark="优先级">
+                <mapingcol datatype="VARCHAR2">PRIORITY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FINISH_TIME" maxlength="20" datatype="DateTime" type="COL" remark="计划完成时间">
+                <mapingcol datatype="DATE">FINISH_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REQ_DESC" maxlength="4000" datatype="String" type="COL" remark="需求点描述">
+                <mapingcol datatype="VARCHAR2">REQ_DESC</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_PERFORMANCE_TEST" maxlength="20" datatype="Long" type="COL" remark="是否执行性能测试">
+                <mapingcol datatype="NUMBER">IS_PERFORMANCE_TEST</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REQ_ID" maxlength="20" datatype="Long" type="COL" remark="需求编号">
+                <mapingcol datatype="NUMBER">REQ_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_REQ_TAG" maxlength="4000" datatype="String" type="COL" remark="子需求编号">
+                <mapingcol datatype="VARCHAR2">SUB_REQ_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATUS" maxlength="20" datatype="Long" type="COL" remark="状态">
+                <mapingcol datatype="NUMBER">STATUS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATEOR_ID" maxlength="4000" datatype="String" type="COL" remark="创建人ID">
+                <mapingcol datatype="VARCHAR2">CREATEOR_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBREQ_CHARGE" maxlength="4000" datatype="String" type="COL" remark="子需求负责人">
+                <mapingcol datatype="VARCHAR2">SUBREQ_CHARGE</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

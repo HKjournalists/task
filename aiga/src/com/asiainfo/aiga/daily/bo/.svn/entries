@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/daily/bo
+svn://20.26.11.20/products
+
+
+
+2014-11-10T10:51:47.172151Z
+1539989
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaTestDaily.java
+file
+
+
+
+
+2014-12-13T03:48:12.473074Z
+4f484728f5cab2d8c0ad767cbfa2ee99
+2014-11-10T10:51:47.172151Z
+1539989
+renzq
+
+AigaTestDaily.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:12.476075Z
+31264cf5bd87533551bd7cdb67c3e0b3
+2014-11-10T10:51:47.172151Z
+1539989
+renzq
+

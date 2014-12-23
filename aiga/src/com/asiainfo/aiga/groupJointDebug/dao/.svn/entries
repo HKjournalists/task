@@ -1,0 +1,43 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/groupJointDebug/dao
+svn://20.26.11.20/products
+
+
+
+2014-12-16T08:33:58.675004Z
+1599372
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+IAigaJointDebugDao.java
+file
+
+
+
+
+2014-12-16T08:29:09.179222Z
+3c0a4185d648e9272544a1115fcef506
+2014-12-16T08:33:58.675004Z
+1599372
+renzq
+

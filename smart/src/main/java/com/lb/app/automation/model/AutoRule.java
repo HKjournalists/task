@@ -1,0 +1,69 @@
+package com.lb.app.automation.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+
+@Entity
+@Table(name = "auto_rule")
+public class AutoRule {
+	@Id
+	@GeneratedValue(generator = "prefixsequence_gen")  
+	@GenericGenerator(name = "prefixsequence_gen", strategy = "com.lb.app.common.id.PrefixIDSequence",   
+	     parameters = { @Parameter(name = "prefix", value = "RUL"),  
+			@Parameter(name = "sequence", value = "auto_rule$seq")}) 
+	String ruleid;
+	
+	String operation;
+	String value;
+	String version;
+	
+	String parameter;
+	String comments;
+	
+	
+	public String getParameter() {
+		return parameter;
+	}
+	public void setParameter(String parameter) {
+		this.parameter = parameter;
+	}
+	public String getComments() {
+		return comments;
+	}
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+	public String getRuleid() {
+		return ruleid;
+	}
+	public void setRuleid(String ruleid) {
+		this.ruleid = ruleid;
+	}
+	public String getOperation() {
+		return operation;
+	}
+	public void setOperation(String operation) {
+		this.operation = operation;
+	}
+	public String getValue() {
+		return value;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
+	}
+	
+	
+	
+}

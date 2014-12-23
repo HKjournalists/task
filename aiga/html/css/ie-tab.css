@@ -1,0 +1,36 @@
+.x-nbr .x-tab-top-active .x-frame-mc {
+	background-image: none!important;
+	background-color: #1B8ECE!important;
+}
+
+.x-nbr .x-tab-top-active .x-frame-ml {
+	background-image: none!important;
+	background-color: #1B8ECE!important;
+}
+
+.x-nbr .x-tab-top-active .x-frame-tl {
+	background-image: none!important;
+	background-color: #1B8ECE!important;
+}
+
+.x-nbr .x-tab-top-active .x-frame-tc {
+	background-image: none!important;
+	background-color: #1B8ECE!important;
+}
+
+.x-nbr .x-tab-top-active .x-frame-tr {
+	background-image: none!important;
+	background-color: #1B8ECE!important;
+}
+
+.x-nbr .x-tab-top-active .x-frame-mr {
+	background-image: none!important;
+	background-color: #1B8ECE!important;
+}
+
+.x-nlg .x-tab-default-top-mc {
+	background-image: none!important;
+}
+.x-tab .x-frame-mc span.x-tab-inner {
+	overflow: hidden;
+}

@@ -1,0 +1,48 @@
+
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<script language="JavaScript" src="AiFramePrint.js"></script>
+<title>
+  套打报表测试
+</title>
+
+</head>
+<body bgcolor="#ffffff"  onload="SetValue()">
+
+<iframe name="PrintPage" marginwidth=0 marginheight=0 src="RptTemplateTest.htm"
+  frameborder=0  style="width:800;height:400;overflow=auto;">
+</iframe>
+<div id="divBtn" style="display:block">
+<table align="center"  width="40%">
+  <tr>
+    <td>
+      	<INPUT TYPE="button" align="absmiddle" value="打    印" onclick="Print();" class="B">
+    </td>
+    <td>
+   	<INPUT TYPE="button" align="absmiddle" value="打印预览" onclick="PrintPreView();" class="B">
+    </td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+<script language="javascript">
+  //打印预览
+  function PrintPreView(){
+    IFramePrintPreView(PrintPage);
+    return;
+  }
+
+  //打印
+  function Print(){
+    IFramePrint(PrintPage);
+    return;
+}
+
+  function SetValue(){
+    PrintPage.SetAliasValue("NAME","亚信科技");
+    PrintPage.SetAliasValue("LIKE","第一爱羽毛球");
+    PrintPage.SetAliasValue("LIKE1","第二爱音乐");
+  }
+</script>

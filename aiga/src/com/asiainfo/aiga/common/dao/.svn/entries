@@ -1,0 +1,55 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/common/dao
+svn://20.26.11.20/products
+
+
+
+2014-12-16T08:43:00.351646Z
+1599388
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+ICommonPageinationDAO.java
+file
+
+
+
+
+2014-12-16T10:50:05.866805Z
+8e96de71d5afe1ae0b4e54ea8f77f67f
+2014-12-16T08:43:00.351646Z
+1599388
+wenghy
+
+IWorkorderChartDao.java
+file
+
+
+
+
+2014-12-13T03:48:08.935044Z
+fba2c94b4ac4bc3bdc7f7b3cc1c93aa5
+2014-11-07T11:24:42.712667Z
+1534864
+liuchao
+

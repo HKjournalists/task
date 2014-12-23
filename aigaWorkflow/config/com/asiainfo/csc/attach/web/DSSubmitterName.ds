@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSSubmitterName</Name>
+    <Package>com.asiainfo.csc.attach.web</Package>
+    <DataSet SetType="SQLDATA">
+        <ValueAttr>submitter_tag</ValueAttr>
+        <TextAttr>employee_name</TextAttr>
+        <SqlString>select distinct  submitter_tag,employee_name From alm_att_pack_view </SqlString>
+        <DataSource>UserDataSource</DataSource>
+    </DataSet>
+</UIDataSrc>

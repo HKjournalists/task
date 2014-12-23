@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<AttachConfig>
+
+  <!-- FTP/SFTP服务器根目录结尾一定要有"/",无根目录可以设定为"/",该根目录为自定义(非SFTP/FTP),定义该目录要确定服务器上已建立该文件夹,无特殊要求定义"/"-->
+  
+  <ConfigItem name="SYS_ATTACH_FTP_TYPE" remarks="FTP类型：ftp/sftp">ftp</ConfigItem>
+  <ConfigItem name="SYS_ATTACH_FTP_IP" remarks="FTP/SFTP服务器的IP地址">20.26.17.182</ConfigItem>
+  <ConfigItem name="SYS_ATTACH_FTP_PORT" remarks="FTP/SFTP服务器的端口">21</ConfigItem>
+  <ConfigItem name="SYS_ATTACH_FTP_USERNAME" remarks="FTP/SFTP服务器的用户名">tmweb</ConfigItem>
+  <ConfigItem name="SYS_ATTACH_FTP_PSW" remarks="FTP/SFTP服务器的密码">tmweb</ConfigItem>
+  <ConfigItem name="SFTP_PRIVATE_KEY" remarks="SFTP密钥文件路径"></ConfigItem>
+  <ConfigItem name="SFTP_KEY_PSW" remarks="SFTP密钥口令"></ConfigItem>
+  <ConfigItem name="SYS_ATTACH_FTP_ROOT" remarks="FTP/SFTP服务器根目录">/app/tmweb</ConfigItem>
+  <!-- 
+  -->
+  <ConfigItem name="SYS_ATTACH_FORBID_TYPE" remarks="FTP/SFTP服务器禁止上传类型">exe;bat;sh;py</ConfigItem>  
+  <ConfigItem name="SYS_ATTACH_DOWN_TEMP" remarks="批量下载缓存路径">/app/tmweb/tm-web/tm-web-domain/servers/tm-web-cs-srv01/aiga-ftp/temp</ConfigItem>
+  <ConfigItem name="SYS_ATTACH_RAR_TEMP" remarks="要打包成RAR文件缓存路径">/app/tmweb/tm-web/tm-web-domain/servers/tm-web-cs-srv01/aiga-ftp/tempRAR</ConfigItem>
+
+</AttachConfig>

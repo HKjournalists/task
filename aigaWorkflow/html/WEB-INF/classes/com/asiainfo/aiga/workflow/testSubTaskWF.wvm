@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<workflow label="测试子任务流程" tasktype="workflow" tasktag="com.asiainfo.aiga.workflow.testSubTaskWF">
+  <vars name="_TASK_JUGE_RESULT" datatype="java.lang.String" inouttype="inner" description="判断节点结果"/>
+  <vars name="staffId" datatype="java.lang.String" defaultvalue="1" description="员工id"/>
+  <vars name="orderType" datatype="java.lang.String" defaultvalue="1" description="工单类型"/>
+  <vars name="result" datatype="java.lang.String" defaultvalue="pass" description="判断结果"/>
+  <task id="1" label="开始" tasktype="start" isstart="true">
+    <uiinfo>55,44,66,22</uiinfo>
+    <gotoitem goto="2"/>
+    <autodeal>
+      <runtype/>
+      <servicename/>
+      <runclassname/>
+      <runfunctionname/>
+    </autodeal>
+  </task>
+  <task id="2" label="需求设计" tasktype="user" tasktag="subTestTaskDsgn">
+    <uiinfo>51,92,69,19</uiinfo>
+    <gotoitem goto="10"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userPreTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staffId"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userRearTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <task id="5" label="功能测试" tasktype="user" tasktag="subTestTaskFuncTest">
+    <uiinfo>57,197,62,23</uiinfo>
+    <gotoitem goto="13"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userPreTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staffId"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userRearTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <task id="6" label="准发布测试" tasktype="user" tasktag="subTestTaskQuaRel">
+    <uiinfo>51,305,70,20</uiinfo>
+    <gotoitem goto="14"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userPreTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staffId"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userRearTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <task id="8" label="生产测试" tasktype="user" tasktag="subTestTaskProduce">
+    <uiinfo>178,241,61,16</uiinfo>
+    <gotoitem goto="16"/>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userPreTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+    <user taskusertype="staff" taskuserid=":staffId"/>
+    <postdeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>userRearTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="long" contextvarName="$TASK_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$TASK_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_4" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_5" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </postdeal>
+  </task>
+  <task id="9" label="结束" tasktype="finish">
+    <uiinfo>176,145,65,21</uiinfo>
+    <autodeal>
+      <runtype>service</runtype>
+      <servicename>com.asiainfo.aiga.service.AigaTestZheJiangSV</servicename>
+      <runclassname>com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV</runclassname>
+      <runfunctionname>finishTask</runfunctionname>
+      <vars name="P_0" datatype="long" contextvarName="$WORKFLOW_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_1" datatype="java.lang.String" contextvarName="$WORKFLOW_TAG" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_2" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="P_3" datatype="java.lang.String" contextvarName="$WORKFLOW_OBJ_TYPE_ID" defaultvalue="" inouttype="in" description=""/>
+      <vars name="return" datatype="void" contextvarName="" defaultvalue="" inouttype="return" description=""/>
+    </autodeal>
+  </task>
+  <task id="10" label="条件判断" tasktype="decision">
+    <uiinfo>61,137,52,20</uiinfo>
+    <gotoitem condition="pass" goto="5"/>
+    <gotoitem condition="regn" goto="2"/>
+    <condition>result</condition>
+  </task>
+  <task id="13" label="条件判断" tasktype="decision">
+    <uiinfo>51,248,74,18</uiinfo>
+    <gotoitem condition="regn" goto="5"/>
+    <gotoitem condition="pass" goto="6"/>
+    <condition>result</condition>
+  </task>
+  <task id="14" label="条件判断" tasktype="decision">
+    <uiinfo>180,303,62,22</uiinfo>
+    <gotoitem condition="regn" goto="6"/>
+    <gotoitem condition="pass" goto="8"/>
+    <gotoitem condition="noPro" goto="9"/>
+    <condition>result</condition>
+  </task>
+  <task id="16" label="条件判断" tasktype="decision">
+    <uiinfo>180,200,58,13</uiinfo>
+    <gotoitem condition="regn" goto="8"/>
+    <gotoitem condition="pass" goto="9"/>
+    <condition>result</condition>
+  </task>
+  <join taska="1" taskb="2">
+    <uiinfo>10.0,10.0,500,500,88,55,85,92</uiinfo>
+  </join>
+  <join taska="2" taskb="10">
+    <uiinfo>10.0,10.0,500,500,85,101,87,137</uiinfo>
+  </join>
+  <join label="pass" taska="10" taskb="5">
+    <condition>pass</condition>
+    <uiinfo>10.0,10.0,500,500,87,147,88,197</uiinfo>
+  </join>
+  <join label="regn" taska="10" taskb="2" isagainst="true">
+    <condition>regn</condition>
+    <uiinfo>10.0,10.0,500,500,87,147,33,147,33,134,33,101,51,101</uiinfo>
+  </join>
+  <join taska="5" taskb="13">
+    <uiinfo>10.0,10.0,500,500,88,208,88,248</uiinfo>
+  </join>
+  <join label="regn" taska="13" taskb="5" isagainst="true">
+    <condition>regn</condition>
+    <uiinfo>10.0,10.0,500,500,88,257,35,257,35,234,35,209,57,208</uiinfo>
+  </join>
+  <join label="pass" taska="13" taskb="6">
+    <condition>pass</condition>
+    <uiinfo>10.0,10.0,500,500,88,257,86,305</uiinfo>
+  </join>
+  <join taska="6" taskb="14">
+    <uiinfo>10.0,10.0,500,500,86,315,144,314,180,314</uiinfo>
+  </join>
+  <join label="regn" taska="14" taskb="6" isagainst="true">
+    <condition>regn</condition>
+    <uiinfo>10.0,10.0,500,500,211,314,211,340,86,340,86,325</uiinfo>
+  </join>
+  <join label="pass" taska="14" taskb="8">
+    <condition>pass</condition>
+    <uiinfo>10.0,10.0,500,500,211,314,208,257</uiinfo>
+  </join>
+  <join taska="8" taskb="16">
+    <uiinfo>10.0,10.0,500,500,208,249,209,213</uiinfo>
+  </join>
+  <join label="regn" taska="16" taskb="8" isagainst="true">
+    <condition>regn</condition>
+    <uiinfo>10.0,10.0,500,500,209,206,154,206,154,249,178,249</uiinfo>
+  </join>
+  <join label="pass" taska="16" taskb="9">
+    <condition>pass</condition>
+    <uiinfo>10.0,10.0,500,500,209,206,208,166</uiinfo>
+  </join>
+  <join label="noPro" taska="14" taskb="9">
+    <condition>noPro</condition>
+    <uiinfo>10.0,10.0,500,500,211,314,261,314,261,234,261,155,241,155</uiinfo>
+  </join>
+</workflow>

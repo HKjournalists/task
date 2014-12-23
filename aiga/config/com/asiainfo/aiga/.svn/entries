@@ -1,0 +1,121 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/config/com/asiainfo/aiga
+svn://20.26.11.20/products
+
+
+
+2014-12-16T14:28:36.105836Z
+1600098
+yinsx
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+label
+dir
+
+caseLabelRela
+dir
+
+resource
+dir
+
+groupCase
+dir
+
+testPlan
+dir
+
+statistics
+dir
+
+collection
+dir
+
+dic
+dir
+
+p2pTest
+dir
+
+testTask
+dir
+
+search
+dir
+
+groupJointDebug
+dir
+
+r_case_comp
+dir
+
+node_view
+dir
+
+runPlan
+dir
+
+log
+dir
+
+testElem
+dir
+
+r_comp_gui
+dir
+
+gui
+dir
+
+runTask
+dir
+
+sysConstant
+dir
+
+common
+dir
+
+funCaseRela
+dir
+
+r_elem_case
+dir
+
+manualTask
+dir
+
+qualityManage
+dir
+
+r_collect_case
+dir
+
+funPoint
+dir
+
+component
+dir
+
+userCase
+dir
+
+requisition
+dir
+

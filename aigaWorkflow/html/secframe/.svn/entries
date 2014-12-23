@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/html/secframe
+svn://20.26.11.20/products
+
+
+
+2014-11-18T02:36:16.314514Z
+1548940
+lixb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+sysmgr
+dir
+
+images
+dir
+
+common
+dir
+
+orgmodel
+dir
+
+importStaff.jsp
+file
+
+
+
+
+2014-12-13T04:17:55.147041Z
+0a6fd58a670392eed2a0bfb905200bac
+2014-10-20T08:38:59.259271Z
+1499038
+lixb
+

@@ -1,0 +1,154 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/html/extJs
+svn://20.26.11.20/products
+
+
+
+2014-11-12T09:17:44.294734Z
+1543103
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+app
+dir
+
+ext-all.js
+file
+
+
+
+
+2014-12-13T03:47:24.281878Z
+edec53c140ed4e41de693496e9fe617d
+2014-10-31T04:00:55.073570Z
+1518129
+renzq
+
+builds
+dir
+
+Ext.Base.js
+file
+
+
+
+
+2014-12-13T03:47:24.286007Z
+d905d64ba01843966c0ec0f0b10d565e
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+bootstrap.js
+file
+
+
+
+
+2014-12-13T03:47:24.348039Z
+87fb7e1ba09e1f58598b516c9b795af6
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+extJSIntegrate.jsp
+file
+
+
+
+
+2014-12-13T03:47:24.353043Z
+363e33e6954830f2034e3390d17d4b00
+2014-09-17T03:11:49.230223Z
+1449206
+lixb
+
+ux
+dir
+
+plugin
+dir
+
+locale
+dir
+
+MonthField.js
+file
+
+
+
+
+2014-12-13T03:47:24.288131Z
+f4bfc890a383edf98c84cf6c84ce2aeb
+2014-09-11T07:37:19.404970Z
+1442365
+renzq
+
+html5.js
+file
+
+
+
+
+2014-12-13T03:47:24.291276Z
+c71f090205823ae92936f4a3f347b717
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+ext-all-debug.js
+file
+
+
+
+
+2014-12-13T03:47:24.344577Z
+fbed55a894011a1897d083f1feac21c0
+2014-10-31T04:00:55.073570Z
+1518129
+renzq
+
+resources
+dir
+
+extJSIntegrate.js
+file
+
+
+
+
+2014-12-13T03:47:24.350041Z
+fff634419353dafb2012dda5a34246ba
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+ext.bug.fix.js
+file
+
+
+
+
+2014-12-13T03:47:24.356045Z
+2f41fbbea615d929f06e72639bab8332
+2014-11-12T09:17:44.294734Z
+1543103
+wenghy
+

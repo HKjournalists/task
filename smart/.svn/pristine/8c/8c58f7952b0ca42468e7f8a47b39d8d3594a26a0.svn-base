@@ -1,0 +1,35 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<link rel="stylesheet" type="text/css" href="assets/extjs/resources/css/ext-all-neptune.css" />
+<script type="text/javascript" src="assets/extjs/ext-all.js" ></script>
+
+
+<script type="text/javascript" src="api-debug.js"></script>
+<script type="text/javascript">
+
+Ext.onReady(function() {
+	
+	   Ext.Loader.setPath('Ext.app', 'classes');
+	
+	/*Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
+	indexPageSV.doEcho({message: 'aaaaaaaa'}, function(result, e){
+		alert(result);
+	});*/
+	
+	
+	
+
+	
+});
+
+
+</script>
+
+</head>
+<body>
+<iframe id='contentIframe' name='contentIframe' style='height:100%;width:100%' frameborder="no"></iframe>
+</body>
+</html>

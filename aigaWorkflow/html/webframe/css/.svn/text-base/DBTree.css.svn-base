@@ -1,0 +1,12 @@
+
+.unselected{font-family: 宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;color: rgb(102,102,153);background-color: "transparent";}
+.selected{font-family: 宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;color: "white";background-color: "darkblue";}
+.up2{background-color: #D8D8D0; border-left: 2 solid #ffffff;border-right: 2 solid #000000; border-top: 2 solid #ffffff; border-bottom: 2 solid #000000 }
+.up1{background-color:  #FFFFF4; border-left: 1 solid #ffffff;border-right: 1 solid #000000; border-top: 1 solid #ffffff; border-bottom: 1 solid #000000 }
+.down1{ background-color: #D8D8D0; border-left: 1 solid #000000;border-right: 1 solid #ffffff; border-top: 1 solid #000000; border-bottom: 1 solid #ffffff }
+.down2{ background-color: #D8D8D0; border-left: 2 solid #000000;border-right: 2 solid #ffffff; border-top: 2 solid #000000; border-bottom: 2 solid #ffffff }
+.title{padding-left:8;background-color: 000080;cursor:move;color:#ffffff}
+.menu{padding-left:16;padding-top:2;padding-bottom:2;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;}
+.overmenu{padding-left:16;padding-top:2;padding-bottom:2;background-color:highlight;color:highlighttext;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;}
+.sepa{width:100%;border: 1px inset #f0f0f0}
+.disabledmenutext{color:#c0c0c0;}

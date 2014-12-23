@@ -1,0 +1,17 @@
+Ext.define('SmartApp.view.Case.ScriptView', {
+	extend : 'Ext.panel.Panel',
+	alias : 'widget.scriptview',
+
+	initComponent : function() {
+		var me = this;
+		Ext.apply(this, {
+			border : false,
+			layout : "border",
+
+			items : []
+		});
+
+		me.callParent();
+	}
+
+});

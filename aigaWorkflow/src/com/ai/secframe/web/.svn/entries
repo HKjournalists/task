@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/src/com/ai/secframe/web
+svn://20.26.11.20/products
+
+
+
+2014-10-20T09:09:14.006694Z
+1499114
+lixb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+UserManagerDefaultImpl.java
+file
+
+
+
+
+2014-12-13T04:18:40.727259Z
+5f441dc8c78598cef755316df9d68365
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+ImportStaffServlet.java
+file
+
+
+
+
+2014-12-13T04:18:40.727259Z
+5e80f4b4fa7e6696140120bbc84bddf6
+2014-10-20T09:09:14.006694Z
+1499114
+lixb
+

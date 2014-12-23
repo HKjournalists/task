@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* author: tonytian */
+/* mail: kevin903@163.com */
+
+html { scrollbar-3d-light-color:#fff; scrollbar-arrow-color:#0069C2;
+scrollbar-base-color:#C3C3C3; scrollbar-darkshadow-color:#fff; scrollbar-face-color:#ddd;
+scrollbar-highlight-color:#fff; scrollbar-shadow-color:#B6B6B6; scrollbar-track-color:#F3F3F3;}
+body { width:100%; height:100%; font:12px "微软雅黑"; text-align:center;}
+input,select,textarea { font-family:Tahoma,Arial,"微软雅黑";}
+body,div{ margin:0;padding:0;border:0;}
+html { border:0;}
+img { border:0;} 
+.clearfloat{height:0;font-size:1px;clear:both;line-height:0;}
+
+html { background:#3986D8 url(../images/login_bg.jpg) no-repeat center top;}
+.loginArea { width:580px; height:220px; margin:0 auto; margin-top:206px;}
+.loginArea div { width:310px; height:200px; float:right; margin-top:10px;}
+
+.loginArea div span { display:block; float:left; width:300px; text-align:left;}
+.loginArea div .login_txt { height:24px; margin-top:11px; line-height:24px; font-size:14px; font-weight:bold; color:#666;}
+.loginArea div .login_ipt { height:32px;}
+.loginArea div .login_ipt input { width:165px; height:22px; margin-left:36px; border:0; margin-top:1px; background:transparent;
+ line-height:22px; font-size:16px; font-weight:bold; color:#0A5FA2;}
+ 
+.loginArea div .login_btn { height:32px; margin-top:14px;}
+.loginArea div .login_btn input { width:100px; height:30px; border:none; background:url(../images/login_btn.gif) no-repeat left top;
+ font-family:Tahoma,Arial,"微软雅黑"; font-size:14px; color:#FFF;}
+.loginArea div .login_btn input.loginBtnHover { background:url(../images/login_btn.gif) no-repeat left -40px;}

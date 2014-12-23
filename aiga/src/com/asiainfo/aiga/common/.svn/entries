@@ -1,0 +1,322 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/common
+svn://20.26.11.20/products
+
+
+
+2014-12-16T08:43:00.351646Z
+1599388
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+workflowVo
+dir
+
+Tree.java
+file
+
+
+
+
+2014-12-13T03:48:11.159354Z
+b1bf6f4fbedb554d5ee9dc3e2f159ebc
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+MenuAction.java
+file
+
+
+
+
+2014-12-13T03:48:11.161529Z
+bf7355632f775825281af1477d4f96a1
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+JsonDateToObj.java
+file
+
+
+
+
+2014-12-13T03:48:11.164530Z
+8abec10e9d5852bcd07a7a3e91d6d34b
+2014-09-29T02:50:42.040892Z
+1472996
+wenghy
+
+LoginAction.java
+file
+
+
+
+
+2014-12-13T03:48:11.166532Z
+163891db7d45c17961abb88dff3b7f63
+2014-11-10T10:02:36.466652Z
+1539905
+lixb
+
+JsonInteger2Boolean.java
+file
+
+
+
+
+2014-12-13T03:48:11.169534Z
+c79753f77803e609b079c1cd9a2a88f1
+2014-08-22T02:49:04.334729Z
+1410858
+wenghy
+
+JsonDateTrans.java
+file
+
+
+
+
+2014-12-13T03:48:11.171535Z
+9d5a1d660097208750ad102cb8106090
+2014-09-02T07:48:27.300550Z
+1422572
+wenghy
+
+IObjectType.java
+file
+
+
+
+
+2014-12-13T03:48:11.174656Z
+fda9555195f5b1c66d91ddb5499170c2
+2014-12-11T02:11:26.607922Z
+1591949
+yeteng
+
+dao
+dir
+
+CommonUtil.java
+file
+
+
+
+
+2014-12-13T03:48:11.177659Z
+e31639f5cff342d9fd08831ade6fe1c4
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+xls
+dir
+
+ZTree.java
+file
+
+
+
+
+2014-12-13T03:48:11.179660Z
+9acfa32aeaeb8979228f87c941fc2b12
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+LabelDefine.java
+file
+
+
+
+
+2014-12-13T03:48:11.182661Z
+f911a0df0bb233d4a475807d1b34f808
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+aigaUrlConfig
+dir
+
+web
+dir
+
+helper
+dir
+
+ConstDefine.java
+file
+
+
+
+
+2014-12-13T03:48:11.184782Z
+f5cbb6a0393cd85c5ae33ffe2b432c13
+2014-08-21T12:08:09.367791Z
+1409013
+yeteng
+
+BaseAction.java
+file
+
+
+
+
+2014-12-13T03:48:11.187786Z
+bae08fdba3f50ea89df15372e0d34889
+2014-12-11T02:11:26.607922Z
+1591949
+yeteng
+
+JsonStringTrans.java
+file
+
+
+
+
+2014-12-13T03:48:11.190789Z
+4928cae7eb64e6dff652bc3adb8a19ce
+2014-10-30T03:25:13.006794Z
+1517362
+renzq
+
+DynamicBean.java
+file
+
+
+
+
+2014-12-13T03:48:11.192790Z
+8afb8d0bd6e1c7ffd15679fee941e72a
+2014-11-03T03:52:38.310355Z
+1522443
+yeteng
+
+EntityUtil.java
+file
+
+
+
+
+2014-12-13T03:48:11.195791Z
+c56a8d66caeca8b61b730b4c11b38abd
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+JsonClobStringType2String.java
+file
+
+
+
+
+2014-12-13T03:48:11.198250Z
+d56ffb2790be0dcca36343de7edc9a89
+2014-12-11T02:11:26.607922Z
+1591949
+yeteng
+
+LoginFilter.java
+file
+
+
+
+
+2014-12-13T03:48:11.201253Z
+69c6886a7798dd60231a27469c2669a8
+2014-11-10T10:02:36.466652Z
+1539905
+lixb
+
+service
+dir
+
+utils
+dir
+
+IStakeholderType.java
+file
+
+
+
+
+2014-12-13T03:48:11.204268Z
+5eeeec5a1a27e3daf5a182c48751a6e3
+2014-08-20T05:14:46.903336Z
+1400854
+yeteng
+
+FieldUtil.java
+file
+
+
+
+
+2014-12-13T03:48:11.206362Z
+6bc6c2dc61572a84f0d5729144647eaf
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+security
+dir
+
+WorkflowParam.java
+file
+
+
+
+
+2014-12-13T03:48:11.209364Z
+28ac019e373d2765684b1e4d6c57ad88
+2014-11-07T07:08:51.192158Z
+1533644
+liuchao
+
+TreeConstants.java
+file
+
+
+
+
+2014-12-13T03:48:11.214504Z
+9e788bbda2168ee5483879bdba746184
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+workflowJSON.json
+file
+
+
+
+
+2014-12-13T03:48:11.212503Z
+557584bb2a79c47617b10de8bddb27af
+2014-08-22T10:45:57.581961Z
+1412873
+wenghy
+
+client
+dir
+

@@ -1,0 +1,115 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/html
+svn://20.26.11.20/products
+
+
+
+2014-11-18T02:36:16.314514Z
+1548940
+lixb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+jQuery
+dir
+
+bakindex.jsp
+file
+
+
+
+
+2014-12-13T04:18:09.272690Z
+73deb370a058aebd08bad0a81841bc15
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+demo
+dir
+
+jsv2
+dir
+
+secframe
+dir
+
+WEB-INF
+dir
+
+css
+dir
+
+webframe
+dir
+
+easyui
+dir
+
+index_old.jsp
+file
+
+
+
+
+2014-12-13T04:18:09.288316Z
+44b2423541b720a20d58dce812e20a9d
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+META-INF
+dir
+
+chart
+dir
+
+index.jsp
+file
+
+
+
+
+2014-12-13T04:18:09.288316Z
+c07c4960c8930276df309ad8a85738a9
+2014-09-02T01:56:08.100441Z
+1422029
+lixb
+
+images
+dir
+
+csc
+dir
+
+logincss.css
+file
+
+
+
+
+2014-12-13T04:18:09.288316Z
+3b2ac7e854a9e09d54e7c434672e6861
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+workflow
+dir
+

@@ -1,0 +1,40 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/groupCase
+svn://20.26.11.20/products
+
+
+
+2014-12-16T12:57:06.518142Z
+1599968
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+bo
+dir
+
+service
+dir
+
+dao
+dir
+
+web
+dir
+

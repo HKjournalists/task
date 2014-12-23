@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSCommonLink</Name>
+    <Package>com.asiainfo.csc.common.web</Package>
+    <DataSet SetType="SQLDATA">
+        <ValueAttr>link_no</ValueAttr>
+        <TextAttr>phase_name</TextAttr>
+        <SqlString>select phase_name, link_no from alm_workflow  where phase_name is not null order by link_no</SqlString>
+        <DataSource>UserDataSource</DataSource>
+    </DataSet>
+</UIDataSrc>

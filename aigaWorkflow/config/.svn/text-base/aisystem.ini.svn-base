@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<DataSrcList>
+  <DataSrc>
+    <name>UserDataSource</name>
+    <type>SELF</type>
+    <dbType>ORACLE</dbType>
+    <srcUrl>jdbc:oracle:thin:@20.26.11.9:1521:CSIBM02</srcUrl>
+    <minLimit>1</minLimit>
+    <maxLimit>50</maxLimit>
+    <userName>aiga</userName>
+    <password>{O}aiga_123</password>
+  </DataSrc>
+</DataSrcList>

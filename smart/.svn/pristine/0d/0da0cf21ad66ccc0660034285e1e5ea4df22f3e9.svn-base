@@ -1,0 +1,146 @@
+Ext.define('SmartApp.view.Case.TestcaseView', {
+	extend : 'Ext.panel.Panel',
+	alias : 'widget.testcaseview',
+
+	initComponent : function() {
+		var me = this;
+		Ext.apply(this, {
+			border : false,
+			layout : "border",
+
+			items : [{
+						xtype : 'gridpanel',
+						id : 'testcaseUpGrid',
+						region : 'north',
+						height : '30%',
+						store: Ext.create("SmartApp.store.TestcaseStore"),
+						columns : [Ext.create('Ext.grid.RowNumberer'), {
+					        header : "用例名称",
+					        dataIndex : "testcasename",
+					        editor: new Ext.form.TextField({
+					            allowBlank: false
+					        })
+					    },{
+		                    header : "所属脚本",
+		                    dataIndex : "scriptid",
+		                    editor: {
+		                    	 xtype:'combobox',  
+		                         store: 'ScriptStore',  
+		                         queryMode: 'local',  
+		                         displayField: 'scriptname',
+		                         valueField: 'scriptid',
+		                         editable: false,
+		                         listeners:{  
+		                             render:function(combobox,eOpts){  
+		                            	 var submoduleid = combobox.up("moduleview").submoduleid;
+		                            	 var c_store = combobox.getStore();
+		                            	 c_store.load({params:{"submoduleid":submoduleid}});
+		                             }  
+		                           
+		                         }  
+		                    },
+		                    renderer: function(value, metadata, record) {
+		                    	if(value!=undefined && value!=""){
+	                           	 	//var submoduleid = this.up("moduleview").submoduleid;
+	                           	 	script_store = this.up("casemanageview").down("#scriptUpGrid").getStore();
+	                         		var index = script_store.find("scriptid", value);
+			                    	if( index != -1)
+			                    		return script_store.getAt(index).data.scriptname;
+			                    	return value;
+			  
+			                    	
+		                    	}else
+		                    		return value;
+		                    }
+		                },{
+					    	header: "级别",
+					    	dataIndex: "testcaselevel",
+					    	editor: new Ext.form.TextField()
+					    },{
+					    	header: "预期结果",
+					    	dataIndex: "expectedresult",
+					    	editor: new Ext.form.TextField()
+					    }
+					    ],
+					    plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+					        clicksToEdit: 1
+					    })],
+					    tbar: [ {
+					        xtype : 'button',
+					        text : '新增',
+					        iconCls: "Tablerowinsert",
+					        action : "append"
+					    }, {
+					        xtype : 'button',
+					        text : '删除',
+					        iconCls: "Tablerowdelete",
+					        action: "delete"
+					    },{
+					        xtype : 'button',
+					        text : '刷新',
+					        iconCls: "Tablerefresh",
+					        action: "refresh"
+					    },{
+					        xtype : 'button',
+					        text : '保存',
+					        iconCls: "Tablesave",
+					        action: "save"
+					    },{
+					        xtype : 'button',
+					        text : '保存并查看细节',
+					        iconCls: "Packagedown",
+					        action : "show"
+					    }]
+					},{
+						xtype : 'gridpanel',
+						id : 'testcasedetailDownGrid',
+						region : 'center',
+						title : '用例细节',
+						store: Ext.create("SmartApp.store.TestcaseDetailStore"),
+		                plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+		                    clicksToEdit: 1
+		                })],
+						columns : [Ext.create('Ext.grid.RowNumberer'), 
+						    {
+								header: "参数",
+								dataIndex: "parameter",
+								editor: new Ext.form.TextField()
+						    },{
+			                    header : "参数值",
+			                    dataIndex : "value",
+			                    editor: new Ext.form.TextField()
+		                        
+		                    },  {
+		                        header : "测试用例名称",
+		                        dataIndex : "testcasename",
+		                        editor: new Ext.form.TextField()
+		                    }],
+		                    tbar: [ {
+		                        xtype : 'button',
+		                        text : '新增',
+		                        iconCls: "Tablerowinsert",
+		                        action : "append"
+		                    }, {
+		                        xtype : 'button',
+		                        text : '删除',
+		                        iconCls: "Tablerowdelete",
+		                        action: "delete"
+		                    },{
+		                        xtype : 'button',
+		                        text : '刷新',
+		                        iconCls: "Tablerefresh",
+		                        action: "refresh"
+		                    },{
+		                        xtype : 'button',
+		                        text : '保存',
+		                        iconCls: "Tablesave",
+		                        action: "save"
+		                    }]
+					}
+			]
+		});
+
+		me.callParent();
+	}
+
+});

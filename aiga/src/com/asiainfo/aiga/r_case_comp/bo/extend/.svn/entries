@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/r_case_comp/bo/extend
+svn://20.26.11.20/products
+
+
+
+2014-09-25T05:22:30.463940Z
+1470314
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaBaseRCaseComp.java
+file
+
+
+
+
+2014-12-13T03:48:06.834035Z
+b709104e1d801b3d95ddd473f46c8dcd
+2014-09-25T05:22:30.463940Z
+1470314
+liuchao
+
+AigaInstRCaseComp.java
+file
+
+
+
+
+2014-12-13T03:48:06.837040Z
+e629f0b627aab13bf8bbca4071c591fb
+2014-09-25T05:22:30.463940Z
+1470314
+liuchao
+

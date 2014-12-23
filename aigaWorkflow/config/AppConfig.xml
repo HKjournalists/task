@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="GB2312"?>
+<appconfig>
+    <syspath>D:\SourceCode\AIWebApplication\WebApp\SysConfig\</syspath>
+    <resourpath>D:\SourceCode\AIConfigTools\src\com\ai\configtool\CommonManager</resourpath>
+    <resourloader>com.ai.appframe2.configtool.CommonManager.ResourceLoader</resourloader>
+    <appicon>AppIcon.gif</appicon>
+    <buttonlist>
+        <button>
+         <name>ConfigDataSourceButton</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>数据源管理</lable>
+         <icon>images/DataSourceManger24.gif</icon>
+         <panelmapping>ConfigDataSourcePanel</panelmapping>
+       </button>
+
+        <button>
+         <name>ConfigBOButton</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>业务对象</lable>
+         <icon>images/BOManager.gif</icon>
+         <panelmapping>ConfigBOPanel</panelmapping>
+       </button>
+	   
+	   <button>
+         <name>ConfigOBDButton</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>OBD生成BO对象管理</lable>
+         <icon>images/Obd2boManager.png</icon>
+         <panelmapping>ConfigObdBOPanel</panelmapping>
+       </button>
+
+       <button>
+         <name>ConfigBOButton2</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>BO-Field映射</lable>
+         <icon>images/PageFiledManager.gif</icon>
+         <panelmapping>ConfigBOFieldPanel</panelmapping>
+       </button>
+       
+       <button>
+         <name>ConfigBOButton3</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>Map映射</lable>
+         <icon>images/showchild_mode.gif</icon>
+         <panelmapping>ConfigMapBOPanel</panelmapping>
+       </button>
+       
+	   <button>
+         <name>ConfigJspPage</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>jsp页面</lable>
+         <icon>images/jspconf24.png</icon>
+         <panelmapping>ConfigJspPanel</panelmapping>
+       </button>
+
+	   <button>
+         <name>ConfigPageDataSourceButton</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>页面数据源</lable>
+         <icon>images/PagedataSrc.gif</icon>
+         <panelmapping>PageDataSourceManagerPanel</panelmapping>
+       </button>
+       <button>
+         <name>ConfigPageButton</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>页面管理</lable>
+         <icon>images/PageView.gif</icon>
+         <panelmapping>PageViewManagerPanel</panelmapping>
+       </button>
+       <button>
+         <name>ManagerObjectButton</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>被管理对象</lable>
+         <icon>images/Home.gif</icon>
+         <panelmapping>ManagerObjectPanel</panelmapping>
+       </button>
+       
+       <button>
+         <name>GenBOBeanButton</name>
+         <buttonclass>com.ai.appframe2.configtool.CommonManager.ui.FloatToggleButton</buttonclass>
+         <lable>业务对象Bean</lable>
+         <icon>images/BOBean24.gif</icon>
+         <panelmapping>BOBeanManagerPanel</panelmapping>
+       </button>
+
+    </buttonlist>
+    <controlpanellist>
+
+      <controlpanel>
+         <name>ConfigBOPanel</name>
+         <panelclass>com.ai.appframe2.configtool.BOManager.ConfigBOPanel</panelclass>
+      </controlpanel>
+	  <controlpanel>
+         <name>ConfigObdBOPanel</name>
+         <panelclass>com.ai.appframe2.configtool.obd2bo.ConfigObdBOPanel</panelclass>
+      </controlpanel>
+
+
+	  <controlpanel>
+         <name>ConfigJspPanel</name>
+         <panelclass>com.ai.appframe2.configtool.jspconf.JspMainPanel</panelclass>
+      </controlpanel>
+      <controlpanel>
+         <name>ConfigDataSourcePanel</name>
+         <panelclass>com.ai.appframe2.configtool.DataSourceManager.DataSourceManagerPanel</panelclass>
+      </controlpanel>
+      <controlpanel>
+         <name>ConfigBOFieldPanel</name>
+         <panelclass>com.ai.appframe2.configtool.BOFieldConfig.ConfigBOFieldPn</panelclass>
+      </controlpanel>
+      <controlpanel>
+         <name>ConfigMapBOPanel</name>
+         <panelclass>com.ai.appframe2.configtool.map.ConfigMapBOPanel</panelclass>
+      </controlpanel>
+      <controlpanel>
+         <name>PageDataSourceManagerPanel</name>
+         <panelclass>com.ai.appframe2.configtool.UIDataSrc.MainPanel</panelclass>
+      </controlpanel>
+      <controlpanel>
+         <name>BOBeanManagerPanel</name>
+         <panelclass>com.ai.appframe2.configtool.bobeancreate.GeneratorSourceUI</panelclass>
+      </controlpanel>
+      <controlpanel>
+         <name>PageViewManagerPanel</name>
+         <panelclass>com.ai.appframe2.configtool.viewinfo.tool.ViewInfoManagerPanel</panelclass>
+      </controlpanel>
+      <controlpanel>
+         <name>ManagerObjectPanel</name>
+         <panelclass>com.ai.appframe2.configtool.managerobject.ui.ManagerObjectMainPanel</panelclass>
+      </controlpanel>
+      
+    </controlpanellist>
+    <datasourcelist>
+    </datasourcelist>
+</appconfig>

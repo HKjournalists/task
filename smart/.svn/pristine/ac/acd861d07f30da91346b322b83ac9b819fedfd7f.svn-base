@@ -1,0 +1,6 @@
+Ext.define('SmartApp.controller.CaseManageCtrl', {
+    extend: 'Ext.app.Controller',
+    views: ['Case.CaseManageView'],
+    models: [],
+    stores: ['ModuleTreeStore']
+});

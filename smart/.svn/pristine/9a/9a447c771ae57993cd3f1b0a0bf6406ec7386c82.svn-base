@@ -1,0 +1,22 @@
+/**
+ * Created by renzq on 2014/12/1.
+ */
+Ext.define('SmartApp.store.MenuTreeStore', {
+    extend: 'Ext.data.TreeStore',
+    //requires: 'Pandora.model.Station',
+    //model: 'Pandora.model.Station'
+
+    root: {
+        text: '主菜单',
+        expanded: true,
+        children: [
+
+            { text: "用户管理", expanded: true, children: [
+                { text: "用户管理", leaf: true, view_name: 'usermanageview'},
+                { text: "角色管理", leaf: true, view_name: 'rolemanageview'}
+            ] },
+            { text: "自动化测试案例管理", leaf: true }
+
+        ]
+    }
+});

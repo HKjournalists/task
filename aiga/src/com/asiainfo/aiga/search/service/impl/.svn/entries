@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/search/service/impl
+svn://20.26.11.20/products
+
+
+
+2014-12-09T07:31:37.541789Z
+1588842
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+LuceneSearchTree.java
+file
+
+
+
+
+2014-12-13T03:48:05.914429Z
+796ffe6d649510973461b51b7275d625
+2014-09-17T12:01:43.736214Z
+1450263
+liuchao
+
+LuceneSearchSVImpl.java
+file
+
+
+
+
+2014-12-13T03:48:05.919427Z
+a912608984ea7319dbd5e2d1af5a9eda
+2014-12-09T07:31:37.541789Z
+1588842
+wenghy
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOSubReqStatus" mainattr="SUB_REQ_ID">
+        <mapingenty type="table">ALM_SUB_REQ_STATUS</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="SUB_REQ_ID" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">SUB_REQ_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATUS" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STATUS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VM_TASK_NAME" maxlength="128" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">VM_TASK_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_REQ_NAME" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUB_REQ_NAME</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

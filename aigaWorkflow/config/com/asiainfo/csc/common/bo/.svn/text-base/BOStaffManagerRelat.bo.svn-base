@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOStaffManagerRelat" mainattr="STAFF_MANAGER_RELAT_ID">
+        <mapingenty type="table">SYS_STAFF_MANAGER_RELAT</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="STAFF_MANAGER_RELAT_ID" maxlength="12" datatype="Long" type="PK" remark="主键">
+                <mapingcol datatype="NUMBER">STAFF_MANAGER_RELAT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STAFF_ID" maxlength="12" datatype="Long" type="COL" remark="人员ID">
+                <mapingcol datatype="NUMBER">STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STAFF_NAME" maxlength="32" datatype="String" type="COL" remark="人员名称">
+                <mapingcol datatype="VARCHAR2">STAFF_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SYS_TAG" maxlength="12" datatype="Long" type="COL" remark="所属系统">
+                <mapingcol datatype="NUMBER">SYS_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REQ_TYPE" maxlength="2" datatype="String" type="COL" remark="需求类型">
+                <mapingcol datatype="VARCHAR2">REQ_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CONFIG_DSCR" maxlength="100" datatype="String" type="COL" remark="配置描述">
+                <mapingcol datatype="VARCHAR2">CONFIG_DSCR</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

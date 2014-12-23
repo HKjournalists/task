@@ -1,0 +1,53 @@
+package com.lb.app.privilege.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.transaction.Transactional;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lb.app.privilege.action.RoleAction;
+import com.lb.app.privilege.dao.IRoleDao;
+import com.lb.app.privilege.model.Role;
+
+
+@Service
+@Transactional
+public class RoleService {
+
+	final private static Log log = LogFactory.getLog(RoleAction.class);
+
+	@Autowired
+	IRoleDao roleDao;
+	
+	public List<Role> load(String name) {
+		log.info("service: role load...");
+		return roleDao.findbyCriteria(Restrictions.like("name", "%" + name + "%"));
+	}
+	
+	public List<Role> saveOrUpdate(List<Role> roles){
+		log.info("service: role save...");
+		for(Role r: roles){
+			log.info(r.getRoleid());
+			roleDao.saveOrUpdate(r);
+		}
+		return roles;
+	}
+	
+	public void destory(List<Role> roles){
+		log.info("service: role destory...");
+		log.info(roles.size());
+		for(Role r: roles){
+			roleDao.delete(r);
+		}
+		
+	}
+	
+	
+}

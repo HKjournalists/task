@@ -1,0 +1,56 @@
+package com.lb.app.privilege.model;
+
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
+
+@Entity
+public class Role {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="role$seq")
+	@SequenceGenerator(name="role$seq",sequenceName="role$seq")
+	private long roleid;
+	
+	
+	private String name;
+	private String memo;
+	@ManyToMany(targetEntity=com.lb.app.privilege.model.SysUser.class, fetch=FetchType.LAZY)
+	@JoinTable(name="r_user_role", joinColumns={ @JoinColumn(name="roleid")}, 
+    inverseJoinColumns={ @JoinColumn(name = "userid") })
+	private Set<SysUser> users;
+	
+	
+	public long getRoleid() {
+		return roleid;
+	}
+	public void setRoleid(long id) {
+		this.roleid = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getMemo() {
+		return memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+	public Set<SysUser> getUsers() {
+		return users;
+	}
+	public void setUsers(Set<SysUser> users) {
+		this.users = users;
+	}
+	
+}

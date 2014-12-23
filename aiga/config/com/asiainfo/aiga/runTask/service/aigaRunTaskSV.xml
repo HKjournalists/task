@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="aigaRunTaskSV" class="com.asiainfo.aiga.runTask.service.impl.AigaRunTaskSVImpl">
+		<property name="aigaRunTaskDAO" ref="aigaRunTaskDao"></property>
+		<property name="aigaLogDao" ref="logDao"></property>
+		<property name="aigaRunPlanDAO" ref="aigaRunPlanDao"></property>
+	</bean>
+	
+	<bean id="runTaskThread" class="com.asiainfo.aiga.runTask.thread.RunTaskThread" destroy-method="destroyMethod">
+		<property name="aigaRunTaskDAO" ref="aigaRunTaskDao"></property>
+		<property name="caseHttpSend" ref="caseSend"></property>
+	</bean>
+</beans>

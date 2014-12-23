@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sysParamSV" class="com.asiainfo.aiga.sysConstant.service.impl.SysConstantSVImpl">
+		<property name="sysContantDao" ref="sysParamDAO"></property>
+	</bean>
+	
+	<bean id="sysConstantInt" class="com.asiainfo.aiga.sysConstant.util.SysContentUtil" init-method="init">
+		<property name="sysConDao" ref="sysParamDAO"></property>
+	</bean>
+	
+	<bean id="labelMapInt" class="com.asiainfo.aiga.sysConstant.util.LabelMapUtil" init-method="initLabelMap">
+		<property name="busiDao" ref="busiDao"></property>
+		<property name="baseBusiDao" ref="baseBusiDao"></property>
+	</bean>
+	
+	<bean id="refreshLabelMap" class="com.asiainfo.aiga.sysConstant.service.impl.LabelMapSVImpl">
+		<property name="labelMapUtil" ref="labelMapInt"></property>
+	</bean>
+</beans>

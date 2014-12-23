@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<module name="业务模块" html-dir="" java-package="">
+     <scanengine tasktype="APPFRAME_SCAN_ENGINE"  queueid="QH" sleep="1" threadnum="1" fetchnum="100" start="true"/>
+</module>

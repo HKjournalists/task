@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.asiainfo.aiga.*" />
+	<aop:aspectj-autoproxy />
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:database.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+      <!-- 基本属性 url、user、password -->
+      <property name="url" value="${jdbc.url}" />
+      <property name="username" value="${jdbc.username}" />
+      <property name="password" value="${jdbc.password}" />
+
+      <!-- 配置初始化大小、最小、最大 -->
+      <property name="initialSize" value="1" />
+      <property name="minIdle" value="1" /> 
+      <property name="maxActive" value="20" />
+
+      <!-- 配置获取连接等待超时的时间 -->
+      <property name="maxWait" value="60000" />
+
+      <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+      <property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+      <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+      <property name="minEvictableIdleTimeMillis" value="300000" />
+
+      <property name="validationQuery" value="SELECT 'x' from dual" />
+      <property name="testWhileIdle" value="true" />
+      <property name="testOnBorrow" value="false" />
+      <property name="testOnReturn" value="false" />
+
+      <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+      <property name="poolPreparedStatements" value="true" />
+      <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+      
+      
+      <!-- 关闭长时间不使用的连接 -->
+      <property name="removeAbandoned" value="true" /> <!-- 打开removeAbandoned功能 -->
+      <property name="removeAbandonedTimeout" value="1200" /> <!-- 1200秒，也就是20分钟 -->
+      <property name="logAbandoned" value="true" /> <!-- 关闭abanded连接时输出错误日志 -->
+
+
+      <!-- 数据库监控，及日志配置 , 配置监控统计拦截的filters-->
+      <property name="filters" value="stat,log4j" />
+      <!-- 合并统计多个数据源 -->
+      <property name="useGloalDataSourceStat" value="true" />
+      
+      
+  </bean>
+  <bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true" />
+
+	<bean id="druid-stat-interceptor"
+	  class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+	</bean>
+	
+	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut"
+	    scope="prototype">
+	    <property name="patterns">
+	        <list>
+	            <value>com.asiainfo.aiga.*.service.*</value>
+	            <value>com.asiainfo.aiga.*.dao.*</value>
+	        </list>
+	    </property>
+	</bean>
+			
+	<aop:config>
+	    <aop:advisor advice-ref="druid-stat-interceptor"
+	        pointcut-ref="druid-stat-pointcut" />
+	</aop:config>
+	
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="lobHandler" ref="lobHandler" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/asiainfo/aiga/funCaseRela/bo/AigaFunCaseRela.hbm.xml</value>
+				<value>com/asiainfo/aiga/funCaseRela/bo/AigaHisFunCaseRela.hbm.xml</value>
+				<value>com/asiainfo/aiga/funPoint/bo/AigaFunPoint.hbm.xml</value>
+				<value>com/asiainfo/aiga/funPoint/bo/AigaKnowledge.hbm.xml</value>
+				<value>com/asiainfo/aiga/label/bo/AigaLabel.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaRequisition.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaAudit.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaAccountTest.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaTestSubTask.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaPerfSubResult.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaTestSubReason.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaPerformanceSubTask.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/requisition/bo/SysStaffOrgRelat.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/requisition/bo/SysOrganize.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/caseLabelRela/bo/AigaCaseLabelRela.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/resource/bo/AigaTestResource.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/sysConstant/bo/SysConstant.hbm.xml</value>
+				<value>com/asiainfo/aiga/gui/bo/AigaGui.hbm.xml</value>
+				<value>com/asiainfo/aiga/component/bo/AigaComponent.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaBaseBusi.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaBusi.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaCaseParams.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaAutotestParams.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaFunFolder.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaHisFunFolder.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaSubSysFolder.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaSystemFolder.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/r_case_comp/bo/AigaRCaseComp.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/collection/bo/AigaCaseCollection.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/r_collect_case/bo/AigaRCollectCase.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/node_view/bo/NodeView.hbm.xml</value>
+				<value>com/asiainfo/aiga/r_comp_gui/bo/AigaGuiCompRela.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/common/security/user/bo/AigaMenu.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/r_elem_case/bo/AigaRElemCase.hbm.xml
+				</value>
+				<value>com/asiainfo/aiga/runPlan/bo/AigaRunPlan.hbm.xml</value>
+				<value>com/asiainfo/aiga/runTask/bo/AigaRunTask.hbm.xml</value>
+				<value>com/asiainfo/aiga/log/bo/AigaLogElement.hbm.xml</value>
+				<value>com/asiainfo/aiga/log/bo/AigaLogStep.hbm.xml</value>
+				<value>com/asiainfo/aiga/log/bo/AigaLogTestCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/testPlan/bo/AigaTestPlan.hbm.xml</value>
+				<value>com/asiainfo/aiga/testTask/bo/AigaTestTask.hbm.xml</value>
+				<value>com/asiainfo/aiga/testVersion/bo/AigaTestVersion.hbm.xml</value>
+				<value>com/asiainfo/aiga/manualTask/bo/AigaManualTask.hbm.xml</value>
+				<value>com/asiainfo/aiga/search/bo/AigaExtIndex.hbm.xml</value>
+				<value>com/asiainfo/aiga/daily/bo/AigaTestDaily.hbm.xml</value>
+				<value>com/asiainfo/aiga/solidTask/bo/AigaSolidTask.hbm.xml</value>
+				<value>com/asiainfo/aiga/common/client/bo/AigaClientConfig.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/AigaMonthRunKpi.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/AigaMonthRepKpi.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/AigaMonthDelSla.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/StatKpiTarget.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/StatSlaNormI.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/StatMonthOneLevelKpi.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupCase/bo/AigaGroupCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupCase/bo/AigaRGroupSubCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupCase/bo/AigaRGroupChangeCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupCase/bo/AigaHisGroupCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaRFunElem.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaSecene.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaTestElem.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaTestSubElem.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaHisElem.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaHisSecene.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaHisSubElem.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaRElemSec.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaRCaseElem.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/StatGridColumns.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/StatConstants.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/StatGrid.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaSubTaskProblem.hbm.xml</value>
+				<value>com/asiainfo/aiga/statistics/bo/StatAutoCover.hbm.xml</value>
+				<value>com/asiainfo/aiga/r_collect_case/bo/AigaRFunCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/userCase/bo/AigaHisCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/qualityManage/bo/AigaQualityManage.hbm.xml</value>
+				<value>com/asiainfo/aiga/solidTask/bo/AigaStSecutest.hbm.xml</value>
+				<value>com/asiainfo/aiga/solidTask/bo/AigaStRegrtest.hbm.xml</value>
+				<value>com/asiainfo/aiga/solidTask/bo/AigaStPerftest.hbm.xml</value>
+				<value>com/asiainfo/aiga/solidTask/bo/AigaStHwregrtest.hbm.xml</value>
+				<value>com/asiainfo/aiga/solidTask/bo/AigaStCodescan.hbm.xml</value>
+				<value>com/asiainfo/aiga/testTask/bo/AigaPerftestTask.hbm.xml</value>
+				<value>com/asiainfo/aiga/runTask/bo/AigaHisRunTaskResult.hbm.xml</value>
+				<value>com/asiainfo/aiga/testTask/bo/AigaTestTaskChange.hbm.xml</value>
+				<value>com/asiainfo/aiga/requisition/bo/AigaQuestion.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pBusiOneLevel.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pBusiTwoLevel.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pBaseFunction.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pChannel.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pFunctionPoint.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pTestElem.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pCaseTemp.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pCase.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pBusiCaseCollection.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pBusiScene.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pSceneCollectRela.hbm.xml</value>
+				<value>com/asiainfo/aiga/p2pTest/bo/AigaP2pSceneSubTaskRela.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupJointDebug/bo/AigaJointDebugReqForm.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupJointDebug/bo/AigaJointDebugTaskForm.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupJointDebug/bo/AigaJointDebugSubTaskForm.hbm.xml</value>
+				<value>com/asiainfo/aiga/groupJointDebug/bo/AigaJointDebugChange.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="transactionManager"></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_NEVER,readOnly</prop>
+				<prop key="find*">PROPAGATION_NEVER,readOnly</prop>
+				<prop key="query*">PROPAGATION_NEVER,readOnly</prop>
+				<prop key="save*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="update*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED,-Exception</prop>
+			</props>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>aigaFunCaseRelaSV</value>
+				<value>aigaGuiSV</value>
+				<value>componentSV</value>
+				<value>funPointSV</value>
+				<value>aigalabelSV</value>
+				<value>requisitionSV</value>
+				<value>caseSV</value>
+				<value>aigaCaseLabelRelaSV</value>
+				<value>searchSV</value>
+				<value>resourceSV</value>
+				<value>sysParamSV</value>
+				<value>userSV</value>
+				<value>aigaRunTaskSV</value>
+				<value>aigaRunPlanSV</value>
+				<value>ManualTaskSV</value>
+				<value>groupCaseSV</value>
+				<value>busiSV</value>
+				<value>testElementSV</value>
+				<value>baseBusiSV</value>
+				<value>autoTestParamSV</value>
+				<value>caseParamSV</value>
+				<value>funFolderSV</value>
+				<value>subSysFolderSV</value>
+				<value>sysFolderSV</value>
+				<value>testSeceneSV</value>
+				<value>rFunCaseSV</value>
+				<value>qualityManageSV</value>
+				<value>caseWorkflowSV</value>
+				<value>p2pTestSV</value>
+				<value>aigaJointDebugSV</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="freemarkerConfiguration" class="freemarker.template.Configuration"/>
+	<import resource="com/asiainfo/aiga/funCaseRela/dao/funCaseRelaDao.xml" />
+	<import resource="com/asiainfo/aiga/funCaseRela/service/funCaseRelaSV.xml" />  
+	<import resource="com/asiainfo/aiga/funPoint/dao/funPointDao.xml" />
+	<import resource="com/asiainfo/aiga/funPoint/service/funPointSV.xml" />
+	<import resource="com/asiainfo/aiga/funPoint/dao/funPointDao.xml" />
+	<import resource="com/asiainfo/aiga/funPoint/service/funPointSV.xml" />
+	<import resource="com/asiainfo/aiga/label/dao/labelDao.xml" />
+	<import resource="com/asiainfo/aiga/label/service/labelSV.xml" />
+	<import resource="com/asiainfo/aiga/requisition/dao/requisitionDao.xml" />
+	<import resource="com/asiainfo/aiga/requisition/service/requisitionSV.xml" />
+	<import resource="com/asiainfo/aiga/sysConstant/dao/sysConstantDao.xml" />
+	<import resource="com/asiainfo/aiga/sysConstant/service/sysConstantSV.xml" />
+	<import resource="com/asiainfo/aiga/search/service/searchSV.xml" />
+	<import resource="com/asiainfo/aiga/search/dao/searchDao.xml" />
+	<import resource="com/asiainfo/aiga/resource/dao/testResourceDao.xml" />
+	<import resource="com/asiainfo/aiga/resource/service/testResourceSV.xml" />
+	<import resource="com/asiainfo/aiga/gui/dao/aigaGuiDao.xml" />
+	<import resource="com/asiainfo/aiga/gui/service/aigaGuiSV.xml" />
+	<import resource="com/asiainfo/aiga/component/dao/componentDao.xml" />
+	<import resource="com/asiainfo/aiga/component/service/componentSV.xml" />
+	<import resource="com/asiainfo/aiga/userCase/dao/caseDao.xml" />
+	<import resource="com/asiainfo/aiga/userCase/service/caseSV.xml" />
+	<import resource="com/asiainfo/aiga/r_case_comp/dao/RCaseCompDao.xml" />
+	<import resource="com/asiainfo/aiga/r_collect_case/dao/RCollectCaseDao.xml" />
+	<import resource="com/asiainfo/aiga/collection/dao/collectionDao.xml" />
+	<import resource="com/asiainfo/aiga/caseLabelRela/dao/caseLabelRelaDao.xml" />
+	<import resource="com/asiainfo/aiga/caseLabelRela/service/caseLabelRelaSV.xml" />
+	<import resource="com/asiainfo/aiga/node_view/dao/nodeDao.xml" />
+	<import resource="com/asiainfo/aiga/r_comp_gui/dao/RCompGuiDao.xml" />
+	<import resource="com/asiainfo/aiga/common/security/user/dao/userDao.xml" />
+	<import resource="com/asiainfo/aiga/common/security/user/service/userSV.xml" />
+	<import resource="com/asiainfo/aiga/common/security/user/dao/commonPageinationDAO.xml" />
+	<import resource="com/asiainfo/aiga/common/security/user/service/commonPageinationSV.xml" />
+	<import resource="com/asiainfo/aiga/r_elem_case/dao/RElemCaseDao.xml" />
+	<import resource="com/asiainfo/aiga/r_elem_case/service/RElemCaseSV.xml" />
+	<import resource="com/asiainfo/aiga/runPlan/service/aigaRunPlanSV.xml" />
+	<import resource="com/asiainfo/aiga/runPlan/dao/aigaRunPlanDao.xml" />
+	<import resource="com/asiainfo/aiga/runTask/dao/aigaRunTaskDao.xml" />
+	<import resource="com/asiainfo/aiga/runTask/service/aigaRunTaskSV.xml" />
+	<import resource="com/asiainfo/aiga/log/dao/logDao.xml" />
+	<import resource="com/asiainfo/aiga/testPlan/service/testPlanSV.xml" />
+	<import resource="com/asiainfo/aiga/testPlan/dao/testPlanDao.xml" />
+	<import resource="com/asiainfo/aiga/manualTask/dao/manualTaskDao.xml" />
+	<import resource="com/asiainfo/aiga/manualTask/service/manualTaskSV.xml" />
+	<import resource="com/asiainfo/aiga/common/security/user/service/workflowParam.xml" />
+	<import resource="com/asiainfo/aiga/common/security/user/dao/recieveClientConfigDao.xml" />
+	<import resource="com/asiainfo/aiga/common/security/user/service/recieveClientConfigSV.xml" />
+	<import resource="com/asiainfo/aiga/groupCase/dao/groupCaseDao.xml" />
+	<import resource="com/asiainfo/aiga/groupCase/service/groupCaseSV.xml" />
+	<import resource="com/asiainfo/aiga/statistics/service/statisticsSV.xml" />
+	<import resource="com/asiainfo/aiga/statistics/dao/statisticsDao.xml" />
+	<import resource="com/asiainfo/aiga/r_collect_case/dao/RFunCaseDao.xml" />
+	<import resource="com/asiainfo/aiga/r_collect_case/service/RFunCaseSV.xml" />
+	<import resource="com/asiainfo/aiga/qualityManage/dao/qualityManageDao.xml" />
+	<import resource="com/asiainfo/aiga/qualityManage/service/qualityManageSV.xml" />
+	<import resource="com/asiainfo/aiga/testTask/service/testTaskSV.xml" />
+	<import resource="com/asiainfo/aiga/testTask/dao/testTaskDao.xml" />
+	<import resource="com/asiainfo/aiga/p2pTest/dao/AigaP2PDao.xml" />
+	<import resource="com/asiainfo/aiga/p2pTest/service/AigaP2PServiceSV.xml" />
+	<import resource="com/asiainfo/aiga/groupJointDebug/service/aigaJointDebugSV.xml" />
+	<import resource="com/asiainfo/aiga/groupJointDebug/dao/aigaJointDebugDao.xml" />
+</beans>
+
+

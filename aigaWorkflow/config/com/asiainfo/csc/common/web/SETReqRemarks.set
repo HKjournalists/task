@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETReqRemarks" BOName="com.asiainfo.csc.common.bo.BOReqRemarks" MainField="REMARK_ID" Title="com.asiainfo.csc.common.bo.BOReqRemarks" ActBOName="com.asiainfo.csc.common.bo.BOReqRemarks" Package="com.asiainfo.csc.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>CHANGE_TIME</Name>
+        <BOAttrName>CHANGE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CHANGE_TIME</ID>
+        <Title>修改时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="0" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOReqRemarks" Attr="CHANGE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CREATE_TIME</Name>
+        <BOAttrName>CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_TIME</ID>
+        <Title>创建时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOReqRemarks" Attr="CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>OBJ_TAG</Name>
+        <BOAttrName>OBJ_TAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_TAG</ID>
+        <Title>对象编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOReqRemarks" Attr="OBJ_TAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>OBJ_TYPE</Name>
+        <BOAttrName>OBJ_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_TYPE</ID>
+        <Title>对象类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="2" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.csc.common.web.DSObjType" hasNull="false" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOReqRemarks" Attr="OBJ_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>REMARKS</Name>
+        <BOAttrName>REMARKS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARKS</ID>
+        <Title>后续备注</Title>
+        <Authority>U</Authority>
+        <EditType>DBTextArea</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOReqRemarks" Attr="REMARKS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>REMARK_ID</Name>
+        <BOAttrName>REMARK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>REMARK_ID</ID>
+        <Title>备注ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOReqRemarks" Attr="REMARK_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

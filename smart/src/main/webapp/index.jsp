@@ -1,0 +1,31 @@
+<%@page language="java" pageEncoding="UTF-8"%>  
+<%@page contentType="text/html;charset=UTF-8"%>  
+<%@page import="com.lb.app.privilege.model.Sys_User"%> 
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自动化测试平台</title>
+    <link rel="shortcut icon"href="images/smart.ico">
+   	<link rel="stylesheet" href="assets/extjs/resources/css/ext-all.css"/>
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="stylesheet" href="resources/css/icon.css" />
+    <script src="assets/extjs/bootstrap.js"></script>
+    <script src="assets/extjs/locale/ext-lang-zh_CN.js"></script>
+    <script src="resources/js/ext-expand.js"></script>
+    <script src="resources/js/ext-plugins.js"></script>
+    <script type="text/javascript" src="api.js"></script>  
+    <script src="app/app.js"></script>
+    <script>
+    	<% 
+    		Sys_User user = new Sys_User();
+    		if (session.getAttribute("user") == null)
+    			response.sendRedirect("login.html");
+    		else
+    			user = (Sys_User)session.getAttribute("user");
+    	%>
+        realname = '<%=user.getRealname()%>';
+    </script>
+</head>
+<body></body>
+</html>

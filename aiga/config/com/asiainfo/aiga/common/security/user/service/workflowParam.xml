@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="workflowParam" class="com.asiainfo.aiga.common.WorkflowParam" init-method="initWorkflowParam" lazy-init="true">
+	</bean>
+	
+	<bean id="workorderChartDao" class="com.asiainfo.aiga.common.dao.impl.WorkorderChartDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="workorderChartSV" class="com.asiainfo.aiga.common.service.impl.WorkorderChartSVImpl">
+		<property name="chartDao" ref="workorderChartDao"></property>
+	</bean>
+</beans>

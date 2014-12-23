@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GB2312"?>
+<service-config default-ejb-context="bea" default-web-context="bea">
+<ejb-context id="boss20" name="BOSS20 EJB服务器">
+  <item use="true">
+      <p name="java.naming.factory.initial" value="com.inprise.j2ee.jndi.CtxFactory"/>
+      <p name="java.naming.provider.url" value="corbaloc::localhost:29000/NameService"/>
+  </item>
+</ejb-context>
+
+<ejb-context id="WAS-WPS-BPE" name="WebSphere EJB服务器">
+  <item use="true">
+      <p name="java.naming.factory.initial"    value="com.ibm.websphere.naming.WsnInitialContextFactory"/>
+      <p name="java.naming.provider.url"       value="iiop://localhost:9100"/>
+      <p name="java.naming.security.principal" value="wps"/>
+      <p name="java.naming.security.credentials" value="wps"/>
+  </item>
+</ejb-context>
+
+<ejb-context id="bea" name="weblogic EJB服务器">
+  <item use="true">
+      <p name="java.naming.factory.initial"    value="weblogic.jndi.WLInitialContextFactory"/>
+      <p name="java.naming.provider.url"       value="t3://localhost:7001"/>
+      <p name="java.naming.security.principal" value="weblogic"/>
+      <p name="java.naming.security.credentials" value="weblogic"/>
+  </item>
+</ejb-context>
+
+<module file="service/appframe-pojo.service" use="true"/>
+<module file="service/secframe-pojo.service" use="true"/>
+<module file="service/attach.service" use="true"/>
+</service-config>
+

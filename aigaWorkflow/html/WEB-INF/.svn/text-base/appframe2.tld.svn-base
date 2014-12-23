@@ -1,0 +1,440 @@
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+
+
+
+  <tlibversion>1.0</tlibversion>
+
+  <jspversion>1.1</jspversion>
+
+  <shortname>Application Tag Library</shortname>
+
+  <uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+
+  <info>
+
+    This tag library contains functionality specific to the Struts
+
+    Example Application.
+
+  </info>
+  
+  
+<tag>
+  <name>stable</name>
+  <tagclass>com.ai.appframe2.web.tag.AISimpleGridTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute><name>tableid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>setname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>needrefresh</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  
+  <attribute><name>invoke_type</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>invoke_name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>invoke_querymethod</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>invoke_countmethod</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  
+  <attribute><name>ondbclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onrowchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>oncellchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onvalchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>oncontextmenu</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onfocusout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>ontitledbclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>ondblink</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onbeforeturnpage</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onafterturnpage</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onrowselected</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onresize</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onkeyup</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+  <attribute><name>onkeydown</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+  
+  
+  <attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>multiselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>pagesize</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>footdisplay</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+<attribute><name>rowheight</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>rowsequence</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>mo</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>operator</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>modealtype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+<attribute><name>tabletitle</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+<attribute><name>hassubtitle</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+<attribute><name>tablesubtitle</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+<attribute><name>onlyquery</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+
+
+</tag>
+
+<tag>
+  <name>table</name>
+  <tagclass>com.ai.appframe2.web.tag.AIDBGridTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute><name>tableid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>setname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>tablemodel</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>conditionname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>parametersname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>needrefresh</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>ondbclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onrowchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>oncellchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onvalchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>oncontextmenu</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onfocusout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  
+  <attribute><name>ontitledbclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>implservice_name</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>implservice_querymethod</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>implservice_countmethod</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+  <attribute><name>ondblink</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>multiselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>pagesize</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>cacheid</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>footdisplay</name><required>false</required><rtexprvalue>true</rtexprvalue>
+</attribute><attribute><name>defineqryfunctioncode</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onbeforeturnpage</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onafterturnpage</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onrowselected</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>rowheight</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onresize</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>rowsequence</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>mo</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>operator</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>modealtype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+<attribute><name>tabletitle</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+<attribute><name>hassubtitle</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+<attribute><name>tablesubtitle</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+<attribute><name>onlyquery</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+
+
+  <attribute><name>onkeyup</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+ <attribute><name>onkeydown</name><required>false</required><rtexprvalue>false</rtexprvalue></attribute>
+</tag>
+<tag>
+  <name>col</name>
+  <tagclass>com.ai.appframe2.web.tag.AIDBGridColTag</tagclass>
+  <bodycontent>empty</bodycontent>
+  <attribute><name>fieldname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>visible</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>edittype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>prompt</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+ <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+ <attribute><name>total</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute></tag>
+<tag>
+   <name>dbform</name>
+   <tagclass>com.ai.appframe2.web.tag.AIDBFormTag</tagclass>
+   <attribute><name>formid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>setname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>datamodel</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onvalchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>ondblink</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onfocusin</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onfocusout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onkeypress</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onkeydown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onbeforepaste</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>conditionname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>parametersname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>mo</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>operator</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>modealtype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>cacheid</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>implservice_name</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>implservice_querymethod</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+</tag>
+<tag>
+	   <name>autoform</name>
+	   <tagclass>com.ai.appframe2.web.tag.AutoFormTag</tagclass>
+	   <attribute><name>formid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>setname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>datamodel</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>onvalchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>conditionname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>parametersname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	   <attribute><name>template</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag><name>dbformfield</name>
+<tagclass>com.ai.appframe2.web.tag.AIDBFormFieldTag</tagclass>
+<bodycontent>empty</bodycontent>
+<attribute><name>formid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>fieldname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>visible</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>tabindex</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>edittype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+</tag>
+<tag><name>error</name><tagclass>com.ai.appframe2.web.tag.AIErrorTag</tagclass><bodycontent>empty</bodycontent></tag>
+<tag>
+  <name>button</name>
+  <tagclass>com.ai.appframe2.web.tag.AIButtonTag</tagclass>
+  <bodycontent>empty</bodycontent>
+  <attribute><name>text</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>length</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>name</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>enable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>display</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>classname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>mo</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>operator</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onmousemove</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onmousedown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onmouseout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onmouseover</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onmouseup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onkeydown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onkeypress</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onkeyup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onblur</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+   <name>dbtree</name>
+   <tagclass>com.ai.appframe2.web.tag.AIDBTreeTag</tagclass>
+   <bodycontent>empty</bodycontent>
+<attribute><name>treeid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>rootid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>roottext</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>idcolname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>textcolname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>hiberarchycols</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>setname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>datamodel</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>conditionname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>parametersname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>width</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>multiselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+   <name>dbtree_new</name>
+   <tagclass>com.ai.appframe2.web.tag.dbtree.AIDBTreeNewTag</tagclass>
+   <bodycontent>empty</bodycontent>
+<attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>datamodel</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>width</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onrightclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>oncheckboxclick </name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onwillexpand</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>multiselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>ishaveline</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>isdrag</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>explanonselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+<name>dbtree_default</name>
+<tagclass>com.ai.appframe2.web.tag.dbtree.AIDBTreeQueryTag</tagclass>
+<bodycontent>empty</bodycontent>
+<attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>rootvalue</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>roottext</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>rootuserobj</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>valuefield</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>textfield</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>userobjfield</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>datamodel</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onrightclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>ishaveline</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+	<name>listbox</name>
+	<tagclass>com.ai.appframe2.web.tag.AIListBoxTag</tagclass><bodycontent>empty</bodycontent>
+	<attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>ds</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>showtype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>listsize</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>multiselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>nullid</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>nulltext</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>parameters</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+	<attribute><name>styleclass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+  <name>loginuser</name>
+  <tagclass>com.ai.appframe2.web.tag.AILoginUserTag</tagclass>
+  <bodycontent>empty</bodycontent>
+</tag>
+<tag>
+  <name>tab</name>
+  <tagclass>com.ai.appframe2.web.tag.AITabTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>getParameter</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>type</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>vmFile</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>beforeSetTab</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>afterSetTab</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+  <name>tabitem</name>
+  <tagclass>com.ai.appframe2.web.tag.AITabItemTag</tagclass>
+  <bodycontent>empty</bodycontent>
+  <attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>src</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>isDeletable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>operator</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>mo</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+  
+<tag>
+    <name>contentframe</name>
+    <tagclass>com.ai.appframe2.web.tag.AIContentFrameTag</tagclass>
+    <attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>contenttype</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+<tag>
+    <name>contractframe</name>
+    <tagclass>com.ai.appframe2.web.tag.AIContractFrameTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>contenttype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>allowcontract</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>frameclosed</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+<tag>
+  <name>contractitem</name>
+  <tagclass>com.ai.appframe2.web.tag.AIContractItemTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+</tag>
+
+<tag>
+      <name>script</name>
+      <tagclass>com.ai.appframe2.web.tag.AIScript</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>parameters</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>type</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>remark</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute></tag><tag><name>comment</name><tagclass>com.ai.appframe2.web.tag.AIComment</tagclass><attribute><name>author</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>date</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute></tag><tag><name>pagearea</name><tagclass>com.ai.appframe2.web.tag.AIPageArea</tagclass><attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>remark</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+<tag>
+  <name>dbdate</name>
+  <tagclass>com.ai.appframe2.web.tag.AIDateTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>value</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+  <name>dbautoform</name>
+  <tagclass>com.ai.appframe2.web.tag.AIDBAutoFormTag</tagclass>
+   <bodycontent>EMPTY</bodycontent>
+  <attribute><name>formid</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>setname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>datamodel</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onvalchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>ondblink</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onfocusin</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>onfocusout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>conditionname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>parametersname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>initial</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>colnum</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>templatename</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+   <attribute><name>templateclass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+</tag>
+
+<tag>
+<name>dbautoformfield</name>
+<tagclass>com.ai.appframe2.web.tag.AIDBAutoFormFieldTag</tagclass>
+<bodycontent>empty</bodycontent>
+<attribute><name>fieldname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>colspan</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>editable</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>visible</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>titleposition</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+  <name>scriptinclude</name>
+  <tagclass>com.ai.appframe2.web.tag.AIScriptIncludeTag</tagclass>
+  <bodycontent>empty</bodycontent>
+  <attribute><name>src</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+  <name>html</name>
+  <tagclass>com.ai.appframe2.web.tag.AIHtmlTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+</tag>
+<tag>
+  <name>fileupload</name>
+  <tagclass>com.ai.appframe2.web.tag.AIFileUploadTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>submitFuncName</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>fileSavePath</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>formXmlParamName</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>savePathStyle</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>onFinishFuncName</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  <attribute><name>showProcessBar</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+<tag>
+  <name>outlook</name>
+  <tagclass>com.ai.appframe2.web.tag.AIOutLookTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+          <attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+          <attribute><name>isshow</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+  <name>outlookitem</name>
+  <tagclass>com.ai.appframe2.web.tag.AIOutLookItemTag</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+            <attribute><name>classname</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+                        <attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+</taglib>

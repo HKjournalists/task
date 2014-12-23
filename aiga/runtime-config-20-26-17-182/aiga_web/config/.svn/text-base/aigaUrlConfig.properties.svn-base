@@ -1,0 +1,5 @@
+recieveCaseId=port:9998,url:/sendCase
+sendCaseIdUrl=http://10.73.144.201:9999/srf/arrange
+recieveLogUrl=port:9995,url:/sendResult
+recieveGuiUrl=port:9999,url:/sendGui
+recieveCaseUrl=port:9996,url:/sendCase

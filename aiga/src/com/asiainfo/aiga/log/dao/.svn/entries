@@ -1,0 +1,43 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/log/dao
+svn://20.26.11.20/products
+
+
+
+2014-08-08T06:40:00.370037Z
+1383285
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+IAigaLogDao.java
+file
+
+
+
+
+2014-12-13T03:48:07.433216Z
+2b720929883275d622ea3a58bf82b6f6
+2014-08-08T06:40:00.370037Z
+1383285
+liuchao
+
+impl
+dir
+

@@ -1,0 +1,9 @@
+ BAK_AIGA_FUN_FOLDER //功能点
+ BAK_AIGA_BUSI //业务标签
+ BAK_AIGA_BASE_BUSI //基础业务标签
+ 需要与生产环境同步数据的时候,同步以上这三张表中的数据.
+ 
+ AIGA_FUN_FOLDER //功能点
+ AIGA_BUSI //业务标签
+ AIGA_BASE_BUSI //基础业务标签
+ 这三张表中可能存在脏数据

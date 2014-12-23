@@ -1,0 +1,79 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/r_collect_case/bo
+svn://20.26.11.20/products
+
+
+
+2014-10-23T01:06:50.451823Z
+1509371
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaRCollectCase.java
+file
+
+
+
+
+2014-12-13T03:48:11.834972Z
+deea617616825b1ca1e79cc7ac25e971
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+extend
+dir
+
+AigaRFunCase.java
+file
+
+
+
+
+2014-12-13T03:48:11.837974Z
+d8336276bd5d8b8f89e14104b788438a
+2014-10-22T07:29:30.116893Z
+1507649
+yeteng
+
+AigaRCollectCase.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:11.841149Z
+249fd533feaa6b594c72d302c9a122b4
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+AigaRFunCase.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:11.844152Z
+f0dcfae86dec24ae55b841aedf77974b
+2014-10-23T01:06:50.451823Z
+1509371
+liuchao
+

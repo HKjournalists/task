@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SmartApp</title>
+    <link rel="shortcut icon"href="images/smart.ico">
+   	<link rel="stylesheet" href="assets/extjs/resources/css/ext-all.css"/>
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="stylesheet" href="resources/css/icon.css" />
+    <script src="assets/extjs/ext-all.js"></script>
+    <script src="assets/extjs/locale/ext-lang-zh_CN.js"></script>
+    <script src="resources/js/ext-expand.js"></script>
+    <script src="resources/js/ext-plugins.js"></script>
+    <script type="text/javascript" src="api.js"></script>  
+    <script src="app/app.js"></script>
+    <script>
+   		
+    </script>
+</head>
+<body></body>
+</html>

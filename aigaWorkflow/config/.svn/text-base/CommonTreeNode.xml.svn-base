@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<common-tree desc="通用树配置">
+	<nodes desc="树节点">
+	  <tree id="50" type="workflow">
+	    <node id="1" value="流程调度管理" use="true" child-node-type="5001" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="2" value="流程统计" use="true" child-node-type="2" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="3" value="流程发布" use="false" child-node-type="0" parent-id="0" web-url="/workflow/TemplatePublish.jsp" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="201" value="流程处理统计" use="true" child-node-type="0" parent-id="2" web-url="/workflow/WorkflowStat.jsp" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="202" value="业务量统计" use="true" child-node-type="0" parent-id="2" web-url="/workflow/WorkflowAmount.jsp" open-pic="" close-pic="" leaf-pic=""/>
+	  </tree>
+	  <tree id="30" type="monitor">
+	    <node id="1" value="服务器监控" use="true" child-node-type="3001" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="2" value="服务器信息" use="true" child-node-type="3002" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="3" value="统计信息" use="true" child-node-type="0" parent-id="0" web-url="/monitor/statMain.jsp" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="3" value="trace信息" use="true" child-node-type="0" parent-id="0" web-url="/monitor/trace/index.jsp" open-pic="" close-pic="" leaf-pic=""/>
+	  </tree>
+	  
+	  <tree id="31" type="stat">
+	    <node id="1" value="正向调用" use="true" child-node-type="3101" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	    <node id="2" value="反向调用" use="true" child-node-type="3102" parent-id="0" web-url="" open-pic="" close-pic="" leaf-pic=""/>
+	  </tree>
+	</nodes>
+	
+	<node-types desc="通用节点类型">
+	  <node-type id="1" type="root" service-id="com.ai.appframe.CommonTreeService" method="getStaticTreeNode"/>
+	  <node-type id="2" type="static" service-id="com.ai.appframe.CommonTreeService" method="getStaticTreeNode"/>
+	  
+	  <node-type id="3001" type="server_list" service-id="com.ai.appframe.monitor.ServerMonitor" method="getScheduleUrlInfo"/>
+	  <node-type id="3002" type="server_list" service-id="com.ai.appframe.monitor.ServerMonitor" method="getServerUrlInfo"/>
+	  
+	  <node-type id="3101" type="stat_info" service-id="com.ai.appframe.monitor.ServerMonitor" method="getStatInfo"/>
+	  <node-type id="3102" type="stat_info" service-id="com.ai.appframe.monitor.ServerMonitor" method="getStatOppInfo"/>
+	  
+	  <node-type id="5001" type="server_list" service-id="com.ai.comframe.console.WorkflowServerMonitor" method="getScheduleUrlInfo"/>
+	</node-types>
+</common-tree>

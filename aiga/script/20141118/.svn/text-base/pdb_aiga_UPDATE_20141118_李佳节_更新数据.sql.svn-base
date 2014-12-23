@@ -1,0 +1,1 @@
+update aiga_test_task t set t.dev_firm=103,t.test_firm=103 where t.task_tag='TT20141117175328823';

@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/config/com/asiainfo/aiga/r_collect_case/dao
+svn://20.26.11.20/products
+
+
+
+2014-10-22T07:29:13.271396Z
+1507648
+yeteng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+RCollectCaseDao.xml
+file
+
+
+
+
+2014-12-13T03:47:28.249458Z
+15fffff84f4a6eaa0063e8b388574380
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+RFunCaseDao.xml
+file
+
+
+
+
+2014-12-13T03:47:28.252582Z
+d6665865a511bbf4d304882b1b0e4874
+2014-10-22T07:29:13.271396Z
+1507648
+yeteng
+

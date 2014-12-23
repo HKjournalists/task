@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/runtime-config-20-26-17-182/aiga_web/config
+svn://20.26.11.20/products
+
+
+
+2014-11-12T03:29:29.127548Z
+1542743
+lixb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+log4j.properties
+file
+
+
+
+
+2014-12-13T04:18:40.586629Z
+917fcb3cac3d46e8fddc369089fc4823
+2014-08-06T12:55:10.713309Z
+1379465
+majy
+
+aisystem.ini
+file
+
+
+
+
+2014-12-13T04:18:40.602253Z
+5138213f163c4d984f2b1460df784a3b
+2014-11-04T07:05:56.430842Z
+1525306
+lixb
+

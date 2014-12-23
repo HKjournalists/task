@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSCurPhase</Name>
+    <Package>com.asiainfo.csc.common.web</Package>
+    <DataSet SetType="SQLDATA">
+        <ValueAttr>phase_id</ValueAttr>
+        <TextAttr>phase_name</TextAttr>
+        <SqlString>select distinct phase_id,phase_name from alm_workflow where phase_id is not null</SqlString>
+        <DataSource>UserDataSource</DataSource>
+    </DataSet>
+</UIDataSrc>

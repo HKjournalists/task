@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAlmHisWorkflowCase" mainattr="TASK_ID">
+        <mapingenty type="table">ALM_HIS_WORK_FLOW_CASE</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="TASK_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_TEMPLATE_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">TASK_TEMPLATE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="QUEUE_ID" maxlength="20" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">QUEUE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ENGINE_WORKFLOW_ID" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ENGINE_WORKFLOW_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ENGINE_TYPE" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ENGINE_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_TYPE" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">TASK_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_TAG" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">TASK_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARENT_TASK_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PARENT_TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_EXCEPTION_WORKFLOW" maxlength="2" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">IS_EXCEPTION_WORKFLOW</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATE" maxlength="2" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">STATE_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WORKFLOW_OBJECT_ID" maxlength="50" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">WORKFLOW_OBJECT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WORKFLOW_OBJECT_TYPE_ID" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">WORKFLOW_OBJECT_TYPE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="USER_TASK_COUNT" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">USER_TASK_COUNT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CURRENT_TASK_ID" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CURRENT_TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DURATION" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">DURATION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_STAFF_ID" maxlength="30" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CREATE_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="START_DATE" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">START_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FINISH_DATE" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">FINISH_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LABEL" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">LABEL</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DESCRIPTION" maxlength="500" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">DESCRIPTION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VARS" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">VARS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OP_STAFF_ID" maxlength="30" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">OP_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ERROR_COUNT" maxlength="3" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">ERROR_COUNT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ERROR_MESSAGE" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ERROR_MESSAGE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DISTRICT_ID" maxlength="6" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">DISTRICT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WARNING_DATE" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">WARNING_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WARNING_TIMES" maxlength="2" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">WARNING_TIMES</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

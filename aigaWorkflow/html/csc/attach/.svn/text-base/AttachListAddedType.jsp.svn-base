@@ -1,0 +1,206 @@
+<%@ page contentType="text/html; charset=GBK"%>
+<%@ taglib uri="/WEB-INF/appframe2.tld" prefix="ai" %>
+<%@include file="/csc/common/taglib.jsp"%>
+<%
+//request.setAttribute("userInfo", g_GetUserInfo());
+
+String  staffCode = g_GetUserInfo().getCode();
+String orgName = request.getSession().getAttribute("orgNameStr").toString();
+
+%>
+<html>
+	<head>
+		
+		<script type="text/javascript" src="<%=request.getContextPath()%>/csc/attach/js/swfupload/swfupload.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath()%>/csc/attach/js/swfupload/swfupload.queue.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath()%>/csc/attach/js/swfupload/fileprogress.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath()%>/csc/attach/js/swfupload/handlers.js"></script>
+		
+		<script src="<%=request.getContextPath()%>/jsv2/PopMenu_v2.js"></script>
+		<script>
+			var attPackId="";
+			var objNo="";
+			var objType="";
+			var linkNo="";
+			var fileName="";
+			var filePath="";
+			var model = new AIPopMenuModel();
+			model.addPopMenuItem("btnDownload","下载",null,'downloadAttach');
+			model.addPopMenuItem("btnDelete","删除",null,'deleteAttach');
+			var popMenu = new AIPopMenu(model);
+			document.onclick = function(){popMenu.hidePopMenu();}
+			//document.oncontextmenu = function (){return false;}
+			
+			function deleteAttach(){
+				if(!confirm('确认要删除选择的附件吗？')){
+					return;
+				}
+				var url = "<%=request.getContextPath()%>/business/com.asiainfo.csc.attach.web.AttachAction?action=delPackage&attPackId="+attPackId;
+				var rtn = PostInfo(url,null);
+				u_message(rtn.getValueByName("msg"));
+				getDocumentList(objNo,objType);
+			}
+			
+			function downloadAttach(){
+				window.open("<%=request.getContextPath()%>/business/com.asiainfo.csc.attach.web.AttachAction?action=doDownload&attName=" + fileName + "&attPath=" + filePath);
+			}
+			
+			function showBtnMenu(_attPackId,_submitterTag,_fileName,_filePath){
+				popMenu.setItemHideById("btnDownload",false);
+				if("${userInfo.code}"==_submitterTag){
+					popMenu.setItemHideById("btnDelete",false);
+				}else{
+					popMenu.setItemHideById("btnDelete",true);
+				}
+				popMenu.showPopMenu();
+				attPackId=_attPackId;
+				fileName=_fileName;
+				filePath=_filePath;
+			}
+			
+	
+			
+			//用于测试数据，测试时使用
+			//objType="9";
+			//objNo="PROBLEM20130128112601";
+			//linkNo="b";
+			
+			//================================upload function=======================================================
+			var swfu1=null;
+			var swfu2=null;
+			
+			function queueComplete_func(){
+				getDocumentList(objNo, objType, linkNo);
+			}
+			
+			function getDocumentList(_objNo,_type,_linkno){
+					objNo=_objNo;
+					objType=_type;
+					linkNo=_linkno;
+					$('#attachList').html("");
+					var url = "<%=request.getContextPath()%>/business/com.asiainfo.csc.attach.web.AttachAction?action=getAttachList&objNo="	+ objNo + "&type=" + objType;
+						var rtn = PostInfo(url, null);
+						if (rtn.getValueByName('html') == "") {
+							document.getElementById("attachList").style.display = "none";
+						} else {
+							document.getElementById("attachList").style.display = "block";
+							$('#attachList').html(rtn.getValueByName('html'));
+						}
+				
+				if(swfu1==null)
+					swfu1 = new SWFUpload({
+						flash_url : "<%=request.getContextPath()%>/csc/attach/swfupload/swfupload.swf",
+						upload_url: "<%=request.getContextPath()%>/business/com.asiainfo.csc.attach.web.FileUploadAction?action=fileUpload",
+						post_params: {"uploadTimer" : new Date(), 
+							"SUBMITTER_TAG": "<%=staffCode%>",
+							"ATT_PATH": "<%=orgName%>",
+							"SUBMIT_LINK" : linkNo,
+							"OBJ_NO" : objNo,
+							"OBJ_TYPE" : objType,
+							"ATT_TYPE" : "1"
+							
+							},
+						file_size_limit : "100 MB",
+						file_types : "*.*",
+						file_types_description : "All Files",
+						file_upload_limit : 100,
+						file_queue_limit : 0,
+						custom_settings : {
+							progressTarget : "fsUploadProgress",
+							cancelButtonId : "btnCancel1"
+						},
+						debug: false,
+		
+						// Button settings
+						button_image_url : "<%=request.getContextPath()%>/csc/attach/images/fla_btn02.png",
+						button_placeholder_id : "spanButtonPlaceholder1",
+						button_width: 100,
+						button_height: 22,
+						
+						// The event handler functions are defined in handlers.js
+						file_queued_handler : fileQueued,
+						file_queue_error_handler : fileQueueError,
+						file_dialog_complete_handler : fileDialogComplete,
+						upload_start_handler : uploadStart,
+						upload_progress_handler : uploadProgress,
+						upload_error_handler : uploadError,
+						upload_success_handler : uploadSuccess,
+						upload_complete_handler : uploadComplete,
+						queue_complete_handler : queueComplete_func	// Queue plugin event
+					});
+				if (swfu2==null)
+					swfu2 = new SWFUpload({
+						flash_url : "<%=request.getContextPath()%>/csc/attach/swfupload/swfupload.swf",
+						upload_url: "<%=request.getContextPath()%>/business/com.asiainfo.csc.attach.web.FileUploadAction?action=fileUpload",
+						post_params: {"uploadTimer" : new Date(), 
+							"SUBMITTER_TAG": "<%=staffCode%>",
+							"ATT_PATH": "<%=orgName%>",
+							"SUBMIT_LINK" : linkNo,
+							"OBJ_NO" : objNo,
+							"OBJ_TYPE" : objType,
+							"ATT_TYPE" : "2"
+							
+							},
+						file_size_limit : "100 MB",
+						file_types : "*.*",
+						file_types_description : "All Files",
+						file_upload_limit : 100,
+						file_queue_limit : 0,
+						custom_settings : {
+							progressTarget : "fsUploadProgress",
+							cancelButtonId : "btnCancel2"
+						},
+						debug: false,
+		
+						// Button settings
+						button_image_url : "<%=request.getContextPath()%>/csc/attach/images/fla_btn01.png",
+						button_placeholder_id : "spanButtonPlaceholder2",
+						button_width: 100,
+						button_height: 22,
+						
+						// The event handler functions are defined in handlers.js
+						file_queued_handler : fileQueued,
+						file_queue_error_handler : fileQueueError,
+						file_dialog_complete_handler : fileDialogComplete,
+						upload_start_handler : uploadStart,
+						upload_progress_handler : uploadProgress,
+						upload_error_handler : uploadError,
+						upload_success_handler : uploadSuccess,
+						upload_complete_handler : uploadComplete,
+						queue_complete_handler : queueComplete_func	// Queue plugin event
+					});
+				}
+	</script>
+	</head>
+	<body>
+	
+		<div id="pucker1" >
+			<table id="pucker_head1" width="100%">
+				<!--  <tr style="cursor:hand;">-->
+				<tr>
+					<td class="title_e" style="width:77px;padding-left:0px;">会议附件：</td>
+					<td id="attachList"></td>
+					<td>
+						<div id="content">
+							<form id="form1" action="AttachListAddedType.jsp" method="post" enctype="multipart/form-data">
+									<span>
+								
+										 <span id="spanButtonPlaceholder2"></span>
+										 <span id="spanButtonPlaceholder1"></span>
+										 
+										 <input id="btnCancel1" type="button" value="取消下载" onclick="swfu1.cancelQueue();" disabled="disabled" style="visibility:hidden; margin-left: 2px; font-size: 8pt; height: 22px;" />
+										 <input id="btnCancel2" type="button" value="取消下载" onclick="swfu2.cancelQueue();" disabled="disabled" style="visibility:hidden; margin-left: 2px; font-size: 8pt; height: 22px;" />
+										 
+									</span>
+									<div id="fsUploadProgress">
+									</div>
+
+							</form>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+
+</html>

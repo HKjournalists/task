@@ -1,0 +1,155 @@
+Ext.define('SmartApp.view.Case.ScriptView', {
+	extend : 'Ext.panel.Panel',
+	alias : 'widget.scriptview',
+
+	initComponent : function() {
+		var me = this;
+		var keyword_store = Ext.create("SmartApp.store.KeywordStore");
+		Ext.apply(this, {
+			border : false,
+			layout : "border",
+
+			items : [{
+				xtype : 'gridpanel',
+				id : 'scriptUpGrid',
+				region : 'north',
+				height : '30%',
+				//store: Ext.create("SmartApp.store.ScriptStore"),
+				columns : [Ext.create('Ext.grid.RowNumberer'), {
+                    header : "脚本名称",
+                    dataIndex : "scriptname",
+                    sortable : true,
+                    editor: new Ext.form.TextField({
+                        allowBlank: false
+                    })
+                }
+                ],
+                plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+                    clicksToEdit: 1
+                })],
+                tbar: [ {
+                    xtype : 'button',
+                    text : '新增',
+                    iconCls: "Tablerowinsert",
+                    action : "append"
+                }, {
+                    xtype : 'button',
+                    text : '删除',
+                    iconCls: "Tablerowdelete",
+                    action: "delete"
+                },{
+                    xtype : 'button',
+                    text : '刷新',
+                    iconCls: "Tablerefresh",
+                    action: "refresh"
+                },{
+                    xtype : 'button',
+                    text : '保存',
+                    iconCls: "Tablesave",
+                    action: "save"
+                },{
+                    xtype : 'button',
+                    text : '保存并查看细节',
+                    iconCls: "Packagedown",
+                    action : "show"
+                }]
+			},{
+				xtype : 'gridpanel',
+				id : 'scriptdetailDownGrid',
+				region : 'center',
+				title : '基本细节',
+				store: Ext.create("SmartApp.store.ScriptDetailStore"),
+                plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+                    clicksToEdit: 1
+                })],
+                viewConfig: {
+                	plugins:{
+                		ptype: "gridviewdragdrop",
+                		dragText: "通过拖动排序"
+                	},
+                	listeners: {  
+                        beforedrop: function(node, data, overModel, dropPosition, dropHandlers) {
+                        	 dropHandlers.wait = true;
+                        	 grid_store = overModel.store;
+                        	 var flag = true;
+                        	 for(var index = 0 ; index < grid_store.getCount(); index++){
+                        		 if (grid_store.getAt(index).data.scriptdetailid === ""){
+                        			 dropHandlers.cancelDrop();
+                            		 Ext.MessageBox.alert("提示", "需要将新增的脚本细节信息保存后才能进行拖动排序.");
+                            		 flag = false;
+                            		 break;
+                        		 }
+                        			 
+                        	 }
+                        	 if (flag === true)
+                        		 dropHandlers.processDrop();
+                        	 
+                        }
+                	}
+                },
+				columns : [Ext.create('Ext.grid.RowNumberer'), 
+				           {
+							  header: "脚本细节ID",
+							  dataIndex: "scriptdetailid"
+				           },{
+	                    header : "关键字",
+	                    dataIndex : "keywordid",
+	                    editor: {
+	                    	 xtype:'combobox',  
+	                         store: 'KeywordStore',  
+	                         queryMode: 'local',  
+	                         displayField: 'keywordname',
+	                         valueField: 'keywordid',
+	                         editable: false,
+	                         listeners:{  
+	                             render:function(combobox,eOpts){  
+	                            	 var submoduleid = combobox.up("moduleview").submoduleid;
+	                            	 var c_store = combobox.getStore();
+	                            	 c_store.load({params:{"submodule_id":submoduleid}});
+	                             }  
+	                           
+	                         }  
+	                    },
+	                    renderer: function(value, metadata, record) {
+	                    	keyword_store = this.up("casemanageview").down("#keywordUpGrid").getStore();
+	                        if(value && value!=null && value!= "" && this.keyword_store){
+                                var index = keyword_store.find("keywordid", value);
+                                if(index!=-1)
+                                	return keyword_store.getAt(index).data.keywordname;
+	                        }
+	                        return value;
+	                    }
+                        
+                    }, {
+                    header : "版本",
+                    dataIndex : "version",
+                    editor:  new Ext.form.TextField()
+                    }],
+                    tbar: [ {
+                        xtype : 'button',
+                        text : '新增',
+                        iconCls: "Tablerowinsert",
+                        action : "append"
+                    }, {
+                        xtype : 'button',
+                        text : '删除',
+                        iconCls: "Tablerowdelete",
+                        action: "delete"
+                    },{
+                        xtype : 'button',
+                        text : '刷新',
+                        iconCls: "Tablerefresh",
+                        action: "refresh"
+                    },{
+                        xtype : 'button',
+                        text : '保存',
+                        iconCls: "Tablesave",
+                        action: "save"
+                    },'-','<font color="red">*</font>请通过记录拖动排列顺序后保存']
+			}]
+		});
+
+		me.callParent();
+	}
+
+});

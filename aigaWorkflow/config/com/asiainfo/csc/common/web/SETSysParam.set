@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETSysParam" BOName="com.asiainfo.csc.common.bo.BOSysParam" MainField="PARAM_TYPE" Title="com.asiainfo.csc.common.bo.BOSysParam" ActBOName="com.asiainfo.csc.common.bo.BOSysParam" Package="com.asiainfo.csc.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>PARAM_DISC</Name>
+        <BOAttrName>PARAM_DISC</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARAM_DISC</ID>
+        <Title>参数描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="PARAM_DISC" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>PARAM_ID</Name>
+        <BOAttrName>PARAM_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARAM_ID</ID>
+        <Title>参数ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="PARAM_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>PARAM_NAME</Name>
+        <BOAttrName>PARAM_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARAM_NAME</ID>
+        <Title>参数名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="PARAM_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>PARAM_NO</Name>
+        <BOAttrName>PARAM_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARAM_NO</ID>
+        <Title>参数编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="PARAM_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>PARAM_RELA_ID</Name>
+        <BOAttrName>PARAM_RELA_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARAM_RELA_ID</ID>
+        <Title>默认为 父关系 PARAM_ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="PARAM_RELA_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>PARAM_TYPE</Name>
+        <BOAttrName>PARAM_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARAM_TYPE</ID>
+        <Title>参数类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="PARAM_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>PARAM_VALUE</Name>
+        <BOAttrName>PARAM_VALUE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARAM_VALUE</ID>
+        <Title>参数值</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="PARAM_VALUE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>SORT_ID</Name>
+        <BOAttrName>SORT_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SORT_ID</ID>
+        <Title>参数排序，以sort_id的值的大小作为排次序。缺省值为0</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOSysParam" Attr="SORT_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

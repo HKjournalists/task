@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<module name="业务模块" html-dir="" java-package="">
+  <service id="com/asiainfo/csc/matrix/dao/matrixWorkFlowDao.service"/>
+  <service id="com/asiainfo/csc/matrix/service/matrixWorkFlowSV.service"/>
+  <service id="com/asiainfo/aiga/service/aigaWorkFlowSV.service"/>
+</module>

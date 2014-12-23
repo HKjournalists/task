@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETAlmStakeholder" BOName="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" MainField="STDHOLDER_ID" Title="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" ActBOName="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Package="com.asiainfo.csc.matrix.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>CREATE_TIME</Name>
+        <BOAttrName>CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_TIME</ID>
+        <Title>创建时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>LINK_ID</Name>
+        <BOAttrName>LINK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_ID</ID>
+        <Title>环节ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="LINK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>LINK_NO</Name>
+        <BOAttrName>LINK_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_NO</ID>
+        <Title>环节编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="LINK_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>OBJ_ID</Name>
+        <BOAttrName>OBJ_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_ID</ID>
+        <Title>对象ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="OBJ_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>OBJ_TYPE</Name>
+        <BOAttrName>OBJ_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_TYPE</ID>
+        <Title>对象类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="OBJ_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>ROLE_CODE</Name>
+        <BOAttrName>ROLE_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_CODE</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="ROLE_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>ROLE_ID</Name>
+        <BOAttrName>ROLE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_ID</ID>
+        <Title>权限ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="ROLE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>STDHOLDER_ID</Name>
+        <BOAttrName>STDHOLDER_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STDHOLDER_ID</ID>
+        <Title>干系人ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="STDHOLDER_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>STDHOLDER_STAFF_ID</Name>
+        <BOAttrName>STDHOLDER_STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STDHOLDER_STAFF_ID</ID>
+        <Title>干系人员工ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="STDHOLDER_STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>STDHOLDER_STAFF_NAME</Name>
+        <BOAttrName>STDHOLDER_STAFF_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STDHOLDER_STAFF_NAME</ID>
+        <Title>干系人员工姓名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="STDHOLDER_STAFF_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>STDHOLDER_STAFF_NO</Name>
+        <BOAttrName>STDHOLDER_STAFF_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STDHOLDER_STAFF_NO</ID>
+        <Title>干系人员工编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="STDHOLDER_STAFF_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>STDHOLDER_STAFF_ORG_ID</Name>
+        <BOAttrName>STDHOLDER_STAFF_ORG_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STDHOLDER_STAFF_ORG_ID</ID>
+        <Title>干系人所属组织ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="STDHOLDER_STAFF_ORG_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>STDHOLDE_TYPE</Name>
+        <BOAttrName>STDHOLDE_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STDHOLDE_TYPE</ID>
+        <Title>1 执行 2 审批(需求审批) 3 查看(需求抄送) 4 通知 5讨论(需求讨论)</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="STDHOLDE_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>TEMPLATE_ID</Name>
+        <BOAttrName>TEMPLATE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMPLATE_ID</ID>
+        <Title>模板ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmStakeholder" Attr="TEMPLATE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>LINK_NAME</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>LINK_NAME</ID>
+        <Title>环节名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="0" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

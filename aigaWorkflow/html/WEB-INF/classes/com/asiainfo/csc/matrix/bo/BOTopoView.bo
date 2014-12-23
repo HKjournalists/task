@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOTopoView" mainattr="NO">
+        <mapingenty type="table">ALM_TOPO_VIEW</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="NO" maxlength="15" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FPOINT" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">FPOINT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TPOINT" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">TPOINT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ACTION" maxlength="50" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ACTION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="COND" maxlength="15" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">COND</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FUN" maxlength="255" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">FUN</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SERVID" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SERVID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DRIVNOS" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">DRIVNOS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DRIV_CON_NO" maxlength="15" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">DRIV_CON_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DRIVNO_FUN" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">DRIVNO_FUN</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMPLATE_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">TEMPLATE_ID</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

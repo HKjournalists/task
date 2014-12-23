@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<module id="" ejb-deploy="" action-deploy="" webservice-deploy="">
+  <service id="com.ai.comframe.ComframeCallBusi" interface="com.ai.comframe.client.IComframeCallBusi">
+    <impl-define type="singleton" use="true" impl-class="com.ai.comframe.client.ComframeCallBusiDefault" transaction-type="join" />
+  </service>
+</module>

@@ -1,0 +1,605 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<%@ include file="/webframe/common/commonhead.jsp"%>
+<HTML>
+<HEAD>
+<TITLE>日期选择</TITLE>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<script  language="JavaScript" src="Globe_v2.jsp"></script>
+<script  language="JavaScript">
+window.returnValue = "none";
+
+
+var DBCalendar_gBegin=[1900,1,1];	// 日历显示的最早日期[Year,Month,Date]
+var DBCalendar_gEnd=[2050,12,31];	// 日历显示的最后日期 [Year,Month,Date]
+
+var DBCalendar_gdBegin=new Date(DBCalendar_gBegin[0],DBCalendar_gBegin[1]-1,DBCalendar_gBegin[2]);
+var DBCalendar_gdEnd=new Date(DBCalendar_gEnd[0],DBCalendar_gEnd[1]-1,DBCalendar_gEnd[2]);
+
+var DBCalendar_gMonths=["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+var DBCalendar_gWeekDay=["日","一","二","三","四","五","六"];	// weekday caption from Sunday to Saturday
+
+var DBCalendar_gcBG="#E0E3F7";	// 默认单元格的背景色
+var DBCalendar_gcCalBG="#D4D0C8";	// 日历的背景色
+var DBCalendar_gcFrame="#E0E3F7";	// 框架的背景色
+var DBCalendar_gcSat="#FF7200";	   //星期六的单元格字的颜色
+var DBCalendar_gcSun="#FF7200"; 	// 星期天单元格字的颜色
+var DBCalendar_gcWorkday="black";	//工作日单元格字的颜色
+var DBCalendar_gcOtherDay="#666666";	// 其他月单元格字的颜色
+var DBCalendar_gcToggle="#94AADE";	// 选中单元格背景色
+
+var DBCalendar_giCellWidth = 26;
+var DBCalendar_giCellHeight = 23;
+
+function DBCalendar(aParent)
+{
+
+  var obj = document.createElement("div");
+  obj.showtype = "date";
+  if (aParent)
+    obj.ParentPK = aParent.PK;
+  else
+    obj.ParentPK = null;
+  //obj.style.position="absolute";//relative
+  //obj.style.visibility="hidden";
+  obj.style.border='0';
+  //obj.style.width = 200;
+
+  var gd=new Date();
+  obj.gToday=[gd.getFullYear(),gd.getMonth()+1,gd.getDate()];
+
+
+
+  obj.gCurMonth = obj.gToday;
+  obj.gdSelect=[0,0,0];
+  var gParam = dialogArguments;
+
+
+
+
+  obj.gcTemp = DBCalendar_gcBG;
+
+  obj.gcbMon = null;   //月选择
+  obj.gcbYear = null;  //年选择
+
+  obj.gCellSet = null;
+  //showMessage("DBDate.js->DBCalendar()","Start");
+  obj.fCheckRange = DBCalendar_fCheckRange;
+  obj.fSetCal = DBCalendar_fSetCal;
+  obj.fSetSelected = DBCalendar_fSetSelected;
+  obj.fGetSelected = DBCalendar_fGetSelected;
+  obj.fUpdateCal = DBCalendar_fUpdateCal;
+  obj.fDrawCal = DBCalendar_fDrawCal;
+  obj.fSetDate = DBCalendar_fSetDate;
+  obj.fPrevMonth = DBCalendar_fPrevMonth;
+  obj.fNextMonth = DBCalendar_fNextMonth;
+
+  //与时间设置相关的函数
+  obj.buildTimeDiv = DBCalendar_fBuildTimeDiv;//构造时间显示控件,设置初始时间值
+  
+
+  obj.style.backgroundColor = DBCalendar_gcCalBG;
+  //showMessage("DBDate.js->DBCalendar()","Start1111");
+  //下拉日历的主体
+  var tmpTable = document.createElement("<table align='center' border='0' width='200'>");
+  tmpTable.style.textAlign  = "center";
+  //tmpTable.border=0;
+  //tmpTable.cellpadding=0;
+  //tmpTable.cellspacing=0;
+  //tmpTable.width = 200;
+  //showMessage("DBDate.js->DBCalendar()->tmpTable",tmpTable);
+  var tmpRow = tmpTable.insertRow();
+  tmpCell = tmpRow.insertCell();
+  //tmpCell.className = "DBDate-CalTop";
+
+  //<INPUT type='button' value='&lt;' class='DBDate-MonthNav' onclick='fPrevMonth();this.blur();'>
+  //上一月
+  var tmpBu = document.createElement("<input>");
+  tmpBu.type="button";
+  tmpBu.className = "btn-1word";
+  tmpBu.value="<"
+  //tmpBu.className = "DBDate-MonthNav";
+  tmpBu.ParentObj = obj;
+  tmpBu.onclick = function(){this.ParentObj.fPrevMonth();this.blur();}
+  tmpCell.appendChild(tmpBu);
+
+  //年选择
+  var tmpSel = document.createElement("<select style='width:80'>");
+  for (var i=DBCalendar_gBegin[0];i<=DBCalendar_gEnd[0];i++)
+  {
+    tmpOption = document.createElement("<option>");
+    tmpOption.value = i;
+    tmpOption.text = i;
+    tmpSel.options.add(tmpOption);
+  }
+  obj.gcbYear = tmpSel;
+  //tmpSel.className = "DBDate-CalTitle";
+  tmpSel.ParentObj = obj;
+  tmpSel.onchange = function(){this.ParentObj.fSetDate(this.ParentObj.gcbYear.value,this.ParentObj.gcbMon.value,1);}
+  tmpCell.appendChild(tmpSel);
+  //yue选择
+  var tmpSel = document.createElement("<select style='width:80'>");
+  for (var i=0;i<12;i++)
+  {
+    tmpOption = document.createElement("<option>");
+    tmpOption.value = i+1;
+    tmpOption.text = DBCalendar_gMonths[i];
+    tmpSel.options.add(tmpOption);
+  }
+
+  obj.gcbMon = tmpSel;
+  //tmpSel.className = "DBDate-CalTitle";
+  tmpSel.ParentObj = obj;
+  tmpSel.onchange = function(){this.ParentObj.fSetDate(this.ParentObj.gcbYear.value, this.ParentObj.gcbMon.value,1);}
+  tmpCell.appendChild(tmpSel);
+
+
+
+  //下一月
+  var tmpBu = document.createElement("<input>");
+  tmpBu.type="button";
+  tmpBu.className = "btn-1word";
+  tmpBu.value=">"
+  //tmpBu.className = "DBDate-MonthNav";
+  tmpBu.ParentObj = obj;
+  tmpBu.onclick = function(){this.ParentObj.fNextMonth();this.blur();}
+  tmpCell.appendChild(tmpBu);
+
+//日历Div
+  var tmpRow = tmpTable.insertRow();
+  tmpCell = tmpRow.insertCell();
+  //tmpCell.className = "DBDate-CalMiddle";
+  tmpDiv = document.createElement("<div align='center'>");
+  tmpDiv.style.position = "relative";
+  //tmpDiv.style.background = "black";
+  tmpCell.appendChild(tmpDiv);
+  obj.CalendarArea =tmpDiv;
+
+
+  //showMessage("DBDate.js->DBCalendar()->tmpTable.innerHTML",tmpTable.innerHTML);
+
+ //今日日期
+  var tmpRow = tmpTable.insertRow();
+  var tmpCell = tmpRow.insertCell();
+  //tmpCell.className = "DBDate-CalBottom";
+  tmpCell.ParentObj = obj;
+  var tmpA = document.createElement("<span>");
+  tmpA.style.cursor = "hand";
+  tmpA.style.height = "30";
+  tmpA.style.fontSize  = "12px";
+  tmpA.style.textAlign  = "center";
+  tmpA.style.paddingTop  = "10px";
+  //tmpA.className = "DBDate-Today";
+  tmpA.title = "今天";
+  tmpA.innerHTML  = "<B>今天:"+obj.gToday[0]+"年"+obj.gToday[1]+"月"+obj.gToday[2]+"日</B>";
+  tmpA.ParentObj = obj;
+  
+  tmpA.onclick = function(){
+    var tmp=this.ParentObj.gCurMonth;
+    this.ParentObj.gCurMonth=this.ParentObj.gToday;
+    this.ParentObj.fSetDate(this.ParentObj.gToday[0],this.ParentObj.gToday[1],this.ParentObj.gToday[2]);
+ 
+    if(obj.showtype=="datetime"){
+      window.returnValue = this.ParentObj.gToday[0]+DATE_SEPARATOR+DBCalendar_setMothDayLength(this.ParentObj.gToday[1])+DATE_SEPARATOR+DBCalendar_setMothDayLength(this.ParentObj.gToday[2])+" "+document.all.item("hourSel").value+":"+document.all.item("minSel").value+":"+document.all.item("secSel").value;
+    }
+		else{
+      window.returnValue = this.ParentObj.gToday[0]+DATE_SEPARATOR+DBCalendar_setMothDayLength(this.ParentObj.gToday[1])+DATE_SEPARATOR+DBCalendar_setMothDayLength(this.ParentObj.gToday[2]);
+    }
+    top.close();
+  }
+  
+  tmpA.onmouseover = function(){this.style.color = "#336699";return true;}
+  tmpA.onmouseout = function(){this.style.color = "#000000";}
+  tmpCell.appendChild(tmpA);
+
+  obj.appendChild(tmpTable);
+  obj.fDrawCal();
+
+
+  obj.fUpdateCal(obj.gCurMonth[0],obj.gCurMonth[1]);
+  
+  //解析参数
+  if(gParam===null || gParam=="" || gParam.showtype==null || gParam.showtype==""){
+    obj.fSetDate(obj.gCurMonth[0],obj.gCurMonth[1],obj.gCurMonth[2]);
+    return obj;
+  }
+  
+  //如果日期为空获取是非法的日期或时间的话的话，则用当前日期代替 
+  if(gParam.definedate==null || gParam.definedate=="" ){
+      obj.fSetDate(obj.gCurMonth[0],obj.gCurMonth[1],obj.gCurMonth[2]);
+  }
+  //日期格式
+  else if(g_IsDate(gParam.definedate)){
+    var dateArray = gParam.definedate.split(DATE_SEPARATOR);
+
+    obj.gdSelect = [parseInt(dateArray[0],10),parseInt(dateArray[1],10),parseInt(dateArray[2],10)];
+    obj.fSetDate(parseInt(dateArray[0],10),parseInt(dateArray[1],10),parseInt(dateArray[2],10));
+  }
+  
+  //日期时间格式
+  else if(g_IsDateTime(gParam.definedate) ){
+    var dateTimeArray = gParam.definedate.split(" ");
+    var dateArray = dateTimeArray[0].split(DATE_SEPARATOR);
+        
+    obj.gdSelect = [parseInt(dateArray[0],10),parseInt(dateArray[1],10),parseInt(dateArray[2],10)];
+    obj.fSetDate(parseInt(dateArray[0],10),parseInt(dateArray[1],10),parseInt(dateArray[2],10));
+  }
+  //非法的日期或者时间格式，则用当前日期代替
+  else{
+    alert(gParam.definedate +' 是非法的日期或者时间格式！');
+    obj.fSetDate(obj.gCurMonth[0],obj.gCurMonth[1],obj.gCurMonth[2]);
+  }
+
+ 
+  if(gParam.showtype=="datetime"){
+    obj.showtype = "datetime";
+    var nowDate = new Date();
+    var hourVal = nowDate.getHours();
+    var minVal = nowDate.getMinutes();
+    var secVal = nowDate.getSeconds();
+    
+    
+    //如果类型为datetime,但初始值只有日期YYYY-MM-DD格式,则设置缺省时间为00:00:00
+    if(gParam.definedate!=null && gParam.definedate!="" && g_IsDate(gParam.definedate))
+    {
+      hourVal = "00";
+			minVal ="00";
+			secVal = "00";    
+    }
+    else if(gParam.definedate!=null && gParam.definedate!="" &&  g_IsDateTime(gParam.definedate))
+    { 	  
+      var dateTimeArray = gParam.definedate.split(" ");
+		  var timeArray = dateTimeArray[1].split(":");
+      
+		  if(timeArray.length==3)
+		  {
+        hourVal = timeArray[0];
+        minVal = timeArray[1];
+        secVal = timeArray[2];
+      }   
+    }
+
+    var timeDiv = document.createElement("div");
+    timeDiv.innerHTML = obj.buildTimeDiv(hourVal,minVal,secVal);
+	timeDiv.style.fontSize  = "12px";
+    timeDiv.style.textAlign  = "center";
+    obj.appendChild(timeDiv);
+    obj.appendChild(document.createElement("P"));
+	 }
+   
+  return obj;
+}
+
+function DBCalendar_fValidRange(y,m,d) {
+  var date=new Date(y,m-1,d);
+  return (date>=DBCalendar_gdBegin)&&(date<=DBCalendar_gdEnd);
+}
+
+function DBCalendar_fCalibrate(y,m) {
+  if (m<1) { y--; m=12; }
+  else if (m>12) { y++;	m=1; }
+  return [y,m];
+}
+
+function DBCalendar_fGetDays(y) {
+  return [31,31,(y%4==0&&y%100!=0||y%400==0)?29:28,31,30,31,30,31,31,30,31,30,31];
+}
+
+function DBCalendar_fBuildCal(y,m) {
+  var cal=[];
+  for (var i=0;i<6;i++)
+	cal[i]=[];
+  var days=DBCalendar_fGetDays(y);
+  var dCalDate=new Date(y,m-1,1);
+  var iDay1=dCalDate.getDay();
+
+  var iLast=days[m-1]-iDay1+1;
+  var iDate=1;
+  var iNext=1;
+
+  for (var d=0;d<7;d++)
+	cal[0][d]=(d<iDay1)?[m-1,-(iLast+d)]:[m,iDate++];
+
+  //alert("cal="+cal);
+  for (var w=1;w<6;w++)
+	for (var d=0;d<7;d++)
+		cal[w][d]=(iDate<=days[m])?[m,iDate++]:[m+1,-(iNext++)];
+  return cal;
+}
+
+function DBCalendar_fCheckRange(y,m) {
+  if (y>DBCalendar_gEnd[0]||y<DBCalendar_gBegin[0]||(y==DBCalendar_gBegin[0]&&m<DBCalendar_gBegin[1])||(y==DBCalendar_gEnd[0]&&m>DBCalendar_gEnd[1])) {
+	//alert('gsOutOfRange');
+	if (this.gcbMon) this.gcbMon.options[this.gCurMonth[1]-1].selected=true;
+	if (this.gcbYear) this.gcbYear.options[this.gCurMonth[0]-DBCalendar_gBegin[0]].selected=true;
+	return false;
+  }
+  return true;
+}
+
+function DBCalendar_fSetCal(y,m,d) {
+  y=parseInt(y,10);
+  m=parseInt(m,10);
+  if (!this.fCheckRange(y,m)) return false;
+
+  this.gCurMonth=[y,m];
+  this.fUpdateCal(y,m);
+  if (this.gcbMon) this.gcbMon.options[m-1].selected=true;
+  if (this.gcbYear) this.gcbYear.options[y-DBCalendar_gBegin[0]].selected=true;
+  return true;
+}
+
+function DBCalendar_fSetSelected(aCell)
+{
+  aCell.bgColor=DBCalendar_gcBG;
+  var s=this.fGetSelected(aCell);
+  this.fSetDate(s[0],s[1],s[2]);
+  if(this.showtype=="datetime")
+  {
+  window.returnValue = s[0]+DATE_SEPARATOR+DBCalendar_setMothDayLength(s[1])+DATE_SEPARATOR+DBCalendar_setMothDayLength(s[2])+" "+document.all.item("hourSel").value+":"+document.all.item("minSel").value+":"+document.all.item("secSel").value;
+  
+  }
+  else{
+   window.returnValue = s[0]+DATE_SEPARATOR+DBCalendar_setMothDayLength(s[1])+DATE_SEPARATOR+DBCalendar_setMothDayLength(s[2]);//this.ParentObj.SubButton.onclick();
+  }
+  top.close();
+}
+
+function DBCalendar_fGetSelected(aCell){
+  var y=this.gCurMonth[0];
+  var m=this.gCurMonth[1];
+  var chd=aCell.firstChild;
+  //alert(aCell.innerHTML);
+  with (chd) {
+	var d=parseInt(innerHTML,10);
+	if (d>20&&MonDifId<10) m--;
+	else if (d<15&&MonDifId>25) m++;
+	if (m<1) {y--; m=12;}
+	else if (m>12) { y++; m=1;}
+	return [y,m,d];
+  }
+}
+
+function DBCalendar_fSetDate(y,m,d) {
+  /*个性化日历，可以指定Agenda
+  var action=fGetAgenda([y,m,d])[2];
+  if (action==null) return false;
+  eval(action);*/
+  this.gdSelect=[y,m,d];
+  this.gcTemp=m==this.gCurMonth[1]?DBCalendar_gcToggle:null;
+  this.fSetCal(y,m);
+  return true;
+}
+
+function DBCalendar_fDrawCal() {
+  //showMessage("DBDate.js->DBCalendar_fDrawCal()","Start!");
+  this.CalendarArea.innerHTML = "";
+
+  var objTable = document.createElement("<table border='0' cellspacing='2' cellpadding='0' style='BORDER-RIGHT: #5661a8 1px solid; BORDER-TOP: #5661a8 1px solid; FONT-SIZE: 9pt; BACKGROUND: #E0E3F7; BORDER-LEFT: #5661a8 1px solid; BORDER-BOTTOM: #5661a8 1px solid; FONT-FAMILY: Arial'>");
+  var tmpRow = objTable.insertRow();
+  tmpRow.style.textAlign  = "center";
+  tmpRow.bgColor =  "#6A85C6";
+  tmpRow.style.color = "#000000";
+  for (var i=0,wd=0;i<8;i++)
+  {
+    if (i!=7)
+      {
+      	var tmpCell = tmpRow.insertCell();
+      	//showMessage("DBDate.js->DBCalendar_fDrawCal()","break1!");
+      	//tmpCell.className = "DBDate-CalHead";
+
+      	tmpCell.width = DBCalendar_giCellWidth;
+      	tmpCell.style.height = DBCalendar_giCellHeight;
+      	tmpCell.innerHTML = DBCalendar_gWeekDay[wd++];
+		  
+      }//end if
+  }//end for i ,wd;
+  var id=0;
+
+  this.gCellSet = new Array();
+
+  for (var w=1;w<7;w++)
+  {
+    var tmpRow = objTable.insertRow();
+    for (var d=0;d<7;d++)
+    {
+      var tmpCell = tmpRow.insertCell();
+      //tmpCell.className = "DBDate-CalHead";
+      tmpCell.width = DBCalendar_giCellWidth;
+      tmpCell.style.height = DBCalendar_giCellHeight;
+
+      tmpDiv = document.createElement("<div>");
+      tmpDiv.style.position = "relative";
+	  tmpDiv.style.textAlign = "center";
+	  tmpDiv.style.paddingTop = "5px";
+	  tmpDiv.style.height = DBCalendar_giCellHeight;
+      tmpDiv.style.width = DBCalendar_giCellWidth;
+      tmpDiv.ParentObj = this;
+      //tmpDiv.className = "DBDate-CalCell";
+      tmpDiv.onmouseover = function(){this.ParentObj.gcTemp=this.style.backgroundColor;this.style.backgroundColor=DBCalendar_gcToggle;return true;}
+      tmpDiv.onclick     = function(){
+      	                   //alert("aa");
+      	                   this.ParentObj.fSetSelected(this);
+      	                   }
+      tmpDiv.onmouseout  = function(){this.style.backgroundColor=this.ParentObj.gcTemp?this.ParentObj.gcTemp:"transparent";}
+
+
+
+      tmpAhref = document.createElement("<A>");
+      //tmpAhref.className = "DBDate-CellAnchor";
+      tmpAhref.innerText="00";
+
+      tmpAhref.onclick = function(){return false;}
+      tmpAhref.onfocus = function(){this.blur();}
+
+      this.gCellSet[id] = tmpAhref;
+      tmpAhref.MonDifId = id;
+      id++;
+      tmpDiv.appendChild(tmpAhref);
+
+      tmpCell.appendChild(tmpDiv);
+      //<A  href='javascript:void(0)' class='DBDate-CellAnchor' onclick='return false;' onfocus='this.blur();'>00</A>
+    }
+  } //end for w;
+  //showMessage("DBDate.js->DBCalendar_fDrawCal()","End Table!");
+
+  this.CalendarArea.appendChild(objTable);
+}
+
+
+function DBCalendar_fUpdateCal(y,m) {
+  //showMessage("DBDate.js->DBCalendar()","Start"+" and y="+y+"m="+m);
+  var ag,d,offset;
+  var cal = DBCalendar_fBuildCal(y,m);
+  //showMessage("DBDate.js->DBCalendar()->this.gCellSet.length",this.gCellSet.length);
+  //for (offset=1;offset<this.gCellSet.length;offset++);
+
+    for (var week=0; week<6; week++)
+	for (var day=0; day<7; day++)
+	{
+
+		m=cal[week][day][0];
+		d=cal[week][day][1];
+		//alert(this.gCellSet[0].innerHTML);
+		with (this.gCellSet[(7*week)+day])
+		{
+			if (d<0)
+			{
+				style.color=DBCalendar_gcOtherDay;
+				d=-d;
+			}
+			else style.color=(day==0)?DBCalendar_gcSun:(day==6)?DBCalendar_gcSat:DBCalendar_gcWorkday;
+			innerHTML=d;
+			//alert(parentElement.tagName);
+			with (parentElement)
+			{
+
+				if (m==this.gCurMonth[1]){style.backgroundColor=this.gdSelect+''==[y,m,d]+''?DBCalendar_gcToggle:DBCalendar_gcBG;}
+				else {style.backgroundColor=DBCalendar_gcBG;}
+				style.backgroundColor=style.backgroundColor;
+				parentElement.bgColor=DBCalendar_gcBG;
+			}//end parentNode
+		}//end with this.gcellset
+	}
+  m--;
+}
+
+function DBCalendar_fPrevMonth() {
+  var m=this.gCurMonth[1];
+  var y=this.gCurMonth[0];
+  if (--m<1) { m=12; y--; }
+  this.fSetDate(y,m,1);
+}
+
+function DBCalendar_fNextMonth() {
+  //alert("next");
+  var m=this.gCurMonth[1];
+  var y=this.gCurMonth[0];
+  if (++m>12) { m=1; y++; }
+  this.fSetDate(y,m,1);
+}
+
+
+//在设置window.returnValue返回值时，将month和day的位数统一为2位。不够两位的前面补0
+function DBCalendar_setMothDayLength(val)
+{
+  var str = val.toString(10);
+  return str.length<2?"0"+str:str;
+}
+
+function DBCalendar_fBuildTimeDiv(hourVal,minVal,secVal){
+  var hourArray = new Array();
+  var minArray = new Array();
+  var secArray = new Array();
+  var scriptArray = new Array();
+  for(var i=0;i<60;i++)
+  {
+	  var val = DBCalendar_setMothDayLength(i);
+	  if(i<24){
+	    if(DBCalendar_setMothDayLength(hourVal)==val) 
+		  hourArray[hourArray.length] = "<option value='"+val+"' selected>"+val+"</option>";
+        else
+		   hourArray[hourArray.length] = "<option value='"+val+"'>"+val+"</option>";
+	  }
+
+      if(DBCalendar_setMothDayLength(minVal)==val)
+	    minArray[minArray.length] = "<option value='"+val+"' selected>"+val+"</option>";
+      else
+	    minArray[minArray.length] = "<option value='"+val+"'>"+val+"</option>";
+	  if(DBCalendar_setMothDayLength(secVal)==val)
+		secArray[secArray.length] = "<option value='"+val+"' selected>"+val+"</option>";
+	  else
+		secArray[secArray.length] = "<option value='"+val+"'>"+val+"</option>";
+
+	  
+  }
+scriptArray[scriptArray.length] = "时间:";
+scriptArray[scriptArray.length] = "<SELECT id=\"hourSel\">";
+scriptArray[scriptArray.length] = hourArray.join("");
+scriptArray[scriptArray.length] ="</SELECT>时<SELECT id=\"minSel\">";
+scriptArray[scriptArray.length] =minArray.join("");
+scriptArray[scriptArray.length] ="</SELECT>分<SELECT id=\"secSel\">";
+scriptArray[scriptArray.length] = secArray.join("");
+scriptArray[scriptArray.length] ="</SELECT>秒";
+
+
+
+return scriptArray.join("");
+
+}
+
+
+
+
+
+
+/*********************************************************************************
+* FUNCTION: g_IsDate 校验日期是否合法yyyy-mm-dd这种格式的日期
+* PARAMETER: 字符串s
+* RETURNS: true/false
+*********************************************************************************/
+
+function g_IsDate(str)
+{
+   var patrn = /^\d{4}-\d{1,2}-\d{1,2}$/;
+   if(!patrn.exec(str)) return false;
+   var dateArray  = str.split(DATE_SEPARATOR);
+   var d= new Date(dateArray[0],dateArray[1]-1,dateArray[2]);
+   var issame =(d && (d.getFullYear()==dateArray[0])&& (d.getMonth()+1==dateArray[1]) &&(d.getDate()==dateArray[2]));
+   if (!issame)
+       {  
+         return false;
+       } 
+   return true;
+}
+
+
+function g_IsDateTime(str)
+{
+  var patrn = /^\d{4}-\d{1,2}-\d{1,2}\s\d{2}:\d{1,2}:\d{1,2}$/;
+   if(!patrn.exec(str)) return false;
+   var dateTimeArray = str.split(" ");
+   if(dateTimeArray==null || dateTimeArray.length!=2) return false;
+   var dateArray  = dateTimeArray[0].split("-");
+   var timeArray = dateTimeArray[1].split(":");
+   var d= new Date(dateArray[0],dateArray[1]-1,dateArray[2],timeArray[0],timeArray[1],timeArray[2]);
+   var issame =(d && (d.getFullYear()==dateArray[0])&& (d.getMonth()+1==dateArray[1]) &&(d.getDate()==dateArray[2]) && (d.getHours() == timeArray[0]) && (d.getMinutes()== timeArray[1]) && (d.getSeconds()== timeArray[2])  );
+   if (!issame)
+       {  
+         return false;
+       } 
+   return true;
+}	
+</script>
+</HEAD>
+
+<BODY bgcolor="#D4D0C8">
+
+</BODY>
+<Script language="JavaScript" >
+var tmpC = DBCalendar(this);
+//alert(tmpC.outerHTML);
+  //this.appendChild(tmpC);
+document.body.appendChild(tmpC);
+</script>
+</HTML>
+

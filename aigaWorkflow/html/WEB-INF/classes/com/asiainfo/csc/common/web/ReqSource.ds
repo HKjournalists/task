@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="Y">
+    <Name>ReqSource</Name>
+    <Package>com.asiainfo.alm.web.common</Package>
+    <DataSet SetType="SQLDATA">
+        <ValueAttr>param_no</ValueAttr>
+        <TextAttr>param_name</TextAttr>
+        <SqlString>select param_name,param_no from alm_sys_param where param_type='REQ_SOURCE' order by param_no</SqlString>
+        <DataSource>UserDataSource</DataSource>
+    </DataSet>
+</UIDataSrc>

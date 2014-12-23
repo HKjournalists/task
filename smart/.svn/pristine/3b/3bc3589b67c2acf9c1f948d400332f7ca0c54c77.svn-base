@@ -1,0 +1,9 @@
+package com.lb.app.automation.dao;
+
+import com.lb.app.automation.model.AutoModule;
+import com.lb.app.common.dao.IGenericDAO;
+import com.lb.app.privilege.model.Sys_Role;
+
+public interface IAutoModuleDao extends IGenericDAO<AutoModule>{
+
+}

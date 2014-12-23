@@ -1,0 +1,8 @@
+package com.lb.app.privilege.dao;
+
+import com.lb.app.common.dao.IGenericDAO;
+import com.lb.app.privilege.model.SysUser;
+
+public interface IUserDao extends IGenericDAO<SysUser>{
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSSysParam</Name>
+    <Package>com.asiainfo.csc.common.web</Package>
+    <DataSet SetType="SERVICE">
+        <ValueAttr>param_no</ValueAttr>
+        <TextAttr>param_name</TextAttr>
+        <ClassName>com.asiainfo.csc.common.service.interfaces.ISysParamSV</ClassName>
+        <FunctionName>getSysPars</FunctionName>
+    </DataSet>
+    <Parameter name="type" DataType="String" />
+</UIDataSrc>

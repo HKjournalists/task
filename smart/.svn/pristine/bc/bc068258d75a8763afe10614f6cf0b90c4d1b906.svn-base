@@ -1,0 +1,45 @@
+package privilege;
+
+import javax.transaction.Transactional;
+
+import junit.framework.Assert;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+
+import com.lb.app.privilege.dao.IUserDao;
+import com.lb.app.privilege.model.SysUser;
+
+import common.JUnit4ClassRunner;
+
+@RunWith(JUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath*:spring/spring-base.xml"})
+@Transactional  
+@TransactionConfiguration(transactionManager = "txManager", defaultRollback = true) 
+public class UserDaoTest {
+	final private static Log log = LogFactory.getLog(UserDaoTest.class);
+
+	@Autowired
+	IUserDao userDao;
+	
+	@Test
+	public void testQueryAll(){
+		System.out.println("=====================");
+		log.info("start");
+		SysUser u = new SysUser();
+		u.setUsername("newone");
+		u.setRealname("book");
+		u.setPassword("123456");
+		log.info(u.getUserid());
+		userDao.saveOrUpdate(u);
+		
+		Assert.assertNotNull(u.getUserid());
+		Assert.assertNotSame(u.getUsername(), 0);
+	}
+
+}

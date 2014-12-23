@@ -1,0 +1,3 @@
+
+copy lib库到web-inf/lib
+mvn dependency:copy-dependencies -DoutputDirectory=src/main/webapp/WEB-INF/lib  -DincludeScope=runtime

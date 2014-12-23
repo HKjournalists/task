@@ -1,0 +1,55 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/sysConstant/service
+svn://20.26.11.20/products
+
+
+
+2014-09-25T03:42:14.716477Z
+1470149
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+ILabelMapSV.java
+file
+
+
+
+
+2014-12-13T03:48:08.207045Z
+d39a6858a60b2da89150592431dd21b9
+2014-09-25T03:42:14.716477Z
+1470149
+renzq
+
+impl
+dir
+
+ISysConstantSV.java
+file
+
+
+
+
+2014-12-13T03:48:08.209046Z
+646ce29ec3fd2d2887b696631f457460
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+

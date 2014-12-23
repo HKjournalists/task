@@ -1,0 +1,10 @@
+insert into alm_workflow (WF_ITEM_ID, TEMPLATE_ID, TEMPLATE_NAME, TEMPLATE_TYPE, VERSION, PHASE_ID, PHASE_NAME, VM_TASK_NAME, VM_LINK_ID, VM_TASK_NO, LINK_ID, LINK_NO, LINK_NO_TYPE, ROLE_CODE, LINK_URL, NEXT_LINK_COND_TREE, IS_DISPLAY, IS_ROLE, IS_PRINT, IS_REAUTHORIZE, IS_TERMINATE, IS_BACK, IS_NOTICE, IS_DISCUSS, BACK_COND, BACK_LINK_NO, HTML_TAG_NAME, HTML_TAG_DESC, INIT_LINK_NO, INIT_LINK_ID, NEED_INIT_STAFF, CREATE_STAFF_ID, CREATE_TIME, START_TIME, END_TIME, VALID_TAG, IS_COMPANY, IS_DEPART, IS_GROUP, CONNECT_POINT)
+values (506, 24000, 'com.asiainfo.aiga.workflow.regrTestWF', 1, '', '5', '∆¿…Û', '◊‘∂ØªÿπÈ≤‚ ‘∆¿…Û', 506, 'rgrTestProVerify', 506, 'rgrTestProVerify', 'user', 'WF_TEST_MGR', '/aiga/workflow/regrTest/RgrTestProVerify.jsp', null, null, null, null, null, null, null, null, null, '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '');
+
+insert into alm_workflow (WF_ITEM_ID, TEMPLATE_ID, TEMPLATE_NAME, TEMPLATE_TYPE, VERSION, PHASE_ID, PHASE_NAME, VM_TASK_NAME, VM_LINK_ID, VM_TASK_NO, LINK_ID, LINK_NO, LINK_NO_TYPE, ROLE_CODE, LINK_URL, NEXT_LINK_COND_TREE, IS_DISPLAY, IS_ROLE, IS_PRINT, IS_REAUTHORIZE, IS_TERMINATE, IS_BACK, IS_NOTICE, IS_DISCUSS, BACK_COND, BACK_LINK_NO, HTML_TAG_NAME, HTML_TAG_DESC, INIT_LINK_NO, INIT_LINK_ID, NEED_INIT_STAFF, CREATE_STAFF_ID, CREATE_TIME, START_TIME, END_TIME, VALID_TAG, IS_COMPANY, IS_DEPART, IS_GROUP, CONNECT_POINT)
+values (1006, 25000, 'com.asiainfo.aiga.workflow.hwRegrTestWF', 1, '', '5', '∆¿…Û', ' ÷π§ªÿπÈ≤‚ ‘∆¿…Û', 1006, 'hwRegrTestProVerify', 1006, 'hwRegrTestProVerify', 'user', 'WF_TEST_MGR', '/aiga/workflow/hwRegrTest/HWRegrTestProVerify.jsp', null, null, null, null, null, null, null, null, null, '', '', '', '', '', null, null, null, null, null, null, null, null, null, null, '');
+
+update alm_workflow t set t.vm_task_name ='◊º∑¢≤º≤‚ ‘∆¿…Û' where t.vm_link_id =505;
+update alm_workflow t set t.vm_task_name ='…˙≤˙≤‚ ‘∆¿…Û' where t.vm_link_id =506;
+update alm_workflow t set t.vm_task_name ='◊º∑¢≤º≤‚ ‘∆¿…Û' where t.vm_link_id =1005;
+update alm_workflow t set t.vm_task_name ='…˙≤˙≤‚ ‘∆¿…Û' where t.vm_link_id =1006;

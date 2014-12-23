@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAlmWorkflowTemplate" mainattr="TEMPLATE_ID">
+        <mapingenty type="table">ALM_WORKFLOW_TEMPLATE</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="TEMPLATE_ID" maxlength="10" datatype="Long" type="PK">
+                <mapingcol datatype="NUMBER">TEMPLATE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMPLATE_TYPE" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">TEMPLATE_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMPLATE_NAME" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">TEMPLATE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_TYPE" maxlength="10" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">OBJ_TYPE</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

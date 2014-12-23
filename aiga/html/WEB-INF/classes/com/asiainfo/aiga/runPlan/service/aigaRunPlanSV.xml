@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="aigaRunPlanSV" class="com.asiainfo.aiga.runPlan.service.impl.AigaRunPlanSVImpl">
+		<property name="aigaRunPlanDAO" ref="aigaRunPlanDao"></property>
+	</bean>
+	
+	<bean id="caseResultHttp" class="com.asiainfo.aiga.runPlan.httpTrans.CaseResultHttp">
+		<property name="aigaRunPlanSV" ref="aigaRunPlanSV"></property>
+		<property name="aigaLogDao" ref="logDao"></property>
+		<property name="aigaRunTaskDAO" ref="aigaRunTaskDao"></property>
+	</bean>
+	<bean id="caseResultListener" class="com.asiainfo.aiga.runPlan.httpTrans.AigaCaseResultListener" init-method="initMethod" destroy-method="destoryMethod">
+		<property name="caseResultHttp" ref="caseResultHttp"></property>
+	</bean>
+	<bean id="aigaRunResultTree" class="com.asiainfo.aiga.runPlan.service.impl.AigaRunResultTree"></bean>
+</beans>

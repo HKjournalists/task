@@ -1,0 +1,664 @@
+<html>
+	<head>
+		<title>日历选择器</title>
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<link rel="stylesheet" type="text/css" href="/boss/cs/css/style.css">
+		<script LANGUAGE="javascript">
+		/*-----------样式修改记录：by hequ 2008-10-03---------------------*/
+<!--
+var m_DateValue = "";
+var m_tdActive = null;
+
+function HowManyDays(strMonth,strYear)
+{  
+	var strDate1 = strMonth+"-"+"01"+"-"+strYear;
+	strMonth     = parseInt(strMonth,10)+1;
+	var strDate2 = strMonth +"-"+"01"+"-"+strYear	;
+	var date1 = new Date(strDate1);
+	var date2 = new Date(strDate2);
+	var days  =(date2 - date1)/24/60/60/1000;
+	return days;
+}
+
+function setDaysToCalendar(strWeekday,strTotalDays,strToday)
+{
+	var i,j,td,count;
+	count=1;
+	for(i=3;i<=8;i++)
+	{ 
+		if(i==3) 
+			for(j=0;j<=6;j++)
+			{
+				td=document.all.tblTotalCalendar.rows(i).cells(j);
+				if (j<strWeekday)
+				{
+					td.Active = false;
+				}
+				else
+				{
+					td.innerText=count;
+					td.style.borderRightColor = "#6A85C6";
+					if(count==strToday) 
+					{
+						td.style.backgroundColor = "#94AADE";
+						td.Active = true;
+						m_tdActive = td;
+					}
+					else td.Active = false;
+					count=count+1;
+				}
+			}
+		else if(count<=strTotalDays) 
+			for(j=0;j<=6;j++)
+			{
+				td=document.all.tblTotalCalendar.rows(i).cells(j);
+				td.innerText=count;
+				if(count==strToday)
+				{
+					td.style.backgroundColor = "#94AADE";
+					td.Active = true;
+					m_tdActive = td;
+				}
+				else td.Active = false;
+				count=count+1;        
+				if (count>strTotalDays) 
+					return true;
+			}
+	}  
+}
+
+function WriteNullToCalendar()
+{
+	var i, j;
+	var td;
+	for(i=3; i<document.all.tblTotalCalendar.rows.length; i++)
+		for(j=0; j<document.all.tblTotalCalendar.rows(i).cells.length; j++)
+		{
+			td = document.all.tblTotalCalendar.rows(i).cells(j);
+			td.innerText = "";
+		}
+		return true;
+}
+
+function WhichDaySelected()
+{
+	var i,j,td;
+	var ls_date;
+	for (i=3;i<=8;i++)
+		for(j=0;j<=6;j++)
+		{
+			td = document.all.tblTotalCalendar.rows(i).cells(j);
+			if(td.Active == true)
+			{
+				ls_date=td.innerText;
+				return ls_date;		   
+			}
+		}
+}  
+
+function ResetbgColor()
+{
+	m_tdActive.style.background = "#e0e3f7";
+	m_tdActive.Active = false;
+	return true;
+}  
+
+function formateDate(strYear,strMonth,strDate)
+{
+	var ls_date;
+	strMonth = new String(strMonth);
+	strDate  = new String(strDate);
+	if(strMonth.length==1) strMonth = "0"+ strMonth;
+	if(strDate.length ==1) strDate  = "0"+ strDate;
+	ls_date=strYear + "-" + strMonth + "-" +strDate;
+    showOut(strYear,strMonth,strDate);
+	return ls_date;
+}
+
+function dateCheck(strDate)
+{
+  if (strDate.length != 4) return false;
+  var iYear = parseInt(strDate);
+  if (isNaN(iYear)) return false;
+  var strYear = "" + iYear;
+  if (strYear.length != 4) return false;
+  return true;
+}
+
+function setCalendar(dtDate)
+{
+	var strYear,strMonth,strDate,strDay;
+	var dtCurrent = dtDate;
+	strYear  = dtCurrent.getYear();
+	strMonth = dtCurrent.getMonth()+1;
+	strDate  = dtCurrent.getDate();
+	strDay   = dtCurrent.getDay();
+
+	sltMonth.selectedIndex = strMonth-1;
+	window.txtYear.value   = strYear;
+
+	var iWeekDate,iHowManyDays,iFirstDay;
+	iFirstDay    = new Date(strYear,strMonth-1,1)
+	iWeekDate    = iFirstDay.getDay();
+	iHowManyDays = HowManyDays(strMonth,strYear);
+	setDaysToCalendar(iWeekDate,iHowManyDays,strDate);
+	m_DateValue  = formateDate(strYear,strMonth,strDate);
+}
+
+function calendarInit()
+{
+    setCalendar(new Date());
+}
+
+function resetCalendar()
+{
+    var strCurrent,dtCurrent,strYear,strMonth,strDate;
+    strYear  = m_DateValue.slice(0,4);
+    strMonth = m_DateValue.slice(5,7);
+    strDate  = m_DateValue.slice(8,10);
+    strCurrent = strMonth + "-" + strDate + "-" + strYear;
+    dtCurrent  = new Date(strCurrent)
+    setCalendar(dtCurrent);
+}
+
+function imgUpOnClick()
+{
+	var strYear;
+	strYear=txtYear.value;
+	strYear=parseInt(strYear)+1;
+	txtYear.value=strYear;
+	dateChange();
+}
+
+function imgDownOnClick()
+{
+	var strYear;
+	strYear=txtYear.value;
+	strYear=parseInt(strYear)-1;
+	txtYear.value=strYear;
+	dateChange();
+}
+
+function dateChange()
+{
+	var strYear,strMonth,strDate
+	strYear=txtYear.value
+	if (dateCheck(strYear))
+	{
+       strMonth=window.sltMonth.value 
+	   iWeekDate = (new Date(strYear,strMonth-1,1)).getDay();
+	   iHowManyDays=HowManyDays(strMonth,strYear);
+	   strDate=WhichDaySelected();
+	   if (iHowManyDays < parseInt(strDate)) strDate = iHowManyDays ;
+	   WriteNullToCalendar();
+	   ResetbgColor();
+	   setDaysToCalendar(iWeekDate,iHowManyDays,strDate);
+	   m_DateValue=formateDate(strYear,strMonth,strDate);
+	}
+	else
+	{
+	   alert("无效年份日期！");
+	   resetCalendar();
+	}
+}
+
+function tdOnClick()
+{
+	var src = event.srcElement 
+	if (src.tagName != "TD") return false;
+	if (!chbShowDate.checked) return false;
+	var  strYear,strMonth,strDate
+	if (src.innerText!="" && src.innerText!=" ")
+	{
+		ResetbgColor();
+		src.style.backgroundColor = "#94AADE";
+		src.Active = true;
+		m_tdActive = src;
+		strYear=txtYear.value
+		strMonth=window.sltMonth.value 
+		strDate=src.innerText
+		m_DateValue=formateDate(strYear,strMonth,strDate)
+	}
+}
+function txtYearKeyDown()
+{
+    if(event.keyCode == 13) txtYear.blur();
+    if(event.keyCode == 38) imgUpOnClick();
+    if(event.keyCode == 40) imgDownOnClick();
+}
+
+function returnDate()
+{
+	var paramObj = window.dialogArguments;
+    if (paramObj[0])
+    {       
+       var inFiled = paramObj[0];
+       if (chbShowDate.checked && chbShowTime.checked && paramObj[1])
+       {
+         inFiled.value = m_DateValue +" " +outTime.innerText;
+       }
+       else if(chbShowDate.checked)
+       {
+         inFiled.value = m_DateValue;
+       }
+       else if(chbShowTime.checked)
+       {
+         inFiled.value = outTime.innerText;
+       }
+       window.close();
+    }
+    else
+       alert("输入参数无效!");
+    return false;
+}
+
+function showDate()
+{
+  if (chbShowDate.checked)
+  {
+    btnNowDate.disabled       = false;
+    btnNow.disabled           = false;
+    sltMonth.disabled         = false;
+    txtYear.disabled          = false;
+    imgUp.disabled            = false;
+    imgDown.disabled          = false;
+    tblTotalCalendar.disabled = false;
+    resetCalendar();
+  }
+  else
+  {
+    btnNowDate.disabled       = true;
+    btnNow.disabled           = true;
+    sltMonth.disabled         = true;
+    txtYear.disabled          = true;
+    imgUp.disabled            = true;
+    imgDown.disabled          = true;
+    tblTotalCalendar.disabled = true;
+    outDate.innerText         = "";
+  }
+}
+
+function showTime()
+{
+  if (chbShowTime.checked)
+  {
+    sltHour.disabled    = false;
+    sltMinute.disabled  = false;
+    sltSecond.disabled  = false;
+    btnNowTime.disabled = false;
+    btnNow.disabled     = false;   
+    outTime.innerText   = sltHour.value + ":" + sltMinute.value + ":" + sltSecond.value;
+  }
+  else
+  {
+    sltHour.disabled    = true;
+    sltMinute.disabled  = true;
+    sltSecond.disabled  = true;
+    btnNowTime.disabled = true;
+    btnNow.disabled     = true;
+    outTime.innerText   = "";
+  }
+}
+
+function showOut(strYear,strMonth,strDay)
+{
+   if (chbShowDate.checked)
+   {
+      outDate.innerText=strYear + "年" +strMonth + "月" + strDay + "日";
+   }
+   if (chbShowTime.checked)
+   {
+      outTime.innerText=sltHour.value + ":" + sltMinute.value + ":" + sltSecond.value;
+   }
+}
+
+function timeChange()
+{
+   outTime.innerText=sltHour.value + ":" + sltMinute.value + ":" + sltSecond.value;
+}
+
+function setDateNowDate()
+{
+    ResetbgColor();
+    setCalendar(new Date());
+}
+
+function setDateNowTime()
+{
+    var dtNow = new Date();
+    var intHour = dtNow.getHours();
+    var intMinute = dtNow.getMinutes();
+    var intSecond = dtNow.getSeconds();
+    sltHour.selectedIndex = intHour;
+    sltMinute.selectedIndex = intMinute;
+    sltSecond.selectedIndex = intSecond;
+    if (chbShowTime.checked) timeChange();
+}
+
+function setDateNow()
+{
+    setDateNowDate();
+    setDateNowTime();
+}
+
+-->
+		</script>
+	</head>
+	<body style="MARGIN: 0px; CURSOR: default" onLoad="return calendarInit();"
+		oncontextmenu="self.event.returnValue=false;" onselectstart="self.event.returnValue=false;"
+		ondragstart="self.event.returnValue=false;">
+		<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" width="100%"
+			height="100%" bgcolor="#d4d0c8">
+			<tr>
+				<td width="100%" align="center" valign="top">
+					<table border="0" cellpadding="3" cellspacing="0" style="BORDER-COLLAPSE: collapse" width="380"
+						height="205">
+						<tr height="100%">
+							<td width="210" valign="top">
+								<!--------------------------------------------------------------------------------------------------------------------->
+								<table border="1" style="BORDER-COLLAPSE: collapse" bordercolor="#111111" width="100%"
+									height="100%" bordercolorlight="#ffffff" bordercolordark="#111111">
+									<tr>
+										<td width="100%" valign="middle" align="center">
+											<!------------------------------------Calendar component begin at here-------------------------------------------->
+											<table id="tblTotalCalendar" border="1" cellspacing="2" cellpadding="0" style="BORDER-RIGHT: #6A85C6 1px solid; BORDER-TOP: #6A85C6 1px solid; FONT-SIZE: 9pt; BACKGROUND: #e0e3f7; BORDER-LEFT: #6A85C6 1px solid; BORDER-BOTTOM: #6A85C6 1px solid; FONT-FAMILY: Arial">
+												<tr>
+												</tr>
+												<tr height="18" bgcolor="#e0e3f7" bordercolorlight="#e0e3f7" bordercolordark="#e0e3f7">
+													<td colSpan="3">
+														<select valign="top" id="sltMonth" onChange="return dateChange();" style="FONT-SIZE:12px;WIDTH:80px;HEIGHT:20px"
+															bordercolor="#e0e3f7">
+															<option value="01" selected>一月</option>
+															<option value="02">二月</option>
+															<option value="03">三月</option>
+															<option value="04">四月</option>
+															<option value="05">五月</option>
+															<option value="06">六月</option>
+															<option value="07">七月</option>
+															<option value="08">八月</option>
+															<option value="09">九月</option>
+															<option value="10">十月</option>
+															<option value="11">十一月</option>
+															<option value="12">十二月</option>
+														</select>
+													</td>
+													<td colSpan="3">
+														<input type="text" name="txtYear" id="txtYear" style="WIDTH:80px;HEIGHT:20px" onChange="return dateChange();"
+															onkeydown="txtYearKeyDown()" size="20">
+													</td>
+													<td bgcolor="#ffffff">
+														<div align="center" style="BORDER-RIGHT: #6A85C6 1px solid; BORDER-TOP: #6A85C6 1px solid; BORDER-LEFT: #6A85C6 1px solid; WIDTH: 100%; BORDER-BOTTOM: #6A85C6 1px solid; HEIGHT: 10px"><img SRC="/jsv2/image/button/up.gif" name="imgUp" WIDTH="17" HEIGHT="9" id="imgUp" onClick="return imgUpOnClick();"></div>
+														<div align="center" style="BORDER-RIGHT: #6A85C6 1px solid; BORDER-TOP: #6A85C6 1px solid; BORDER-LEFT: #6A85C6 1px solid; WIDTH: 100%; BORDER-BOTTOM: #6A85C6 1px solid; HEIGHT: 10px"><img id="imgDown" SRC="/jsv2/image/button/down.gif" onClick="return imgDownOnClick();" WIDTH="17" HEIGHT="9"></div>
+													</td>
+												</tr>
+												<tr height="18" bordercolorlight="#6A85C6" bordercolordark="#6A85C6" style="BACKGROUND: #6A85C6; COLOR: #ffffff">
+													<td align="center" width="25">日</td>
+													<td align="center" width="25">一</td>
+													<td align="center" width="25">二</td>
+													<td align="center" width="25">三</td>
+													<td align="center" width="25">四</td>
+													<td align="center" width="25">五</td>
+													<td align="center" width="25">六</td>
+												</tr>
+												<tr height="18" bordercolordark="#ffffff" onClick="return tdOnClick();">
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+												</tr>
+												<tr height="18" bordercolordark="#ffffff" onClick="return tdOnClick();">
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+												</tr>
+												<tr height="18" bordercolordark="#ffffff" onClick="return tdOnClick();">
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+												</tr>
+												<tr height="18" bordercolordark="#ffffff" onClick="return tdOnClick();">
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+												</tr>
+												<tr height="18" bordercolordark="#ffffff" onClick="return tdOnClick();">
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+												</tr>
+												<tr height="18" bordercolordark="#ffffff" onClick="return tdOnClick();">
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center"></td>
+													<td bordercolorlight="#6A85C6" align="center" style="color:#FF7200"></td>
+												</tr>
+											</table>
+											<!------------------------------------Calendar component end   at here-------------------------------------------->
+										</td>
+									</tr>
+								</table>
+								<!--------------------------------------------------------------------------------------------------------------------->
+							</td>
+							<td width="170" valign="top">
+								<!------------------------------------Calendar Time component end   at here-------------------------------------------->
+								<table border="1" style="BORDER-COLLAPSE: collapse" bordercolor="#111111" width="100%"
+									height="100%" bordercolorlight="#ffffff" bordercolordark="#111111">
+									<tr>
+										<td width="100%" valign="middle" align="center">
+											<!------------------------------------Calendar component begin at here-------------------------------------------->
+											<table id="tblTime" border="1" cellpadding="2" style="BORDER-RIGHT: #6A85C6 1px solid; BORDER-TOP: #6A85C6 1px solid; FONT-SIZE: 9pt; BACKGROUND: #e0e3f7; BORDER-LEFT: #6A85C6 1px solid; BORDER-BOTTOM: #6A85C6 1px solid; FONT-FAMILY: Arial; BORDER-COLLAPSE: collapse"
+												height="100%" bordercolor="#111111">
+												<tr height="18" bgcolor="#e0e3f7" bordercolorlight="#e0e3f7" bordercolordark="#e0e3f7">
+													<td nowrap colspan="2">
+														<input type="checkbox" id="chbShowDate" value="ON" disabled checked onClick="showDate()" class="checkbox"><font size="2"><label for="chbShowDate">显示日期</label></font>
+														<input type="checkbox" id="chbShowTime" value="ON" disabled checked onClick="showTime()" class="checkbox"><font size="2"><label for="chbShowTime">显示时间</label></font></td>
+												</tr>
+												<tr height="18" bgcolor="#e0e3f7" bordercolorlight="#e0e3f7" bordercolordark="#e0e3f7">
+													<td nowrap colspan="2">
+														<select valign="top" id="sltHour" onChange="timeChange()" style="FONT-SIZE:12px;WIDTH:50px;HEIGHT:50px"
+															bordercolor="#e0e3f7">
+															<option value="00" selected>0点</option>
+															<option value="01">1点</option>
+															<option value="02">2点</option>
+															<option value="03">3点</option>
+															<option value="04">4点</option>
+															<option value="05">5点</option>
+															<option value="06">6点</option>
+															<option value="07">7点</option>
+															<option value="08">8点</option>
+															<option value="09">9点</option>
+															<option value="10">10点</option>
+															<option value="11">11点</option>
+															<option value="12">12点</option>
+															<option value="13">13点</option>
+															<option value="14">14点</option>
+															<option value="15">15点</option>
+															<option value="16">16点</option>
+															<option value="17">17点</option>
+															<option value="18">18点</option>
+															<option value="19">19点</option>
+															<option value="20">20点</option>
+															<option value="21">21点</option>
+															<option value="22">22点</option>
+															<option value="23">23点</option>
+														</select>
+														<select valign="top" id="sltMinute" onChange="timeChange()" style="FONT-SIZE:12px;WIDTH:50px;HEIGHT:50px"
+															bordercolor="#e0e3f7">
+															<option value="00" selected>0分</option>
+															<option value="01">1分</option>
+															<option value="02">2分</option>
+															<option value="03">3分</option>
+															<option value="04">4分</option>
+															<option value="05">5分</option>
+															<option value="06">6分</option>
+															<option value="07">7分</option>
+															<option value="08">8分</option>
+															<option value="09">9分</option>
+															<option value="10">10分</option>
+															<option value="11">11分</option>
+															<option value="12">12分</option>
+															<option value="13">13分</option>
+															<option value="14">14分</option>
+															<option value="15">15分</option>
+															<option value="16">16分</option>
+															<option value="17">17分</option>
+															<option value="18">18分</option>
+															<option value="19">19分</option>
+															<option value="20">20分</option>
+															<option value="21">21分</option>
+															<option value="22">22分</option>
+															<option value="23">23分</option>
+															<option value="24">24分</option>
+															<option value="25">25分</option>
+															<option value="26">26分</option>
+															<option value="27">27分</option>
+															<option value="28">28分</option>
+															<option value="29">29分</option>
+															<option value="30">30分</option>
+															<option value="31">31分</option>
+															<option value="32">32分</option>
+															<option value="33">33分</option>
+															<option value="34">34分</option>
+															<option value="35">35分</option>
+															<option value="36">36分</option>
+															<option value="37">37分</option>
+															<option value="38">38分</option>
+															<option value="39">39分</option>
+															<option value="40">40分</option>
+															<option value="41">41分</option>
+															<option value="42">42分</option>
+															<option value="43">43分</option>
+															<option value="44">44分</option>
+															<option value="45">45分</option>
+															<option value="46">46分</option>
+															<option value="47">47分</option>
+															<option value="48">48分</option>
+															<option value="49">49分</option>
+															<option value="50">50分</option>
+															<option value="51">51分</option>
+															<option value="52">52分</option>
+															<option value="53">53分</option>
+															<option value="54">54分</option>
+															<option value="55">55分</option>
+															<option value="56">56分</option>
+															<option value="57">57分</option>
+															<option value="58">58分</option>
+															<option value="59">59分</option>
+														</select>
+														<select valign="top" id="sltSecond" onChange="timeChange()" style="FONT-SIZE:12px;WIDTH:50px;HEIGHT:50px"
+															bordercolor="#e0e3f7">
+															<option value="00" selected>0秒</option>
+															<option value="01">1秒</option>
+															<option value="02">2秒</option>
+															<option value="03">3秒</option>
+															<option value="04">4秒</option>
+															<option value="05">5秒</option>
+															<option value="06">6秒</option>
+															<option value="07">7秒</option>
+															<option value="08">8秒</option>
+															<option value="09">9秒</option>
+															<option value="10">10秒</option>
+															<option value="11">11秒</option>
+															<option value="12">12秒</option>
+															<option value="13">13秒</option>
+															<option value="14">14秒</option>
+															<option value="15">15秒</option>
+															<option value="16">16秒</option>
+															<option value="17">17秒</option>
+															<option value="18">18秒</option>
+															<option value="19">19秒</option>
+															<option value="20">20秒</option>
+															<option value="21">21秒</option>
+															<option value="22">22秒</option>
+															<option value="23">23秒</option>
+															<option value="24">24秒</option>
+															<option value="25">25秒</option>
+															<option value="26">26秒</option>
+															<option value="27">27秒</option>
+															<option value="28">28秒</option>
+															<option value="29">29秒</option>
+															<option value="30">30秒</option>
+															<option value="31">31秒</option>
+															<option value="32">32秒</option>
+															<option value="33">33秒</option>
+															<option value="34">34秒</option>
+															<option value="35">35秒</option>
+															<option value="36">36秒</option>
+															<option value="37">37秒</option>
+															<option value="38">38秒</option>
+															<option value="39">39秒</option>
+															<option value="40">40秒</option>
+															<option value="41">41秒</option>
+															<option value="42">42秒</option>
+															<option value="43">43秒</option>
+															<option value="44">44秒</option>
+															<option value="45">45秒</option>
+															<option value="46">46秒</option>
+															<option value="47">47秒</option>
+															<option value="48">48秒</option>
+															<option value="49">49秒</option>
+															<option value="50">50秒</option>
+															<option value="51">51秒</option>
+															<option value="52">52秒</option>
+															<option value="53">53秒</option>
+															<option value="54">54秒</option>
+															<option value="55">55秒</option>
+															<option value="56">56秒</option>
+															<option value="57">57秒</option>
+															<option value="58">58秒</option>
+															<option value="59">59秒</option>
+														</select>
+													</td>
+												</tr>
+												<tr height="100%" bgcolor="#e0e3f7" bordercolorlight="#e0e3f7" bordercolordark="#e0e3f7">
+													<td align="center" colspan="2"><font size="3" color="#000000"><b>
+															<div id="outDate"></div>
+															<div id="outTime"><FONT face="宋体"></FONT></div>
+														</b></font>
+													</td>
+												</tr>
+											</table>
+											<!------------------------------------Calendar component end   at here-------------------------------------------->
+										</td>
+									</tr>
+								</table>
+								<!------------------------------------Calendar Time component end   at here-------------------------------------------->
+							</td>
+						</tr>
+						<tr>
+							<td width="100%" align="center" height="40" valign="bottom" colspan="2">
+							<!--<input type="button" name="btnNowDate" id="btnNowDate" value="当前日期" onclick="return setDateNowDate();">
+								<input type="button" name="btnNowTime" id="btnNowTime" value="当前时间" onclick="return setDateNowTime();">-->
+								<input type="button" name="btnNow" id="btnNow" value="今天" class="btn-2word" onClick="return setDateNow();">&nbsp;&nbsp;<input type="button" name="btnYes" id="btnYes" value="确定" class="btn-2word" onClick="return returnDate();">&nbsp;&nbsp;<input type="button" name="btnCancel" id="btnCancel" value="取消" class="btn-2word" onClick="javascript:self.close();">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

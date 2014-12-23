@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/src/com/asiainfo/csc/matrix
+svn://20.26.11.20/products
+
+
+
+2014-10-13T12:56:22.917445Z
+1480008
+yeteng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+bo
+dir
+
+service
+dir
+
+dao
+dir
+
+factory
+dir
+
+common
+dir
+
+ivalues
+dir
+
+threads
+dir
+
+web
+dir
+

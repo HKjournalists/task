@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAttachTypeDef" mainattr="ATT_TYPE_ID">
+        <mapingenty type="table">ALM_ATT_TYPE_DEF</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ATT_TYPE_ID" maxlength="20" datatype="Long" type="PK" remark="ID">
+                <mapingcol datatype="NUMBER">ATT_TYPE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_TYPE_NAME" maxlength="50" datatype="String" type="COL" remark="附件类型名称">
+                <mapingcol datatype="VARCHAR2">ATT_TYPE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_TYPE_DESC" maxlength="100" datatype="String" type="COL" remark="附件类型描述">
+                <mapingcol datatype="VARCHAR2">ATT_TYPE_DESC</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

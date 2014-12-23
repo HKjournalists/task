@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOVmTaskTrans" mainattr="TASK_ID">
+        <mapingenty type="table">VM_TASK_TRANS</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="TASK_ID" maxlength="12" datatype="Long" type="PK" remark="任务编号">
+                <mapingcol datatype="NUMBER">TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARENT_TASK_ID" maxlength="12" datatype="Long" type="COL" remark="上级任务编号">
+                <mapingcol datatype="NUMBER">PARENT_TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WORKFLOW_ID" maxlength="12" datatype="Long" type="COL" remark="流程编号">
+                <mapingcol datatype="NUMBER">WORKFLOW_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_TEMPLATE_ID" maxlength="12" datatype="Long" type="COL" remark="任务模版编号">
+                <mapingcol datatype="NUMBER">TASK_TEMPLATE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_TYPE" maxlength="100" datatype="String" type="COL" remark="任务类型">
+                <mapingcol datatype="VARCHAR2">TASK_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_BASE_TYPE" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">TASK_BASE_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_TAG" maxlength="100" datatype="String" type="COL" remark="任务标志">
+                <mapingcol datatype="VARCHAR2">TASK_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LABEL" maxlength="100" datatype="String" type="COL" remark="任务主题">
+                <mapingcol datatype="VARCHAR2">LABEL</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DURATION" maxlength="12" datatype="Long" type="COL" remark="任务时限">
+                <mapingcol datatype="NUMBER">DURATION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DECISION_RESULT" maxlength="100" datatype="String" type="COL" remark="判断结果">
+                <mapingcol datatype="VARCHAR2">DECISION_RESULT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_CURRENT_TASK" maxlength="1" datatype="String" type="COL" remark="是否当前任务">
+                <mapingcol datatype="CHAR">IS_CURRENT_TASK</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATE" maxlength="2" datatype="Long" type="COL" remark="任务状态 1-不能调度 2-可以调度 3-已经完成 4-终止 9-等待打单 5-人工处理 6-处理失败 7-等待外部事件触发 8-过期作废 99-系统异常 21-已经回复流程引擎任务单">
+                <mapingcol datatype="NUMBER">STATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="状态时间">
+                <mapingcol datatype="DATE">STATE_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="创建时间">
+                <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATION_ID" maxlength="30" datatype="String" type="COL" remark="任务岗位">
+                <mapingcol datatype="VARCHAR2">STATION_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_STAFF_ID" maxlength="30" datatype="String" type="COL" remark="任务人员">
+                <mapingcol datatype="VARCHAR2">TASK_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LOCK_STAFF_ID" maxlength="30" datatype="String" type="COL" remark="锁定员工">
+                <mapingcol datatype="VARCHAR2">LOCK_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LOCK_DATE" maxlength="20" datatype="DateTime" type="COL" remark="锁定时间">
+                <mapingcol datatype="DATE">LOCK_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FINISH_STAFF_ID" maxlength="30" datatype="String" type="COL" remark="完成人员">
+                <mapingcol datatype="VARCHAR2">FINISH_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FINISH_DATE" maxlength="20" datatype="DateTime" type="COL" remark="完成时间">
+                <mapingcol datatype="DATE">FINISH_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ERROR_MESSAGE" maxlength="1000" datatype="String" type="COL" remark="错误信息">
+                <mapingcol datatype="VARCHAR2">ERROR_MESSAGE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DESCRIPTION" maxlength="500" datatype="String" type="COL" remark="任务描述">
+                <mapingcol datatype="VARCHAR2">DESCRIPTION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WARNING_DATE" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">WARNING_DATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="WARNING_TIMES" maxlength="2" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">WARNING_TIMES</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

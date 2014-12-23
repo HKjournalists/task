@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BODocTemplate" mainattr="DOC_TEMP_ID">
+        <mapingenty type="table">ALM_DOC_TEMPLATE</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="DOC_TEMP_ID" maxlength="12" datatype="Long" type="PK" remark="文档模型ID">
+                <mapingcol datatype="NUMBER">DOC_TEMP_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DOC_TEMP_NAME" maxlength="32" datatype="String" type="COL" remark="文档模型名称">
+                <mapingcol datatype="VARCHAR2">DOC_TEMP_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_DESC" maxlength="128" datatype="String" type="COL" remark="模板描述">
+                <mapingcol datatype="VARCHAR2">TEMP_DESC</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_CREATER" maxlength="128" datatype="String" type="COL" remark="模板创建人">
+                <mapingcol datatype="VARCHAR2">TEMP_CREATER</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_REVISER" maxlength="128" datatype="String" type="COL" remark="模板修订人">
+                <mapingcol datatype="VARCHAR2">TEMP_REVISER</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_CREATE_TIME" maxlength="20" datatype="DateTime" type="COL" remark="模板创建时间">
+                <mapingcol datatype="DATE">TEMP_CREATE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_REVISE_TIME" maxlength="20" datatype="DateTime" type="COL" remark="模板修订时间">
+                <mapingcol datatype="DATE">TEMP_REVISE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_VERSION_NO" maxlength="32" datatype="String" type="COL" remark="模板版本编号">
+                <mapingcol datatype="VARCHAR2">TEMP_VERSION_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_ORG_ID" maxlength="12" datatype="Long" type="COL" remark="归属部门ID(sys_organize org_id)">
+                <mapingcol datatype="NUMBER">TEMP_ORG_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_READ" maxlength="512" datatype="String" type="COL" remark="阅读角色">
+                <mapingcol datatype="VARCHAR2">ROLE_READ</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_DOWNLOAD" maxlength="512" datatype="String" type="COL" remark="下载角色">
+                <mapingcol datatype="VARCHAR2">ROLE_DOWNLOAD</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_MODIFY" maxlength="512" datatype="String" type="COL" remark="修改角色">
+                <mapingcol datatype="VARCHAR2">ROLE_MODIFY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_SORT" maxlength="32" datatype="String" type="COL" remark="模板分类(支持多级分类)">
+                <mapingcol datatype="VARCHAR2">TEMP_SORT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DOC_TYPE" maxlength="32" datatype="String" type="COL" remark="文档类型(=附件类型)">
+                <mapingcol datatype="VARCHAR2">DOC_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_PATH" maxlength="128" datatype="String" type="COL" remark="模板路径">
+                <mapingcol datatype="VARCHAR2">TEMP_PATH</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FILE_TYPE" maxlength="128" datatype="String" type="COL" remark="文件类型">
+                <mapingcol datatype="VARCHAR2">FILE_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMP_FTP_NAME" maxlength="128" datatype="String" type="COL" remark="FTP文档模板文件名称">
+                <mapingcol datatype="VARCHAR2">TEMP_FTP_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_READ_NAME" maxlength="1024" datatype="String" type="COL" remark="阅读角色名称">
+                <mapingcol datatype="VARCHAR2">ROLE_READ_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_DOWNLOAD_NAME" maxlength="1024" datatype="String" type="COL" remark="下载角色名称">
+                <mapingcol datatype="VARCHAR2">ROLE_DOWNLOAD_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_MODIFY_NAME" maxlength="1024" datatype="String" type="COL" remark="修改角色名称">
+                <mapingcol datatype="VARCHAR2">ROLE_MODIFY_NAME</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

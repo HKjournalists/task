@@ -1,0 +1,43 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/groupCase/dao
+svn://20.26.11.20/products
+
+
+
+2014-12-16T08:34:19.708184Z
+1599373
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+IAigaGroupCaseDAO.java
+file
+
+
+
+
+2014-12-16T05:56:41.692660Z
+b64d910f9c438f8afc2e438ba4363018
+2014-12-16T08:34:19.708184Z
+1599373
+renzq
+

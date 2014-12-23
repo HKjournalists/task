@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/resource/bo
+svn://20.26.11.20/products
+
+
+
+2014-09-29T11:20:42.954665Z
+1473713
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaTestResource.java
+file
+
+
+
+
+2014-12-13T03:48:03.220166Z
+75afdbe54e7dfd64d81a9778fc3cfe3a
+2014-09-29T11:20:42.954665Z
+1473713
+renzq
+
+AigaTestResource.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:03.223168Z
+d685f11fecd13f63cbea6122730b920d
+2014-08-13T11:00:54.012077Z
+1387846
+lixb
+

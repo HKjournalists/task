@@ -1,0 +1,97 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/html/webframe/shdesktopui
+svn://20.26.11.20/products
+
+
+
+2014-09-02T01:55:56.663110Z
+1422028
+lixb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+Menu.jsp
+file
+
+
+
+
+2014-12-13T04:17:56.272092Z
+0d56acd9c9ba0ab162f9c0a0afe71051
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+WebAppFrameSet.jsp
+file
+
+
+
+
+2014-12-13T04:17:56.287717Z
+a00a617a53578dc4de5fdf3133f8c579
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+theme
+dir
+
+help.jsp
+file
+
+
+
+
+2014-12-13T04:17:56.287717Z
+189a43ff1dbe486089893629d5b91c8f
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+Desktop.jsp
+file
+
+
+
+
+2014-12-13T04:17:56.287717Z
+66cb1f69a4c0d8daa81e97d8e3928d51
+2014-08-19T12:21:56.590859Z
+1398993
+liuchao
+
+images
+dir
+
+WebAppFrameSet_new.jsp
+file
+
+
+
+
+2014-12-13T04:17:56.287717Z
+0cf302d65943c6db286b79ab3ce74592
+2014-09-02T01:50:51.169975Z
+1422023
+lixb
+
+js
+dir
+

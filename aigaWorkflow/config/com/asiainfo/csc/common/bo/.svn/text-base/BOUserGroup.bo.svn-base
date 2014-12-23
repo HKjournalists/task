@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOUserGroup" mainattr="STAFF_ID">
+        <mapingenty type="query">select sr.staff_id, sr.group_id, sg.group_name from sys_user_group_relate sr, sys_user_group sg where sr.group_id = sg.group_id</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="STAFF_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="GROUP_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">GROUP_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="GROUP_NAME" maxlength="50" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">GROUP_NAME</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

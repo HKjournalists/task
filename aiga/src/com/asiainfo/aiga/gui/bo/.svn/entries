@@ -1,0 +1,55 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/gui/bo
+svn://20.26.11.20/products
+
+
+
+2014-09-15T04:41:13.422285Z
+1447315
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaGui.java
+file
+
+
+
+
+2014-12-13T03:48:07.563669Z
+d46ad50b854edc4d751738a0956dcb73
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+extend
+dir
+
+AigaGui.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:07.566674Z
+e1904cbfc15d658c9117ed55449a6f8a
+2014-09-15T04:41:13.422285Z
+1447315
+liuchao
+

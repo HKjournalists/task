@@ -1,0 +1,123 @@
+/*begin============DBGrid 页面样式==========begin*/
+
+.DBGrid_TableHead{
+ font-family:Arial;
+ font-size:10pt;
+ font-weight:bold;
+ color:#000000;
+}
+
+.DBGrid_TableBody{
+ font-family:Arial;
+ font-size:9pt;
+ color:#000000;
+ behavior:url(/aicommon/sysjs/bodykeydown.htc); /*控制backspace的回退功能**/
+}
+
+.DBGrid_TableFoot{
+ font-family:Arial;
+ font-size:9pt;
+ color:#000000;
+}
+
+/*end============DBGrid 页面样式==========end*/
+
+
+.DBForm_tdDis{
+height:20;
+border-top:1 solid #B1BAC2;
+border-left:1 solid #B1BAC2;
+border-right:1 solid white;
+border-bottom:1 solid white;
+background-color:#E7F4FE;
+padding-top:5;
+padding-left:5
+}
+
+.DBForm_tdTit{
+padding-right:0;
+padding-left:30;
+}
+
+.unselected{font-family: 宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;color: rgb(102,102,153);background-color: "transparent";}
+.selected{font-family: 宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;color: "white";background-color: "darkblue";}
+.up2{background-color: #D8D8D0; border-left: 2 solid #ffffff;border-right: 2 solid #000000; border-top: 2 solid #ffffff; border-bottom: 2 solid #000000 }
+.up1{background-color:  #FFFFF4; border-left: 1 solid #ffffff;border-right: 1 solid #000000; border-top: 1 solid #ffffff; border-bottom: 1 solid #000000 }
+.down1{ background-color: #D8D8D0; border-left: 1 solid #000000;border-right: 1 solid #ffffff; border-top: 1 solid #000000; border-bottom: 1 solid #ffffff }
+.down2{ background-color: #D8D8D0; border-left: 2 solid #000000;border-right: 2 solid #ffffff; border-top: 2 solid #000000; border-bottom: 2 solid #ffffff }
+.title{padding-left:8;background-color: 000080;cursor:move;color:#ffffff}
+.menu{padding-left:16;padding-top:2;padding-bottom:2;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;}
+.overmenu{padding-left:16;padding-top:2;padding-bottom:2;background-color:highlight;color:highlighttext;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;}
+.sepa{width:100%;border: 1px inset #f0f0f0}
+.disabledmenutext{color:#c0c0c0;}
+
+/*============form样式==========*/
+
+
+
+.FormTD{
+font-size:9pt;
+}
+.FormTDName{
+font-size:9pt;
+text-align:right;
+padding-top:6;
+}
+
+
+
+/*begin============两个Tab页面样式==========begin*/
+
+.sec1 {
+/*background-color: #EEEEEE;*/
+cursor: hand;
+font-size:12px;
+color: #000000;
+width:110;
+height:22;
+background-image=url(/webframe/image/main/tab1.gif);
+}
+
+.sec2 {
+/*background-color: #D4D0C8;*/
+padding-top:2;
+font-size:12px;
+color:#003366;
+cursor: hand;
+width:110;
+height:22;
+background-image=url(/webframe/image/main/tab.gif);
+}
+
+.sec3 {
+/*background-color: #EEEEEE;*/
+cursor: hand;
+font-size:12px;
+color: #000000;
+width:110;
+height:22;
+background-image=url(/webframe/image/main/tab3.gif);
+}
+
+.sec4 {
+/*background-color: #D4D0C8;*/
+padding-top:2;
+font-size:12px;
+color:#003366;
+cursor: hand;
+width:110;
+height:22;
+background-image=url(/webframe/image/main/tab2.gif);
+}
+
+.main_tab {
+background-color: #FFFDF8;
+font-size:12px;
+border-left: 2px outset #FFFFFF;
+border-top: 1px outset #FFFFFF;
+border-right: 2px outset #FFFFFF;
+border-bottom: 2px outset #FFFFFF;
+}
+
+/*end============两个Tab页面样式==========end*/
+

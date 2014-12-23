@@ -1,0 +1,37 @@
+Ext.define('SmartApp.view.Case.CaseManageView', {
+    extend: 'Ext.panel.Panel',
+    alias: 'widget.casemanageview',
+    
+    initComponent: function (){
+        var me = this;
+        var module_tree = Ext.create("SmartApp.store.ModuleTreeStore");
+        Ext.apply(this, {
+        	 border: false,
+             layout: "border",
+             
+             items:[
+                    {
+                    	xtype: "panel",
+                    	title: "模块",
+                    	autoScroll: true,
+                    	width: 160,
+                    	layout: 'fit',
+                    	region: "west",
+                    	split: true,
+                    	collapsible: true,
+                    	items:[{
+                  	      xtype: "treepanel",
+                  	      border: false,
+                          store: module_tree
+                    	}]
+                	 
+                    },{
+                    	xtype: "tabpanel",
+                    	layout: 'fit',
+                    	region: "center"
+                    }
+             ]
+        });
+        me.callParent();
+    }
+});

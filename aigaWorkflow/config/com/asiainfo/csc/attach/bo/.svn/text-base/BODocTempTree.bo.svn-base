@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BODocTempTree" mainattr="DOC_TEMP_TREE_ID">
+        <mapingenty type="table">ALM_DOC_TEMP_TREE</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="DOC_TEMP_TREE_ID" maxlength="12" datatype="Long" type="PK" remark="文档模型树ID">
+                <mapingcol datatype="NUMBER">DOC_TEMP_TREE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NODE_NAME" maxlength="32" datatype="String" type="COL" remark="当前节点名称">
+                <mapingcol datatype="VARCHAR2">NODE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NODE_NO" maxlength="32" datatype="String" type="COL" remark="当前节点编号">
+                <mapingcol datatype="VARCHAR2">NODE_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARENT_NODE_NAME" maxlength="32" datatype="String" type="COL" remark="父节点名称">
+                <mapingcol datatype="VARCHAR2">PARENT_NODE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARENT_NODE_NO" maxlength="32" datatype="String" type="COL" remark="父节点编号">
+                <mapingcol datatype="VARCHAR2">PARENT_NODE_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_DOC_TEMP" maxlength="2" datatype="Integer" type="COL" remark="是否文档模板">
+                <mapingcol datatype="NUMBER">IS_DOC_TEMP</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

@@ -1,0 +1,88 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/common/security/user
+svn://20.26.11.20/products
+
+
+
+2014-12-13T05:39:37.416360Z
+1596154
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+bo
+dir
+
+service
+dir
+
+dao
+dir
+
+Menu.java
+file
+
+
+
+
+2014-12-13T03:48:10.972124Z
+6e9a5c1d581e9ae7c6a37b09ccb9a6ea
+2014-08-11T12:28:54.032125Z
+1385872
+lixb
+
+PassUtil.java
+file
+
+
+
+
+2014-12-13T03:48:10.977386Z
+d1764a97ca8d5c566da043a6e8846f05
+2014-08-11T09:16:24.492959Z
+1385570
+lixb
+
+URLConnectUtil.java
+file
+
+
+
+
+2014-12-13T03:48:10.979674Z
+ebb46546b0d4beb08a84315b7213cc70
+2014-09-03T07:18:49.471335Z
+1428049
+lixb
+
+util
+dir
+
+Util.java
+file
+
+
+
+
+2014-12-13T03:48:10.982845Z
+7f20a196937feaf4b318a12a06fa785c
+2014-08-11T12:28:54.032125Z
+1385872
+lixb
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOStaffRoleOrgDistView" mainattr="ROLE_ID">
+        <mapingenty type="table">STAFF_ROLE_ORG_DIST_VIEW</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ROLE_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">ROLE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_CODE" maxlength="40" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ROLE_CODE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_NAME" maxlength="60" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ROLE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STAFF_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CODE" maxlength="20" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CODE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STAFF_NAME" maxlength="200" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">STAFF_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ORGANIZE_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">ORGANIZE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ORGANIZE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DISTRICT_ID" maxlength="8" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">DISTRICT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARENT_ORGANIZE_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PARENT_ORGANIZE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="GROUP_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">GROUP_ID</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

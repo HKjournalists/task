@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<module name="业务模块" html-dir="" java-package="">
+  <initial name="com.ai.appframe2.queue.QueueModuleInitial">
+   <configdata>
+ 	 <queue tasktype="ALM_MATRIX_QUEUE" class="com.asiainfo.csc.matrix.threads.AlmMatrixQueue" threadnum="3" fetchnum="100" start="false" desc="矩阵引擎调度"/>
+	</configdata>
+  </initial>
+</module>

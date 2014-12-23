@@ -1,0 +1,106 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/html/extJs/plugin/extexcel/exporter
+svn://20.26.11.20/products
+
+
+
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+csvFormatter
+dir
+
+Base64.js
+file
+
+
+
+
+2014-12-13T03:47:24.164646Z
+97496e6d0cb7ee44d059f9f21c561a37
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+swfobject.js
+file
+
+
+
+
+2014-12-13T03:47:24.167647Z
+892a543f3abb54e8ec1ada55be3b0649
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+Exporter.js
+file
+
+
+
+
+2014-12-13T03:47:24.170856Z
+11366db02bf58039318a2b79220e457a
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+excelFormatter
+dir
+
+Button.js
+file
+
+
+
+
+2014-12-13T03:47:24.173860Z
+7afa0741f66a4e1c7f45eb53b3599853
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+downloadify.min.js
+file
+
+
+
+
+2014-12-13T03:47:24.176862Z
+52b8be8fe79a2b309ae3862e4b7c11bd
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+Formatter.js
+file
+
+
+
+
+2014-12-13T03:47:24.178863Z
+8bd594ff5cd40fbc18bd6d869d85950f
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+

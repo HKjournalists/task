@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOHisStakeholder" mainattr="LINK_ID">
+        <mapingenty type="table">ALM_HIS_STAKEHOLDER</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="LINK_ID" maxlength="12" datatype="Long" type="COL" remark="环节ID">
+                <mapingcol datatype="NUMBER">LINK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="HIS_STDHOLDER_ID" maxlength="12" datatype="Long" type="PK" remark="干系人ID">
+                <mapingcol datatype="NUMBER">HIS_STDHOLDER_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_ID" maxlength="12" datatype="Long" type="COL" remark="权限ID">
+                <mapingcol datatype="NUMBER">ROLE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDER_STAFF_ID" maxlength="12" datatype="Long" type="COL" remark="干系人员工ID">
+                <mapingcol datatype="NUMBER">STDHOLDER_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDER_ORG_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STDHOLDER_ORG_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDER_STAFF_NO" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">STDHOLDER_STAFF_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDER_ORG_NO" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">STDHOLDER_ORG_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDE_TYPE" maxlength="2" datatype="String" type="COL" remark="1 执行
+2 审批(需求审批)
+3 查看(需求抄送)
+4 通知  5讨论(需求讨论)">
+                <mapingcol datatype="VARCHAR2">STDHOLDE_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_TIME" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">CREATE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDER_STAFF_NAME" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">STDHOLDER_STAFF_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDER_ORG_STRUCTS" maxlength="500" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">STDHOLDER_ORG_STRUCTS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ORDER_ID" maxlength="12" datatype="Long" type="COL" remark="工单ID">
+                <mapingcol datatype="NUMBER">ORDER_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STDHOLDER_DISTRICT_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STDHOLDER_DISTRICT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_TYPE" maxlength="2" datatype="String" type="COL" remark="对象类型">
+                <mapingcol datatype="VARCHAR2">OBJ_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_ID" maxlength="12" datatype="Long" type="COL" remark="对象ID">
+                <mapingcol datatype="NUMBER">OBJ_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_NO" maxlength="32" datatype="String" type="COL" remark="环节编号">
+                <mapingcol datatype="VARCHAR2">LINK_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NOTICE_OPER_TYPE" maxlength="4" datatype="String" type="COL" remark="短信 邮件 公告 格式如(0001,0011,0100)">
+                <mapingcol datatype="VARCHAR2">NOTICE_OPER_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="COUNTER" maxlength="4" datatype="Integer" type="COL" remark="计数器字段">
+                <mapingcol datatype="NUMBER">COUNTER</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

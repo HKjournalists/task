@@ -1,0 +1,96 @@
+Ext.define('SmartApp.view.Viewport', {
+    extend: 'Ext.container.Viewport',
+    alias: 'widget.mainview',
+
+    requires: [
+        'Ext.menu.Menu',
+        'Ext.menu.Item',
+        'Ext.tab.Panel',
+        'Ext.tab.Tab',
+        'SmartApp.view.main.menuTree'
+    ],
+
+    itemId: 'mainView',
+    layout: 'border',
+
+    initComponent: function() {
+        var me = this;
+
+        Ext.applyIf(me, {
+            items: [
+
+            	{
+                    xtype: 'container',
+                    id: 'app-header',
+                    region: 'north',
+                    layout:{
+                        type: 'hbox',
+                        align: 'middle'
+                    },
+                    items:[
+                        {
+                            xtype: 'component',
+                            id: 'app-header-title',
+
+                            html: 'SmartApp',
+                            flex: 1
+
+                        }
+                    ]
+
+            	},
+                {
+                    xtype: 'panel',
+                    region: 'west',
+                    split: true,
+                    collapsible: true,
+                    itemId: 'main',
+                    width: 220,
+                    title: 'Menu',
+                    
+                    autoScroll: true,
+                    items: [
+                        {
+                            xtype: "menuTree",
+                            id: "menuTree",
+                            border: false,
+                            layout: "fit"
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    region: 'center',
+                    itemId: 'contentPanel',
+                    layout: 'border',
+                    border: false,
+                    items: [
+                        {
+                            xtype: 'tabpanel',
+                            activeTab: 0,
+                            id: "main_tab_panel",
+                            region: "center",
+                            layout: "fit",
+                            //autoDestroy: false,
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    title: '工作台',
+                                    bodyStyle: {  
+                                        background: 'url(images/welcome.jpg) no-repeat #FFFFFF  bottom right', 
+                                        padding: '10px'  
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        });
+
+        me.callParent(arguments);
+    }
+
+});
+
+//Ext.create("SmartApp.view.MainView");

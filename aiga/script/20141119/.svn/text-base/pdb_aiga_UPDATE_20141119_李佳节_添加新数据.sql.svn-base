@@ -1,0 +1,1 @@
+insert into aiga_sub_sys_folder(subsys_id,sys_name,sys_id)values(aiga_fun_folder$seq.nextval,'webservice½Ó¿Ú',11);

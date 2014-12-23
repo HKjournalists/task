@@ -1,0 +1,11 @@
+/**
+ * Created by renzq on 2014/12/2.
+ */
+Ext.define("SmartApp.store.UserStore", {
+    extend: "Ext.data.Store",
+    model: "SmartApp.model.User",
+    data: [
+        { id: 1, username: "Tom", realname:"JJJ", email:"a@b.c", mobile: "123456" , deparment:"dev", manager:"a"},
+        { id: 2, username: "Jerry", realname:"J2", email:"a@b.c", mobile: "654321" , deparment:"dev", manager:"a"}
+    ]
+});

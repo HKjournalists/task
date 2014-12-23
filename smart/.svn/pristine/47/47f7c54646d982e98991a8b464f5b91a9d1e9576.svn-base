@@ -1,0 +1,18 @@
+Ext.define('SmartApp.view.Case.TestcaseView', {
+	extend : 'Ext.panel.Panel',
+	alias : 'widget.testcaseview',
+
+	initComponent : function() {
+		var me = this;
+		Ext.apply(this, {
+			border : false,
+			layout : "border",
+
+			items : [
+			]
+		});
+
+		me.callParent();
+	}
+
+});

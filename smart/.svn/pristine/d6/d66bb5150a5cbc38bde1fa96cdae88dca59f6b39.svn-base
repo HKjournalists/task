@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SmartApp</title>
+    <link rel="shortcut icon"href="images/smart.ico">
+   	<link rel="stylesheet" href="assets/extjs/resources/css/ext-all.css"/>
+	<script src="assets/extjs/ext-all.js"></script>
+    <link rel="stylesheet" href="resources/style.css" />
+    <script src="app/app.js"></script>
+</head>
+<body></body>
+</html>

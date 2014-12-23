@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/html/aiga/pushlet
+svn://20.26.11.20/products
+
+
+
+2014-11-03T01:30:55.250038Z
+1521501
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+pushlet.jsp
+file
+
+
+
+
+2014-12-13T03:46:46.482109Z
+4029ba0f42f9a89a76b9cc597e62b66d
+2014-11-03T01:30:55.250038Z
+1521501
+renzq
+
+ajax-pushlet-client.js
+file
+
+
+
+
+2014-12-13T03:46:46.485241Z
+a85627af5b34db7277b8db602e0eb4ae
+2014-08-28T02:37:11.150991Z
+1419252
+wenghy
+

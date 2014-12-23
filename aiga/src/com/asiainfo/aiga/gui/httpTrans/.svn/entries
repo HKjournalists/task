@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/gui/httpTrans
+svn://20.26.11.20/products
+
+
+
+2014-09-10T06:31:29.055922Z
+1439706
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaGuiHttp.java
+file
+
+
+
+
+2014-12-13T03:48:07.638543Z
+a47701af8adc5a85e714c890c4f12a13
+2014-09-10T06:31:29.055922Z
+1439706
+liuchao
+
+AigaGuiListener.java
+file
+
+
+
+
+2014-12-13T03:48:07.640685Z
+3720a90423d4fffbd09cdc277dd6a4ad
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+

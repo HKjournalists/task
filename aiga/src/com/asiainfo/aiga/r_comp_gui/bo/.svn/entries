@@ -1,0 +1,55 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/r_comp_gui/bo
+svn://20.26.11.20/products
+
+
+
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+extend
+dir
+
+AigaGuiCompRela.java
+file
+
+
+
+
+2014-12-13T03:48:07.500278Z
+9c10410ae19e7864f2e7e963bfb921a6
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+AigaGuiCompRela.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:07.502441Z
+feddf427e0ed05b1148eb0a8b066346b
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+

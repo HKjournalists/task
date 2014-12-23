@@ -1,0 +1,312 @@
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+
+<taglib>
+  <tlibversion>1.0</tlibversion>
+
+  <jspversion>1.1</jspversion>
+
+  <shortname>Application Tag Library</shortname>
+
+  <uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+
+  <info>
+
+    This tag library contains functionality specific to the Struts
+
+    Example Application.
+
+  </info>
+
+
+
+<tag>
+  <name>VmlPie</name>
+  <tagclass>com.ai.appframe2.analyse.web.tag.VmlPie</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute>
+    <name>id</name>
+    <required>true</required>
+    <rtexprvalue>false</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strOutDiv</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPercent</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strDblClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPieDataSourceImplClassName</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+</tag>
+
+
+<tag>
+  <name>VmlTridimensionalPie</name>
+  <tagclass>com.ai.appframe2.analyse.web.tag.VmlTridimensionalPie</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute>
+    <name>id</name>
+    <required>true</required>
+    <rtexprvalue>false</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>initHeight</name>
+    <required>true</required>
+    <rtexprvalue>false</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strOutDiv</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPercent</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strDblClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPieDataSourceImplClassName</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>longWidth</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>longHeight</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+</tag>
+
+
+
+<tag>
+  <name>VmlBar</name>
+  <tagclass>com.ai.appframe2.analyse.web.tag.VmlBar</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute>
+    <name>id</name>
+    <required>true</required>
+    <rtexprvalue>false</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>dbBaseX</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>dbBaseY</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strShowX</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>dbCellY</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strShowY</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strOutDiv</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPercent</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strDblClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPieDataSourceImplClassName</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+
+</tag>
+
+
+<tag>
+  <name>VmlLine</name>
+  <tagclass>com.ai.appframe2.analyse.web.tag.VmlLine</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute>
+    <name>id</name>
+    <required>true</required>
+    <rtexprvalue>false</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>dbBaseX</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>dbBaseY</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strShowX</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>dbCellY</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strShowY</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strOutDiv</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPercent</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strDblClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPieDataSourceImplClassName</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+</tag>
+
+
+<tag>
+  <name>VmlTridimensionalBar</name>
+  <tagclass>com.ai.appframe2.analyse.web.tag.VmlTridimensionalBar</tagclass>
+  <bodycontent>JSP</bodycontent>
+  <attribute>
+    <name>id</name>
+    <required>true</required>
+    <rtexprvalue>false</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strOutDiv</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strDblClickEventFun</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPieDataSourceImplClassName</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strTitle</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>intNumberPerLine</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+    <name>strPercent</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+  </attribute>
+</tag>
+
+<tag>
+<name>crossgrid</name>
+<tagclass>com.ai.appframe2.analyse.web.tag.AICrossGridTag</tagclass>
+<bodycontent>JSP</bodycontent>
+<attribute><name>id</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>configname</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>datamodel</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>showtype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>width</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>height</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>onrowselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>isshowselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>oncolselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+<tag>
+<name>crossgridpivot</name>
+<tagclass>com.ai.appframe2.analyse.web.tag.AICrossGridPivotTag</tagclass>
+<bodycontent>empty</bodycontent>
+<attribute><name>area</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>issubtotal</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>selectvalue</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+<attribute><name>ordertype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag>
+
+</taglib>

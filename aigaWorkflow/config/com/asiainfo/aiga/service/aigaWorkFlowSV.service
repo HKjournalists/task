@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<module id="">
+  <service id="com.asiainfo.aiga.service.AigaTestPlanSV" interface="com.asiainfo.aiga.service.interfaces.IAigaTestPlanSV">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.aiga.service.impl.AigaTestPlanSVImpl"></impl-define>
+  </service>
+  <service id="com.asiainfo.aiga.service.AigaTestTaskSV" interface="com.asiainfo.aiga.service.interfaces.IAigaTestTaskSV">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.aiga.service.impl.AigaTestTaskSVImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.aiga.service.AigaTestZheJiangSV" interface="com.asiainfo.aiga.service.interfaces.IAigaTestZheJiangSV">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.aiga.service.impl.AigaTestZheJiangSVImpl"></impl-define>
+  </service>
+</module>

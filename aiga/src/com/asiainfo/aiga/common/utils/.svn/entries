@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/common/utils
+svn://20.26.11.20/products
+
+
+
+2014-11-04T12:57:31.763877Z
+1526029
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+CnToSpell.java
+file
+
+
+
+
+2014-12-13T03:48:09.928889Z
+c3f92b812e7bbd1b28447306a4c784c5
+2014-11-04T12:57:31.763877Z
+1526029
+wenghy
+
+PinyinConv.java
+file
+
+
+
+
+2014-12-13T03:48:09.933893Z
+7bad9081e251bebbd8ce8964b63116c8
+2014-11-04T12:57:31.763877Z
+1526029
+wenghy
+

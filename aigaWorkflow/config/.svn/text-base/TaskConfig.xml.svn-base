@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<tasks>
+  <group title="系统任务" type="system" isvisible="true">
+    <task type="start" title="开始" templateclass="com.ai.appframe2.vm.template.impl.TaskStartTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskStartImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskStartCell" studioPic="com/ai/appframe2/vm/studio/imag/start.gif" studioPartClass="com.ai.studio.ui.part.node.StartNodeEditPartForSrv"/>
+    <task type="finish" title="结束" templateclass="com.ai.appframe2.vm.template.impl.TaskFinishTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskFinishImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskFinishCell" studioPic="com/ai/appframe2/vm/studio/imag/finish.gif" studioPartClass="com.ai.studio.ui.part.node.FinishNodeEditPartForSrv"/>
+    <task type="auto" title="自动" templateclass="com.ai.appframe2.vm.template.impl.TaskAutoTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskAutoImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskAutoCell" studioPic="com/ai/appframe2/vm/studio/imag/auto.gif" studioPartClass="com.ai.studio.ui.part.node.AutoNodeEditPartForSrv"/>
+    <task type="user" title="人工任务" templateclass="com.ai.appframe2.vm.template.impl.TaskUserTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskUserImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskUserCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.UserNodeEditPartForSrv"/>
+    <task type="sign" title="会签" templateclass="com.ai.appframe2.vm.template.impl.TaskSignTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskSignImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskUserCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.SignNodeEditPartForSrv"/>
+    <task type="shell" title="Shell" templateclass="com.ai.appframe2.vm.template.impl.TaskShellTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskShellImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskShellCell" studioPic="com/ai/appframe2/vm/studio/imag/auto.gif" studioPartClass="com.ai.studio.ui.part.node.ShellNodeEditPart"/>
+    <task type="decision" title="条件判断" templateclass="com.ai.appframe2.vm.template.impl.TaskDecisionConditionTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskDecisionConditionImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskDecisionConditionCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.DecisionNodeEditPart"/>
+    <task type="autodecision" title="自动判断" templateclass="com.ai.appframe2.vm.template.impl.TaskDecisionAutoTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskDecisionAutoImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskDecisionAutoCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.AutoDecisionNodeEditPartForSrv"/>
+    <task type="enddecision" title="判断结束" templateclass="com.ai.appframe2.vm.template.impl.TaskDecisionEndTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskNullImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskDecisionEndCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.EndDecisionNodeEditPart"/>
+    <task type="loop" title="循环" templateclass="com.ai.appframe2.vm.template.impl.TaskLoopTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskLoopImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskLoopCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.LoopNodeEditPart"/>
+    <task type="endloop" title="循环结束" templateclass="com.ai.appframe2.vm.template.impl.TaskLoopEndTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskNullImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskLoopEndCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.EndLoopNodeEditPart"/>
+    <task type="break" title="break" templateclass="com.ai.appframe2.vm.template.impl.TaskBreakTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskNullImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskBreakCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.BreakNodeEditPart"/>
+    <task type="continue" title="continue" templateclass="com.ai.appframe2.vm.template.impl.TaskContinueTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskNullImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskContinueCell" studioPic="com/ai/appframe2/vm/studio/imag/user.gif" studioPartClass="com.ai.studio.ui.part.node.ContinueNodeEditPart"/>
+    <task type="childworkflow" title="子流程" templateclass="com.ai.appframe2.vm.template.impl.TaskWorkflowTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskWorkflowImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskWorkflowCell" studioPic="com/ai/appframe2/vm/studio/imag/timer.gif" studioPartClass="com.ai.studio.ui.part.node.WorkFlowNodeEditPartForSrv"/>
+    <task type="event" title="业务事件" templateclass="com.ai.appframe2.vm.template.impl.TaskEventTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskEventImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskEventCell" studioPic="com/ai/appframe2/vm/studio/imag/timer.gif" studioPartClass="com.ai.studio.ui.part.node.BizEventNodeEditPart"/>
+  </group>
+  <group title="工作流任务" type="workflow" isvisible="true">
+    <task type="timer" title="定时器" templateclass="com.ai.appframe2.vm.template.impl.TaskTimerTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskTimerImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskTimerCell" studioPic="com/ai/appframe2/vm/studio/imag/timer.gif" studioPartClass="com.ai.studio.ui.part.node.TimerNodeEditPart"/>
+    <task type="fork" title="Fork" templateclass="com.ai.appframe2.vm.template.impl.TaskForkTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskNullImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskAndOrCell" studioPic="com/ai/appframe2/vm/studio/imag/and.gif" studioPartClass="com.ai.studio.ui.part.node.ForkNodeEditPart"/>
+    <task type="and" title="AND" templateclass="com.ai.appframe2.vm.template.impl.TaskAndTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskAndImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskAndOrCell" studioPic="com/ai/appframe2/vm/studio/imag/and.gif" studioPartClass="com.ai.studio.ui.part.node.AndNodeEditPart"/>
+    <task type="or" title="OR" templateclass="com.ai.appframe2.vm.template.impl.TaskOrTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskOrImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskAndOrCell" studioPic="com/ai/appframe2/vm/studio/imag/or.gif" studioPartClass="com.ai.studio.ui.part.node.OrNodeEditPart"/>
+    <task type="mail" title="发送邮件" templateclass="com.ai.appframe2.vm.template.impl.TaskAutoUserTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskAutoImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskAutoUserCell" studioPic="com/ai/appframe2/vm/studio/imag/timer.gif" studioPartClass="com.ai.studio.ui.part.node.SendMailNodeEditPart">
+      <autodeal>
+        <runtype>pojo</runtype>
+        <servicename/>
+        <runclassname>com.ai.appframe2.vm.task.SendMail</runclassname>
+        <runfunctionname>send</runfunctionname>
+        <vars name="addr" datatype="String" inouttype="in" description="邮件地址,逗号分隔"/>
+        <vars name="ccAddr" datatype="String" inouttype="in" description="抄送地址,逗号分隔"/>
+        <vars name="subject" datatype="String" inouttype="in" description="主题"/>
+        <vars name="body" datatype="String" inouttype="in" description="正文"/>
+        <vars name="files" datatype="String" inouttype="in" description="附件"/>
+        <vars name="return" datatype="boolean" inouttype="return"/>
+      </autodeal>
+    </task>
+    <task type="isOverTime" title="是否超时" templateclass="com.ai.appframe2.vm.template.impl.TaskDecisionAutoUserTemplateImpl" executeclass="com.ai.appframe2.vm.engine.impl.TaskDecisionAutoImpl" studioDisplayClass="com.ai.appframe2.vm.studio.task.TaskDecisionAutoUserCell" studioPic="com/ai/appframe2/vm/studio/imag/timer.gif" studioPartClass="com.ai.studio.ui.part.node.OverTimeNodeEditPart">
+      <autodeal>
+        <runtype>pojo</runtype>
+        <servicename/>
+        <runclassname>com.ai.appframe2.vm.task.SysTask</runclassname>
+        <runfunctionname>isOverTime</runfunctionname>
+        <vars name="inDate" datatype="java.sql.Date" inouttype="in"/>
+        <vars name="return" datatype="boolean" inouttype="return"/>
+      </autodeal>
+    </task>
+  </group>
+</tasks>

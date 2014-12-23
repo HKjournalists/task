@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAigaLinkTimeConfig" mainattr="ID">
+        <mapingenty type="table">AIGA_LINKTME_CONFIG</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ID" maxlength="12" datatype="Long" type="COL" remark="主键">
+                <mapingcol datatype="NUMBER">ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_NO" maxlength="32" datatype="String" type="COL" remark="环节编号">
+                <mapingcol datatype="VARCHAR2">LINK_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DAY_NUM" maxlength="3" datatype="Long" type="COL" remark="处理天数">
+                <mapingcol datatype="NUMBER">DAY_NUM</mapingcol>
+            </attr>
+            <attr floatlength="0" name="MARK" maxlength="2" datatype="String" type="COL" remark="标示符，标识正常或者紧急流程">
+                <mapingcol datatype="VARCHAR2">MARK</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OPERATE" maxlength="1" datatype="Long" type="COL" remark="运算标识，0为T减。1为T加">
+                <mapingcol datatype="NUMBER">OPERATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BASE" maxlength="1" datatype="Long" type="COL" remark="计算根据，0代表从当前时间开始，1代表从计划完成时间开始">
+                <mapingcol datatype="NUMBER">BASE</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

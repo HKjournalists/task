@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOQueryAttach" mainattr="ATT_ID">
+        <mapingenty type="query">select a.*, a.att_id as status, a.att_name as att_type_name from alm_attachment a</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ATT_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">ATT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_NAME" maxlength="1024" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ATT_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_PATH" maxlength="1024" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ATT_PATH</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_TYPE" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ATT_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_DESC" maxlength="1024" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ATT_DESC</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMITTER_TAG" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMITTER_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_TIME" maxlength="7" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">SUBMIT_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_LINK" maxlength="32" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMIT_LINK</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STATUS" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STATUS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_TYPE_NAME" maxlength="1024" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ATT_TYPE_NAME</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

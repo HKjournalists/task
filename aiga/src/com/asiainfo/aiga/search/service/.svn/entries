@@ -1,0 +1,55 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/search/service
+svn://20.26.11.20/products
+
+
+
+2014-12-09T07:31:37.541789Z
+1588842
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+ILuceneSearch.java
+file
+
+
+
+
+2014-12-13T03:48:05.977948Z
+7a83b5249600e8de68989a9295c1255b
+2014-10-31T02:19:12.744736Z
+1517997
+wenghy
+
+AutoCreateIndexThread.java
+file
+
+
+
+
+2014-12-13T03:48:05.983143Z
+c8509af751ebe1a5e69d8791e175e3aa
+2014-11-01T08:23:14.386650Z
+1518863
+lixb
+

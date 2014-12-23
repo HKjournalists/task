@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/script/20141126
+svn://20.26.11.20/products
+
+
+
+2014-11-26T09:51:46.202618Z
+1568103
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+pdb_aiga_UPDATE_20141126_李佳节_更新表数据和Sequence.sql
+file
+
+
+
+
+2014-12-13T03:47:25.144491Z
+b446611194a9bb82512d57f04ff88146
+2014-11-26T02:40:00.340089Z
+1566774
+renzq
+
+pdb_aiga_UPDATE_20141126_李佳节_更新表数据(手工回归).sql
+file
+
+
+
+
+2014-12-13T03:47:25.147493Z
+a39663dd47701a15e0b37f830be07374
+2014-11-26T09:51:46.202618Z
+1568103
+renzq
+

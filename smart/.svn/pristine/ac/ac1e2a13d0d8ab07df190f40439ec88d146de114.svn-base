@@ -1,0 +1,15 @@
+package com.lb.app.main.service;
+
+import org.springframework.stereotype.Service;
+
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethod;
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethodType;
+
+@Service
+public class IndexPageSV {
+
+	@ExtDirectMethod(value = ExtDirectMethodType.SIMPLE_NAMED)
+	public String doEcho(String message) {
+		return message;
+	}
+}

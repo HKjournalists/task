@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="caseSV" class="com.asiainfo.aiga.userCase.service.impl.AigaCaseSVImpl">
+		<property name="caseDAO" ref="caseDao"></property>
+		<property name="compDAO" ref="componentDao"></property>
+		<property name="rCaseCompDAO" ref="rCaseCompDao"></property>
+		<property name="rCollectCaseDAO" ref="rCollectCaseDao"></property>
+		<property name="collectionDAO" ref="collectionDao"></property>
+		<property name="requisitionDAO" ref="requisitionDao"></property>
+		<property name="nodeDAO" ref="nodeDao"></property>
+		<property name="rElemCaseDAO" ref="rElemCaseDao"></property>
+		<property name="aigaManualTaskDao" ref="manualTaskDao"></property>
+		<property name="aigaAutotestParamsDAO" ref="autoTestParamDao"></property>
+		
+		<property name="aigaRFunElemDAO" ref="testRFunElemDao"></property>
+		<property name="aigaSeceneDAO" ref="seceneDao"></property>
+		<property name="RFunCaseDAO" ref="rFunCaseDao"></property>
+		
+		<property name="aigaFunCaseRelaDao" ref="aigaFunCaseRelaDAO"></property>
+		<property name="aigaFunCaseRelaSV" ref="aigaFunCaseRelaSV"></property>
+	</bean>
+	<bean id="caseTree" class="com.asiainfo.aiga.userCase.service.impl.AigaCaseTree"></bean>
+	<bean id="nodeTree" class="com.asiainfo.aiga.node_view.service.impl.AigaNodeViewTree"></bean>
+	
+	<bean id="caseTrans" class="com.asiainfo.aiga.userCase.caseTrans.CaseHttpTrans">
+		<property name="aigaCaseSV" ref="caseSV"></property>
+	</bean>
+	<bean id="caseListener" class="com.asiainfo.aiga.userCase.caseTrans.CaseHttpListener" init-method="initMethod" destroy-method="destoryMethod">
+		<property name="caseHttpTrans" ref="caseTrans"></property>
+	</bean>
+	<bean id="caseSend" class="com.asiainfo.aiga.userCase.caseTrans.CaseHttpSend">
+		<property name="aigaRunPlanDAO" ref="aigaRunPlanDao"></property>
+		<property name="aigaRunTaskDAO" ref="aigaRunTaskDao"></property>
+		<property name="aigaCaseSV" ref="caseSV"></property>
+	</bean>
+	<bean id="importCaseTrans" class="com.asiainfo.aiga.userCase.caseTrans.ImportCaseTrans">
+		<property name="aigaCaseSV" ref="caseSV"></property>
+	</bean>
+	<bean id="importCaseListener" class="com.asiainfo.aiga.userCase.caseTrans.ImportCaseListener" init-method="initMethod" destroy-method="destoryMethod">
+		<property name="importCaseTrans" ref="importCaseTrans"></property>
+	</bean>
+	
+	<bean id="sysFolderSV" class="com.asiainfo.aiga.userCase.service.impl.AigaSystemFolderSVImpl">
+		<property name="aigaSystemFolderDAO" ref="sysFolderDao"></property>
+	</bean>
+	
+	<bean id="subSysFolderSV" class="com.asiainfo.aiga.userCase.service.impl.AigaSubSysFolderSVImpl">
+		<property name="aigaSubSysFolderDAO" ref="subSysFolderDao"></property>
+	</bean>
+	
+	<bean id="funFolderSV" class="com.asiainfo.aiga.userCase.service.impl.AigaFunFolderSVImpl">
+		<property name="aigaFunFolderDAO" ref="funFolderDao"></property>
+	</bean>
+	
+	<bean id="caseParamSV" class="com.asiainfo.aiga.userCase.service.impl.AigaCaseParamSVImpl">
+		<property name="aigaCaseParamDAO" ref="caseParamDao"></property>
+	</bean>
+	
+	<bean id="autoTestParamSV" class="com.asiainfo.aiga.userCase.service.impl.AigaAutotestParamsSVImpl">
+		<property name="aigaAutotestParamsDAO" ref="autoTestParamDao"></property>
+	</bean>
+	
+	<bean id="baseBusiSV" class="com.asiainfo.aiga.userCase.service.impl.AigaBaseBusiSVImpl">
+		<property name="aigaBaseBusiDAO" ref="baseBusiDao"></property>
+	</bean>
+	
+	<bean id="busiSV" class="com.asiainfo.aiga.userCase.service.impl.AigaBusiSVImpl">
+		<property name="aigaBusiDAO" ref="busiDao"></property>
+	</bean>
+	
+	<bean id="testElementSV" class="com.asiainfo.aiga.userCase.service.impl.AigaTestElemSVImpl">
+		<property name="aigaTestElemDAO" ref="testElementDao"></property>
+		<property name="aigaRFunElemDAO" ref="testRFunElemDao"></property>
+		<property name="aigaTestSubElemDAO" ref="testSubElemDao"></property>
+		<property name="aigaSeceneDAO" ref="seceneDao"></property>
+		<property name="aigaCaseDAO" ref="caseDao"></property>
+	</bean>
+	
+	<bean id="testSeceneSV" class="com.asiainfo.aiga.userCase.service.impl.AigaSeceneSVImpl">
+		<property name="aigaSeceneDAO" ref="seceneDao"></property>
+		<property name="aigaTestElemDAO" ref="testElementDao"></property>
+		<property name="aigaTestSubElemDAO" ref="testSubElemDao"></property>
+		<property name="aigaRFunElemDAO" ref="testRFunElemDao"></property>
+		<property name="aigaCaseDAO" ref="caseDao"></property>
+		<property name="aigaFunCaseRelaDAO" ref="aigaFunCaseRelaDAO"></property>
+	</bean>
+	
+	<bean id="caseWorkflowSV" class="com.asiainfo.aiga.userCase.service.impl.AigaCaseWorkflowSVImpl">
+		<property name="aigaCaseDAO" ref="caseDao"></property>
+		<property name="aigaFunFolderDAO" ref="funFolderDao"></property>
+		<property name="aigaRFunElemDAO" ref="testRFunElemDao"></property>
+		<property name="aigaSeceneDAO" ref="seceneDao"></property>
+	</bean>
+</beans>

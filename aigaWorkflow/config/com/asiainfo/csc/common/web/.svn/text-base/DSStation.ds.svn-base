@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSStation</Name>
+    <Package>com.asiainfo.csc.common.web</Package>
+    <DataSet SetType="SQLDATA">
+        <ValueAttr>station_type_id</ValueAttr>
+        <TextAttr>name</TextAttr>
+        <SqlString>select station_type_id,name from sys_station_type where kind_id!=140</SqlString>
+        <DataSource>UserDataSource</DataSource>
+    </DataSet>
+</UIDataSrc>

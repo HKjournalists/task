@@ -1,0 +1,205 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/html/aiga/workflow
+svn://20.26.11.20/products
+
+
+
+2014-12-16T14:29:09.448518Z
+1600099
+yinsx
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+codeScan
+dir
+
+perfTestTask
+dir
+
+uetTask
+dir
+
+AutoTestTask.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.794377Z
+4fef75a5b131388fd9e38f149332f11f
+2014-11-19T09:55:33.146650Z
+1552435
+yeteng
+
+eAESubTaskTest
+dir
+
+common
+dir
+
+SubTaskReview.jsp
+file
+
+
+
+
+2014-12-17T02:21:27.340472Z
+a546ea76dee0d91f9b0ea3c5e251f08a
+2014-12-16T14:29:09.448518Z
+1600099
+yinsx
+
+ReviewSubTask.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.805189Z
+e944594bf1b9878fb4ac5ad15064f03c
+2014-11-13T09:25:09.237167Z
+1544230
+yeteng
+
+testPlan
+dir
+
+perfTest
+dir
+
+performance.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.810432Z
+91aebdf34e6b60d5ff4f2a55873b7565
+2014-09-27T03:07:10.996613Z
+1472051
+lixb
+
+subTaskProblem
+dir
+
+P2PSubTaskAnalysis.jsp
+file
+
+
+
+
+2014-12-16T10:50:01.687359Z
+d3353683b5a7513ae87fe02016f54206
+2014-12-16T08:42:41.181875Z
+1599387
+wenghy
+
+subTaskQuery.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.821896Z
+19b5481b97257d7f6ac997b40ba7c987
+2014-11-13T06:37:23.181152Z
+1543904
+renzq
+
+hwRegrTest
+dir
+
+secuTest
+dir
+
+regrTest
+dir
+
+testTask
+dir
+
+search
+dir
+
+funHistory.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.826903Z
+6e0fad02af4825c199ba99513c9cb8f2
+2014-09-27T03:07:10.996613Z
+1472051
+lixb
+
+perfSubTest
+dir
+
+test.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.831134Z
+f441378c332d4956c11d7da025fe3ceb
+2014-09-27T03:07:10.996613Z
+1472051
+lixb
+
+FunFolderLabelQry.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.836339Z
+41dcbc6aa53e99527d7fa4681bd26869
+2014-11-07T11:42:40.179745Z
+1535015
+lixb
+
+subTaskAnalysis.jsp
+file
+
+
+
+
+2014-12-16T10:50:01.687359Z
+3047ff159ee5a31f966ec2fd8f2bcd07
+2014-12-16T06:26:00.994045Z
+1599027
+yinsx
+
+subTestTask
+dir
+
+subTaskFunPointDetail.jsp
+file
+
+
+
+
+2014-12-13T03:47:00.845508Z
+016feaf259faf8d390a9f96615c78c3c
+2014-11-12T12:52:23.616611Z
+1543361
+renzq
+

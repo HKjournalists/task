@@ -1,0 +1,3 @@
+interface_url=http://192.168.0.199/alm_hn_ext
+linkNo_url=http\://localhost\:8000/alm_hn
+OAJob_interval=1

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAttachType" mainattr="PARAM_TYPE">
+        <mapingenty type="query">select * from alm_sys_param where param_type = 'ATTACH_TYPE'</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="PARAM_TYPE" maxlength="128" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">PARAM_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARAM_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PARAM_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARAM_NO" maxlength="128" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">PARAM_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARAM_NAME" maxlength="128" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">PARAM_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARAM_DISC" maxlength="128" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">PARAM_DISC</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARAM_RELA_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PARAM_RELA_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARAM_VALUE" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PARAM_VALUE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SORT_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">SORT_ID</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

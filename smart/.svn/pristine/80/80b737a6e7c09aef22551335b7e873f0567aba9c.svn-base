@@ -1,0 +1,28 @@
+/**
+ * Created by renzq on 2014/12/1.
+ */
+Ext.define('SmartApp.store.MenuTreeStore', {
+    extend: 'Ext.data.TreeStore',
+
+    root: {
+        text: '主菜单',
+        expanded: true,
+        children: [
+
+            { text: "用户管理", expanded: true, children: [
+                { text: "用户管理", leaf: true, view_name: 'usermanageview'},
+                { text: "角色管理", leaf: true, view_name: 'rolemanageview'}
+            ] },
+            {text: "测试用例管理", leaf: false, expanded: true, children:[
+                 {text: "用例编辑", leaf: true, view_name: 'casemanageview'},
+                 {text: "操作管理", leaf: true, view_name: 'actionmanageview'},
+                 {text: "规则管理", leaf: true, view_name: 'rulemanageview'}
+             ]},
+             {text: "测试计划执行", leaf: false, expanded: true, children:[
+                      {text: "测试计划管理", leaf: true, view_name: 'batchview'},
+                      {text: "测试计划执行", leaf: true, view_name: 'batchexecview'}
+             ]}
+
+        ]
+    }
+});

@@ -1,0 +1,59 @@
+create sequence user$seq 
+minvalue 1 
+maxvalue 999999999999999999999999999 
+start with 1 
+increment by 1 
+nocache;
+
+create sequence role$seq 
+minvalue 1 
+maxvalue 999999999999999999999999999 
+start with 1 
+increment by 1 
+nocache;
+
+
+create table Role (
+        roleid number(19,0) not null,
+        memo varchar2(255),
+        name varchar2(255),
+        primary key (roleid)
+    );
+create table Role_SysUser (
+        Role_roleid number(19,0) not null,
+        users_userid number(19,0) not null,
+        primary key (Role_roleid, users_userid)
+    );
+create table SysUser (
+        userid number(19,0) not null,
+        department varchar2(255),
+        email varchar2(255),
+        manager varchar2(255),
+        mobile varchar2(255),
+        password varchar2(255),
+        realname varchar2(255),
+        username varchar2(255),
+        primary key (userid)
+    );
+create table r_user_role (
+        userid number(19,0) not null,
+        roleid number(19,0) not null,
+        primary key (userid, roleid)
+    );
+alter table Role_SysUser 
+        add constraint FK_lpnoe66a6bgdqslunv2rlayrq 
+        foreign key (users_userid) 
+        references SysUser;
+alter table Role_SysUser 
+        add constraint FK_1ad2bs042vy8h90yp7nbcoykp 
+        foreign key (Role_roleid) 
+        references Role;
+alter table r_user_role 
+        add constraint FK_iljv97wdhg3b7nf8jhhycdg4c 
+        foreign key (roleid) 
+        references Role;
+alter table r_user_role 
+        add constraint FK_axxnnhba897yuqdb44jwhuopb 
+        foreign key (userid) 
+        references SysUser;
+

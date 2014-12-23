@@ -1,0 +1,63 @@
+Ext.define('SmartApp.view.User.UserEdit', {  //注意定义名称 的形式
+    extend: 'Ext.window.Window',
+    alias: 'widget.usereditview',
+
+    initComponent: function() {
+        var me = this;
+
+        Ext.apply(this, {
+            title : '编辑',
+            layout: 'fit',
+            autoShow: true,
+            width: 400,
+            height: 260,
+            plain: true,
+            modal: true,
+            closable: true,
+            maximizable: true,
+            autoScroll: true,
+            items:[{
+                xtype: "form",
+                layout: 'anchor',
+                bodyPadding: 20,
+                defaults: {
+                    anchor: '95%'
+                },
+                defaultType: 'textfield',
+                items:[{
+                    fieldLabel: '用户名',
+                    name: 'username',
+                    allowBlank: false
+                },{
+                    fieldLabel: '真实姓名',
+                    name: 'realname',
+                    allowBlank: false
+                },{
+                    fieldLabel: '电子邮件',
+                    name: 'email'
+                },{
+                    fieldLabel: '手机号码',
+                    name: 'mobile'
+                },{
+                    fieldLabel: '所属部门',
+                    name: 'department'
+                },{
+                    fieldLabel: '上级经理',
+                    name: 'manager'
+                }]
+
+            }],
+            buttons:[{
+                        text: '保存',
+                        action: 'save'
+                    }, {
+                        text: '取消',
+                        scope: me,
+                        handler: me.close
+                    }]
+        });
+        me.callParent(arguments);
+    }
+
+
+});

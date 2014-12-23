@@ -1,0 +1,138 @@
+/** DBGridColResize.htc
+ 　
+ 　作者 ： 墙辉   2003/03/20
+
+   用途 ：在运行期动态确定表格列的宽度
+   
+   
+ 
+   如果在表格中定义列方法onColResize事件,则在列宽度发生改变时触发此事件,参数:columnIndex(改变的列号),incWidth(增长量)
+   IsCustomerColResizeFunc :改变列宽由客户自己完成(true)或由组件完成(false).
+ */
+<public:attach	 event=ondocumentready		onevent="init()" />
+<public:event    id = "onColResize"     name = "onColResize"  />
+<public:property name="IsCustomerColResizeFunc" id="IsCustomerColResizeFunc"  />
+<public:property name="IsRowResize" id="IsRowResize" />
+<script>
+<!--
+
+var g_Grid_Min_ColWidth = 10;
+var g_Grid_Min_RowHeight = 10;
+function init() {
+
+    element.startScreenX =-1;
+    element.startScreenY =-1;
+    element.endScreenX =-1;
+    element.endScreenY =-1;
+    
+    element.isBeginDrop = false;
+    element.attachEvent("onmousedown", MouseDown);
+    element.attachEvent("onmousemove",MouseMove);
+    
+    element.attachEvent("ondragstart", beginDrag);
+    element.attachEvent("ondragend",endDrag);
+    element.attachEvent("onresizeend",resizeEnd);
+
+    //根据当前的ID获取TABLEHEAD的DIV和datadiv
+    //id的格式为'HeadTable_' + id 
+    var element_id = element.id.substring(10);
+    var head_div = window.document.all("HeadDiv_" + element_id);
+    var data_div = window.document.all("TableDiv_" + element_id);
+    
+    //更新表格标题区域的滚动区域的长度
+	TableRowSet_setHeadDivWidth(head_div ,data_div);
+}  
+function resizeEnd(){
+  
+  element.width = element.style.width;
+  element.height = element.style.height;
+  for(var i= element.rows.length -1; i>=0;i--){
+    element.rows(i).height = element.rows(i).clientHeight;
+    for(var j = element.rows(i).cells.length -1;j>=0;j--)
+      element.rows(i).cells(j).width = element.rows(i).cells(j).clientWidth;
+  }
+  
+}
+function endDrag(){        
+        element.endScreenX =event.screenX;
+        element.endScreenY =event.screenY;
+}
+
+function beginDrag(){
+        element.startScreenX =event.screenX;
+        element.startScreenY =event.screenY;
+}
+
+function MouseMove(){
+        if (element.isContentEditable) return;
+        if(element.isBeginDrop) return;
+        var obj = window.event.srcElement;
+        if ((obj.tagName.toLowerCase() == "td"  || obj.tagName.toLowerCase() == "th") && Math.abs(event.offsetX - obj.clientWidth) <= 5)
+          obj.runtimeStyle.cursor='col-resize';
+        else if ((IsRowResize.value =="true"||IsRowResize.value ==true)&&(obj.tagName.toLowerCase() == "td"  || obj.tagName.toLowerCase() == "th") && Math.abs(event.offsetY - obj.clientHeight) <= 3)
+          obj.runtimeStyle.cursor='row-resize';        
+        else
+          obj.runtimeStyle.cursor='default';
+        
+    }
+function MouseDown(){
+        if (element.isContentEditable) return;
+        var obj = window.event.srcElement;
+        if ((obj.tagName.toLowerCase() == "td" || obj.tagName.toLowerCase() == "th")&&  Math.abs(event.offsetX - obj.clientWidth) <= 5)
+        {               
+          obj.runtimeStyle.cursor='col-resize';   
+          element.isBeginDrop = true;        
+          obj.dragDrop();
+          element.isBeginDrop = false;
+          var incWidth = endScreenX - startScreenX;
+          setColWidth(element,obj.cellIndex,incWidth);
+          obj.runtimeStyle.cursor='default';
+        }else if ((IsRowResize.value =="true"||IsRowResize.value ==true)&&(obj.tagName.toLowerCase() == "td"  || obj.tagName.toLowerCase() == "th") && Math.abs(event.offsetY - obj.clientHeight) <= 3){
+          obj.runtimeStyle.cursor='row-resize';   
+          element.isBeginDrop = true;        
+          obj.dragDrop();
+          element.isBeginDrop = false;
+          var incHeight = endScreenY - startScreenY;
+          setRowWidth(element,obj.parentNode,incHeight);
+          obj.runtimeStyle.cursor='default';
+        }        
+    }
+function setRowWidth(aTable,aRow,incHeight){
+
+  var newHeight = aRow.clientHeight + parseInt(incHeight);
+  if (newHeight < g_Grid_Min_RowHeight){
+     newHeight = g_Grid_Min_RowHeight;
+     incHeight = newHeight -  aRow.clientHeight;
+  }
+  aTable.height = aTable.clientHeight +  incHeight + 1;
+  aRow.height = newHeight;
+  aTable.style.height = aTable.height;
+  
+}
+
+function setColWidth(aTable,colIndex,incWidth){
+  
+  if ((IsCustomerColResizeFunc.value == "true") ||(IsCustomerColResizeFunc.value == true)){
+        var oEvent = createEventObject();
+        oEvent.columnIndex = colIndex;
+        oEvent.incWidth = incWidth;
+        onColResize.fire(oEvent);
+        return;
+  }
+  if (aTable.rows.length <=0) return;
+  
+  var newWidth = parseInt(aTable.rows(0).cells(colIndex).clientWidth) + parseInt(incWidth);
+  if (newWidth <g_Grid_Min_ColWidth){
+     newWidth = g_Grid_Min_ColWidth;
+     incWidth = newWidth - parseInt(aTable.rows(0).cells(colIndex).clientWidth);
+  }
+  aTable.style.width = parseInt(aTable.clientWidth) + incWidth + 1;
+  aTable.width = aTable.style.width;
+  
+  for(var i=0;i<aTable.rows.length;i++)
+   aTable.rows(i).cells(colIndex).width = newWidth;
+ 
+} 
+//
+-->
+</script>

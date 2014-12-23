@@ -1,0 +1,50 @@
+package com.lb.app.automation.model;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+@Entity
+@Table(name="auto_script")
+public class AutoScript {
+
+	
+	@Id
+	@GeneratedValue(generator = "prefixsequence_gen")  
+	@GenericGenerator(name = "prefixsequence_gen", strategy = "com.lb.app.common.id.PrefixIDSequence",   
+	     parameters = { @Parameter(name = "prefix", value = "SCR"),  
+			@Parameter(name = "sequence", value = "auto_script$seq")}) 
+	String scriptid;
+	String scriptname;
+	
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH},fetch = FetchType.LAZY)
+    @JoinColumn(name = "submoduleid")
+	AutoSubModule submodule;
+	public String getScriptid() {
+		return scriptid;
+	}
+	public void setScriptid(String scriptid) {
+		this.scriptid = scriptid;
+	}
+	public String getScriptname() {
+		return scriptname;
+	}
+	public void setScriptname(String scriptname) {
+		this.scriptname = scriptname;
+	}
+	public AutoSubModule getSubmodule() {
+		return submodule;
+	}
+	public void setSubmodule(AutoSubModule submodule) {
+		this.submodule = submodule;
+	}
+	
+}

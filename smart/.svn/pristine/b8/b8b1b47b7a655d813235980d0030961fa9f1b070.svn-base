@@ -1,0 +1,60 @@
+package com.lb.app.automation.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lb.app.automation.dao.IAutoModuleDao;
+import com.lb.app.automation.dao.IAutoSubModuleDao;
+import com.lb.app.automation.model.AutoModule;
+import com.lb.app.automation.model.AutoSubModule;
+
+@Service
+public class AutoSubModuleService {
+
+	final private static Log log = LogFactory.getLog(AutoSubModuleService.class);
+
+	@Autowired
+	IAutoSubModuleDao autoSubModuleDao;
+	
+	@Autowired
+	IAutoModuleDao autoModuleDao;
+	
+	public List<AutoSubModule> saveOrUpdate(List<AutoSubModule> submodules){
+		log.info("service: automodule save...");
+		for(AutoSubModule m: submodules){
+			autoSubModuleDao.saveOrUpdate(m);
+		}
+		return submodules;
+	}
+	
+	
+	public List<AutoSubModule> load(String moduleid){
+		return autoSubModuleDao.findbyCriteria(Restrictions.eq("moduleid", moduleid));
+	}
+	
+	public String createSubModule(String subModuleName, String module_id){
+		AutoSubModule submodule = new AutoSubModule();
+		submodule.setSubmodulename(subModuleName);
+		submodule.setModule(autoModuleDao.get(module_id));
+		autoSubModuleDao.saveOrUpdate(submodule);
+		return submodule.getSubmoduleid();
+	}
+	
+	public void deleteSubModule(String id){
+		AutoSubModule module = autoSubModuleDao.get(id);
+		autoSubModuleDao.delete(module);
+	}
+	
+	public void updateSubModule(String id, String name){
+		AutoSubModule module = autoSubModuleDao.get(id);
+		module.setSubmodulename(name);
+		autoSubModuleDao.update(module);
+	}
+}

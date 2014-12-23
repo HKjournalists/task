@@ -1,0 +1,9 @@
+
+== TODO List
+
+* ehcache hibernate.xml
+* oracle jdbc
+* back url web.xml
+* error page web.xml
+* mvc:interceptors spring-dispatcher.xml
+* openSessionInVieFilter web.xml

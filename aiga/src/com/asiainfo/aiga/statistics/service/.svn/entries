@@ -1,0 +1,43 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/statistics/service
+svn://20.26.11.20/products
+
+
+
+2014-11-05T06:10:13.571567Z
+1526870
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+IStatisticsSV.java
+file
+
+
+
+
+2014-12-13T03:48:04.274785Z
+d81b494eca72a988eb7b0e0bf35d6a75
+2014-11-05T06:10:13.571567Z
+1526870
+wenghy
+

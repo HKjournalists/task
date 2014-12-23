@@ -1,0 +1,43 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/testPlan/dao
+svn://20.26.11.20/products
+
+
+
+2014-10-25T02:17:36.290502Z
+1513785
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+IAigaTestPlanDAO.java
+file
+
+
+
+
+2014-12-13T03:48:03.446718Z
+f927b9168b14084cfb2c1ddab4d2ab36
+2014-10-10T08:46:40.193775Z
+1476712
+renzq
+

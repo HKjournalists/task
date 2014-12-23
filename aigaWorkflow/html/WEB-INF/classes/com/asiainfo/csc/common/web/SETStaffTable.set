@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETStaffTable" BOName="com.asiainfo.csc.common.bo.BOStaffTable" MainField="ROLE_CODE" Title="com.asiainfo.csc.common.bo.BOStaffTable" ActBOName="com.asiainfo.csc.common.bo.BOStaffTable" Package="com.asiainfo.csc.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BILL_ID</Name>
+        <BOAttrName>BILL_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BILL_ID</ID>
+        <Title>手机号码</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="50" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="BILL_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>EMPLOYEE_NAME</Name>
+        <BOAttrName>EMPLOYEE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EMPLOYEE_NAME</ID>
+        <Title>员工姓名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="EMPLOYEE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>ORGANIZE_ID</Name>
+        <BOAttrName>ORGANIZE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_ID</ID>
+        <Title>组织ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="22" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="ORGANIZE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>ORGANIZE_NAME</Name>
+        <BOAttrName>ORGANIZE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORGANIZE_NAME</ID>
+        <Title>组织名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="ORGANIZE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>ORG_CODE</Name>
+        <BOAttrName>ORG_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORG_CODE</ID>
+        <Title>组织编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="100" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="ORG_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>PARENT_ORGANIZE_ID</Name>
+        <BOAttrName>PARENT_ORGANIZE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARENT_ORGANIZE_ID</ID>
+        <Title>父组织ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="22" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="PARENT_ORGANIZE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>ROLE_CODE</Name>
+        <BOAttrName>ROLE_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_CODE</ID>
+        <Title>员工角色</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="ROLE_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>STAFF_CODE</Name>
+        <BOAttrName>STAFF_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_CODE</ID>
+        <Title>用户名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="STAFF_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>STAFF_ID</Name>
+        <BOAttrName>STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STAFF_ID</ID>
+        <Title>员工ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="22" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOStaffTable" Attr="STAFF_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

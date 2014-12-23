@@ -1,0 +1,12 @@
+文件夹路径配置:
+lucene索引文件文件夹配置   lucene.base.properties 文件  name为 index.path
+excel模版excel.properties 文件 name为 excel.exportPath
+需求测试报告模版的路径和excel模版的路径相同
+
+
+文件位置:
+/aiga/html/excelTemplate/userCaseCollectionTemplate.xlsx   用例库导出模版
+/aiga/html/excelTemplate/testTaskTemplate.xls  用例库导入模版
+/aiga/html/excelTemplate/funFolder.xls 功能点导入模版
+/aiga/html/excelTemplate/new_model.xml 需求测试报告模版
+/aiga/html/excelTemplate/testElemTemplate.xls 公共要素导入模版

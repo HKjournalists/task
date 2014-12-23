@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAigaTestSubTask" mainattr="SUB_TASK_ID">
+        <mapingenty type="table">AIGA_TEST_SUB_TASK</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="SUB_TASK_ID" maxlength="20" datatype="Long" type="PK" remark="主键ID">
+                <mapingcol datatype="NUMBER">SUB_TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_TASK_TAG" maxlength="255" datatype="String" type="COL" remark="测试子任务编号">
+                <mapingcol datatype="VARCHAR2">SUB_TASK_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_TAG" maxlength="255" datatype="String" type="COL" remark="关联测试任务编号">
+                <mapingcol datatype="VARCHAR2">TASK_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_TASK_NAME" maxlength="255" datatype="String" type="COL" remark="测试子任务名称">
+                <mapingcol datatype="VARCHAR2">SUB_TASK_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REQ_TAG" maxlength="255" datatype="String" type="COL" remark="关联需求编号">
+                <mapingcol datatype="VARCHAR2">REQ_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATOR" maxlength="255" datatype="String" type="COL" remark="子任务派发人ID">
+                <mapingcol datatype="VARCHAR2">CREATOR</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_TASK_STATUS" maxlength="4" datatype="Long" type="COL" remark="子任务状态">
+                <mapingcol datatype="NUMBER">SUB_TASK_STATUS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_TIME" maxlength="20" datatype="DateTime" type="COL" remark="子任务创建时间">
+                <mapingcol datatype="DATE">CREATE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PL_COMPLETE_TIME" maxlength="20" datatype="DateTime" type="COL" remark="计划上线时间">
+                <mapingcol datatype="DATE">PL_COMPLETE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FACT_COMPLETE_TIME" maxlength="20" datatype="DateTime" type="COL" remark="实际完成时间">
+                <mapingcol datatype="DATE">FACT_COMPLETE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_TASK_PRIORITY" maxlength="4" datatype="Long" type="COL" remark="子任务优先级">
+                <mapingcol datatype="NUMBER">SUB_TASK_PRIORITY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="DEV_WORK_DAY" maxlength="255" datatype="String" type="COL" remark="开发任务工时">
+                <mapingcol datatype="VARCHAR2">DEV_WORK_DAY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEST_WORK_DAY" maxlength="255" datatype="String" type="COL" remark="测试任务工时">
+                <mapingcol datatype="VARCHAR2">TEST_WORK_DAY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="POSSIBLE_PRODUCT" maxlength="4" datatype="Long" type="COL" remark="生产环境可测性">
+                <mapingcol datatype="NUMBER">POSSIBLE_PRODUCT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="POSSIBLE_BACK" maxlength="4" datatype="Long" type="COL" remark="准发布环境可测性">
+                <mapingcol datatype="NUMBER">POSSIBLE_BACK</mapingcol>
+            </attr>
+            <attr floatlength="0" name="POSSIBLE_TEST" maxlength="4" datatype="Long" type="COL" remark="测试环境可测性">
+                <mapingcol datatype="NUMBER">POSSIBLE_TEST</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_PERFORMANCE" maxlength="4" datatype="Long" type="COL" remark="是否性能测试">
+                <mapingcol datatype="NUMBER">IS_PERFORMANCE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TASK_ID" maxlength="20" datatype="Long" type="COL" remark="关联测试任务编号">
+                <mapingcol datatype="NUMBER">TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_TASK_TYPE" maxlength="2" datatype="Long" type="COL" remark="子任务类型（正常子任务、端到端任务）">
+                <mapingcol datatype="NUMBER">SUB_TASK_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATOR_STAFF" maxlength="255" datatype="String" type="COL" remark="子任务派发人名称">
+                <mapingcol datatype="VARCHAR2">CREATOR_STAFF</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CUR_PHASE" maxlength="4" datatype="Long" type="COL" remark="当前阶段">
+                <mapingcol datatype="NUMBER">CUR_PHASE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TESTOR_ID" maxlength="20" datatype="Long" type="COL" remark="测试人ID">
+                <mapingcol datatype="NUMBER">TESTOR_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TESTOR_NAME" maxlength="255" datatype="String" type="COL" remark="测试人名称">
+                <mapingcol datatype="VARCHAR2">TESTOR_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="POSSIBLE_PRODUCT_REASON" maxlength="2048" datatype="String" type="COL" remark="生产环境不可测原因">
+                <mapingcol datatype="VARCHAR2">POSSIBLE_PRODUCT_REASON</mapingcol>
+            </attr>
+            <attr floatlength="0" name="POSSIBLE_BACK_REASON" maxlength="2048" datatype="String" type="COL" remark="准发布不可测原因">
+                <mapingcol datatype="VARCHAR2">POSSIBLE_BACK_REASON</mapingcol>
+            </attr>
+            <attr floatlength="0" name="POSSIBLE_TEST_REASON" maxlength="2048" datatype="String" type="COL" remark="测试环境不可测原因">
+                <mapingcol datatype="VARCHAR2">POSSIBLE_TEST_REASON</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_JOINT_DEBUG" maxlength="4" datatype="Long" type="COL" remark="是否联调">
+                <mapingcol datatype="NUMBER">IS_JOINT_DEBUG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="JOINT_ENVIRONMENT" maxlength="4" datatype="Long" type="COL" remark="联调环境（外围平台/集团联调/系统内部）">
+                <mapingcol datatype="NUMBER">JOINT_ENVIRONMENT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_STAFF_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">SUBMIT_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_STAFF_NAME" maxlength="255" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMIT_STAFF_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BIG_TYPE" maxlength="4" datatype="Long" type="COL" remark="系统大类">
+                <mapingcol datatype="NUMBER">BIG_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_TYPE" maxlength="4" datatype="Long" type="COL" remark="系统子类">
+                <mapingcol datatype="NUMBER">SUB_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="USABLE" maxlength="4" datatype="Long" type="COL" remark="是否可用">
+                <mapingcol datatype="NUMBER">USABLE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUB_TASK_CLASS" maxlength="4" datatype="Long" type="COL" remark="子任务分类">
+                <mapingcol datatype="NUMBER">SUB_TASK_CLASS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="JOIN_DEBUG_VALS" maxlength="512" datatype="String" type="COL" remark="联调系统值">
+                <mapingcol datatype="VARCHAR2">JOIN_DEBUG_VALS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="JOIN_TYPE" maxlength="4" datatype="Long" type="COL" remark="联调类型">
+                <mapingcol datatype="NUMBER">JOIN_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REVIEW_RESULT" maxlength="1" datatype="Long" type="COL" remark="审批结果（0未审批;1通过;2不通过）">
+                <mapingcol datatype="NUMBER">REVIEW_RESULT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OPER_ID" maxlength="12" datatype="Long" type="COL" remark="评审人id">
+                <mapingcol datatype="NUMBER">OPER_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OPER_NAME" maxlength="32" datatype="String" type="COL" remark="评审人姓名">
+                <mapingcol datatype="VARCHAR2">OPER_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REVIEW_TIME" maxlength="20" datatype="DateTime" type="COL" remark="评审时间">
+                <mapingcol datatype="DATE">REVIEW_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="JOIN_DEBUG_VALS_OTHER" maxlength="512" datatype="String" type="COL" remark="联调系统值补充">
+                <mapingcol datatype="VARCHAR2">JOIN_DEBUG_VALS_OTHER</mapingcol>
+            </attr>
+            <attr floatlength="0" name="AUDIT_RATE" maxlength="512" datatype="String" type="COL" remark="数据稽核准确率">
+                <mapingcol datatype="VARCHAR2">AUDIT_RATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SCRIPT_FUN_RATE" maxlength="512" datatype="String" type="COL" remark="脚本功能测试通过率">
+                <mapingcol datatype="VARCHAR2">SCRIPT_FUN_RATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SCRIPT_PER_RATE" maxlength="512" datatype="String" type="COL" remark="脚本性能测试通过率">
+                <mapingcol datatype="VARCHAR2">SCRIPT_PER_RATE</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

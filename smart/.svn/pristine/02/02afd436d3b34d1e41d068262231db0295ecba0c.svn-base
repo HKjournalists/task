@@ -1,0 +1,37 @@
+package com.lb.app.privilege.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethod;
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethodType;
+
+import com.lb.app.privilege.dao.IUserDao;
+import com.lb.app.privilege.model.SysUser;
+
+
+@Service
+public class UserService {
+	
+	
+	@Autowired
+	IUserDao userDao;
+	
+	public List<SysUser> load() {
+		return userDao.queryAll();
+	}
+	
+	  public List<SysUser> createOrUpdate(List<SysUser> newOrUpdatedPersons) {
+	    List<SysUser> result = newOrUpdatedPersons;//Lists.newArrayList();
+
+	    for (SysUser person : newOrUpdatedPersons) {
+	      //for example insert/update person into database
+	      //set the id attribute if it's an insert and add it to the result collection
+	      result.add(person);
+	    }
+
+	    return result;
+	  }
+}

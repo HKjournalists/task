@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GB2312"?>
+<module id="">
+  <service id="com.asiainfo.csc.matrix.dao.AlmScheduleDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmScheduleDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmScheduleDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmStakeholderDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmStakeholderDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmStakeholderDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmTopoViewDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmTopoViewDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmTopoViewDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmWorkflowCaseDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmWorkflowCaseDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmWorkflowCaseDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmWorkflowDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmWorkflowDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmWorkflowDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmWorkorderDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmWorkorderDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmWorkorderDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmSubReqDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmSubReqDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmSubReqDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmWorkflowDrivingDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmWorkflowDrivingDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmWorkflowDrivingDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmWorkflowTemplateDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmWorkflowTemplateDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmWorkflowTemplateDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmHisStakeholderDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmHisStakeholderDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmHisStakeholderDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmHisWorkflowCaseDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmHisWorkflowCaseDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmHisWorkflowCaseDaoImpl"></impl-define>
+  </service>
+  
+  <service id="com.asiainfo.csc.matrix.dao.AlmHisWorkorderDao" interface="com.asiainfo.csc.matrix.dao.interfaces.IAlmHisWorkorderDao">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.dao.impl.AlmHisWorkorderDaoImpl"></impl-define>
+  </service>
+ 
+</module>

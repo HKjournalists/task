@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOStaffTable" mainattr="ROLE_CODE">
+        <mapingenty type="query">select distinct a.code role_code, e.organize_id, e.organize_name, e.code org_code, d.employee_name, c.code staff_code, c.staff_id, e.parent_organize_id, d.bill_id from sys_role a, sys_staff_role_author b, sys_staff c, sys_employee d, sys_organize e ,sys_staff_org_relat f where a.role_id = b.role_id and a.state = 1 and b.state = 1 and b.staff_id = c.staff_id and c.state = 1 and c.employee_id = d.employee_id and d.state = 1 and e.organize_id=f.organize_id and f.state=1 and f.staff_id=c.staff_id and e.state = 1</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ROLE_CODE" maxlength="40" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ROLE_CODE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ORGANIZE_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">ORGANIZE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ORGANIZE_NAME" maxlength="200" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ORGANIZE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ORG_CODE" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ORG_CODE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="EMPLOYEE_NAME" maxlength="200" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">EMPLOYEE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STAFF_CODE" maxlength="20" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">STAFF_CODE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STAFF_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PARENT_ORGANIZE_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PARENT_ORGANIZE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BILL_ID" maxlength="50" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">BILL_ID</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

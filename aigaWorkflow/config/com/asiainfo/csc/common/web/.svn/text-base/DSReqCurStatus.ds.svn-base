@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSReqCurStatus</Name>
+    <Package>com.asiainfo.csc.common.web</Package>
+    <DataSet SetType="SQLDATA">
+        <ValueAttr>link_id</ValueAttr>
+        <TextAttr>vm_task_name</TextAttr>
+        <SqlString>select distinct link_id,vm_task_name from alm_workFLOW where template_id=10000 order by linK_id</SqlString>
+        <DataSource>UserDataSource</DataSource>
+    </DataSet>
+</UIDataSrc>

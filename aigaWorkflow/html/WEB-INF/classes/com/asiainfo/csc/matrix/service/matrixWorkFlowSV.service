@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GB2312"?>
+<module id="">
+  <service id="com.asiainfo.csc.matrix.service.AlmStakeholderSV" interface="com.asiainfo.csc.matrix.service.interfaces.IAlmStakeholderSV">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.matrix.service.impl.AlmStakeholderSVImpl"></impl-define>
+  </service>
+ 
+</module>

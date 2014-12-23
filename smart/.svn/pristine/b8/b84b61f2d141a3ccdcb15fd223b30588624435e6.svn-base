@@ -1,0 +1,105 @@
+package com.lb.app.automation.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethod;
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethodType;
+
+import com.lb.app.automation.dao.IAutoModuleDao;
+import com.lb.app.automation.dao.IAutoSubModuleDao;
+import com.lb.app.automation.dao.impl.AutoSubModuleDao;
+import com.lb.app.automation.model.AutoModule;
+import com.lb.app.automation.model.AutoSubModule;
+import com.lb.app.common.tree.Node;
+
+@Service
+public class AutoModuleService {
+
+	final private static Log log = LogFactory.getLog(AutoModuleService.class);
+
+	@Autowired
+	IAutoModuleDao autoModuleDao;
+	
+	@Autowired
+	IAutoSubModuleDao autoSubModuleDao;
+	
+	public List<AutoModule> saveOrUpdate(List<AutoModule> modules){
+		log.info("service: automodule save...");
+		for(AutoModule m: modules){
+			autoModuleDao.saveOrUpdate(m);
+		}
+		return modules;
+	}
+	
+	public List<AutoModule> load(){
+		return autoModuleDao.queryAll();
+	}
+	
+	public List<Node> getTree(String id, String type) {
+
+		List<Node> result = new ArrayList<Node>();
+		List<AutoModule> modules = autoModuleDao.queryAll();
+		for (AutoModule m : modules) {
+			Node n = new Node();
+			n.id = m.getModuleid();
+			n.leaf = m.getSubmodules().size() <= 0;
+			n.text = m.getModulename();
+			if(!n.leaf){
+				List<Node> list_sm = new ArrayList<Node>();
+				for(AutoSubModule sm : m.getSubmodules()){
+					Node sn = new Node();
+					sn.id = sm.getSubmoduleid();
+					sn.leaf = true;
+					sn.text = sm.getSubmodulename();
+					list_sm.add(sn);
+				}
+				n.children = list_sm.toArray(new Node[list_sm.size()]);
+			}
+
+			result.add(n);
+		 }
+		
+	    
+	    return result;
+	  }
+		
+	public String createModule(String name) {
+		AutoModule module = new AutoModule();
+		module.setModulename(name);
+		autoModuleDao.saveOrUpdate(module);
+		return module.getModuleid();
+	}
+	
+	public void deleteModule(String id){
+		
+		AutoModule module = autoModuleDao.get(id);
+		//List<AutoSubModule> submodules = autoSubModuleDao.findbyCriteria(Restrictions.eq("module", module));
+		//for(AutoSubModule submodule : submodules)
+		//	autoSubModuleDao.delete(submodule);
+		autoModuleDao.delete(module);
+	}
+	
+	public void updateModule(String id, String name){
+		AutoModule module = autoModuleDao.get(id);
+		module.setModulename(name);
+		autoModuleDao.update(module);
+	}
+	
+	public void deleteModuleByName(String name){
+		List<AutoModule> modules = autoModuleDao.findbyCriteria(Restrictions.eq("modulename", name));
+		for(AutoModule module:modules){
+			autoModuleDao.delete(module);
+		}
+	}
+}

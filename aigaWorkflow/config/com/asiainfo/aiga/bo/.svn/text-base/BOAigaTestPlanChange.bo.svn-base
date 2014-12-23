@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAigaTestPlanChange" mainattr="AC_ID">
+        <mapingenty type="table">AIGA_TESTLAN_CHANGE</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="AC_ID" maxlength="12" datatype="Long" type="PK">
+                <mapingcol datatype="NUMBER">AC_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_TIME" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">CREATE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_STAFF_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">CHANGE_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_STAFF_NAME" maxlength="255" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CHANGE_STAFF_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_PLAN_ID" maxlength="12" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">CHANGE_PLAN_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_PLAN_TAG" maxlength="20" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CHANGE_PLAN_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_REASON" maxlength="4000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CHANGE_REASON</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CODECOMMITDATE_O" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">CODECOMMITDATE_O</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CODECOMMITDATE_N" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">CODECOMMITDATE_N</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FACTCOMPLETETIME_O" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">FACTCOMPLETETIME_O</mapingcol>
+            </attr>
+            <attr floatlength="0" name="FACTCOMPLETETIME_N" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">FACTCOMPLETETIME_N</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REQTIME_O" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">REQTIME_O</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REQTIME_N" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">REQTIME_N</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VERSION_CONTENT_O" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">VERSION_CONTENT_O</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VERSION_CONTENT_N" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">VERSION_CONTENT_N</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

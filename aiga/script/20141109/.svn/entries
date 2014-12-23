@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/script/20141109
+svn://20.26.11.20/products
+
+
+
+2014-11-09T07:55:55.398228Z
+1537996
+yeteng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+alter_aiga_fun_folder.sql
+file
+
+
+
+
+2014-12-13T03:47:25.547347Z
+860b3087b88e2b526066707d7fc8a131
+2014-11-09T07:49:46.919903Z
+1537993
+renzq
+
+updateWF.sql
+file
+
+
+
+
+2014-12-13T03:47:25.550605Z
+6d0539e5c25ca7c29e2f218cad835750
+2014-11-09T07:55:55.398228Z
+1537996
+yeteng
+

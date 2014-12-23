@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETDocTemplate" BOName="com.asiainfo.csc.attach.bo.BODocTemplate" MainField="DOC_TEMP_ID" Title="com.asiainfo.csc.attach.bo.BODocTemplate" ActBOName="com.asiainfo.csc.attach.bo.BODocTemplate" Package="com.asiainfo.csc.attach.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>DOC_TEMP_ID</Name>
+        <BOAttrName>DOC_TEMP_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DOC_TEMP_ID</ID>
+        <Title>文档模型ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="DOC_TEMP_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>DOC_TEMP_NAME</Name>
+        <BOAttrName>DOC_TEMP_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DOC_TEMP_NAME</ID>
+        <Title>文档模型名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="DOC_TEMP_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>DOC_TYPE</Name>
+        <BOAttrName>DOC_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>DOC_TYPE</ID>
+        <Title>文档类型(=附件类型)</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="DOC_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>FILE_TYPE</Name>
+        <BOAttrName>FILE_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FILE_TYPE</ID>
+        <Title>文件类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="FILE_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>ROLE_DOWNLOAD</Name>
+        <BOAttrName>ROLE_DOWNLOAD</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_DOWNLOAD</ID>
+        <Title>下载角色</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="512" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="ROLE_DOWNLOAD" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>ROLE_DOWNLOAD_NAME</Name>
+        <BOAttrName>ROLE_DOWNLOAD_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_DOWNLOAD_NAME</ID>
+        <Title>下载角色名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1024" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="ROLE_DOWNLOAD_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>ROLE_MODIFY</Name>
+        <BOAttrName>ROLE_MODIFY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_MODIFY</ID>
+        <Title>修改角色</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="512" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="ROLE_MODIFY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>ROLE_MODIFY_NAME</Name>
+        <BOAttrName>ROLE_MODIFY_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_MODIFY_NAME</ID>
+        <Title>修改角色名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1024" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="ROLE_MODIFY_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>ROLE_READ</Name>
+        <BOAttrName>ROLE_READ</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_READ</ID>
+        <Title>阅读角色</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="512" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="ROLE_READ" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>ROLE_READ_NAME</Name>
+        <BOAttrName>ROLE_READ_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_READ_NAME</ID>
+        <Title>阅读角色名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1024" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="ROLE_READ_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>TEMP_CREATER</Name>
+        <BOAttrName>TEMP_CREATER</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_CREATER</ID>
+        <Title>模板创建人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_CREATER" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>TEMP_CREATE_TIME</Name>
+        <BOAttrName>TEMP_CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_CREATE_TIME</ID>
+        <Title>模板创建时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>TEMP_DESC</Name>
+        <BOAttrName>TEMP_DESC</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_DESC</ID>
+        <Title>模板描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_DESC" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>TEMP_FTP_NAME</Name>
+        <BOAttrName>TEMP_FTP_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_FTP_NAME</ID>
+        <Title>FTP文档模板文件名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_FTP_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>TEMP_ORG_ID</Name>
+        <BOAttrName>TEMP_ORG_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_ORG_ID</ID>
+        <Title>归属部门ID(sys_organize org_id)</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_ORG_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>TEMP_PATH</Name>
+        <BOAttrName>TEMP_PATH</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_PATH</ID>
+        <Title>模板路径</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_PATH" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>TEMP_REVISER</Name>
+        <BOAttrName>TEMP_REVISER</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_REVISER</ID>
+        <Title>模板修订人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_REVISER" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="17" IsEnabled="Y">
+        <Name>TEMP_REVISE_TIME</Name>
+        <BOAttrName>TEMP_REVISE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_REVISE_TIME</ID>
+        <Title>模板修订时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_REVISE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="18" IsEnabled="Y">
+        <Name>TEMP_SORT</Name>
+        <BOAttrName>TEMP_SORT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_SORT</ID>
+        <Title>模板分类(支持多级分类)</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_SORT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="19" IsEnabled="Y">
+        <Name>TEMP_VERSION_NO</Name>
+        <BOAttrName>TEMP_VERSION_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMP_VERSION_NO</ID>
+        <Title>模板版本编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.attach.bo.BODocTemplate" Attr="TEMP_VERSION_NO" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

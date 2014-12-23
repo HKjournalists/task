@@ -1,0 +1,54 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/html/csc/attach/swfupload
+svn://20.26.11.20/products
+
+
+
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+swfupload.swf
+file
+
+
+
+
+2014-12-13T04:18:02.803642Z
+4c2fc69dc91c885837ce55d03493a5f5
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+has-props
+
+swfupload_backup.swf
+file
+
+
+
+
+2014-12-13T04:18:02.803642Z
+3a1c6cc728dddc258091a601f28a9c12
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+has-props
+

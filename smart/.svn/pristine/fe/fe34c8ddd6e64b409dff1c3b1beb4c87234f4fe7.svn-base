@@ -1,0 +1,55 @@
+
+
+--sequence
+create sequence AUTO_MODULE$SEQ 
+minvalue 1 
+maxvalue 999999999999999999999999999 
+start with 1 
+increment by 1 
+nocache;
+
+create sequence AUTO_SUBMODULE$SEQ 
+minvalue 1 
+maxvalue 999999999999999999999999999 
+start with 1 
+increment by 1 
+nocache;
+
+
+--table
+create table AUTO_MODULE
+(
+  moduleid   VARCHAR2(20) not null,
+  modulename VARCHAR2(20) not null
+);
+alter table AUTO_MODULE
+  add constraint PK_MODULE primary key (MODULEID)
+  using index;
+  
+alter table AUTO_MODULE
+  add constraint UK_MODULE unique (MODULENAME)
+  using index; 
+  
+  
+  
+create table AUTO_SUBMODULE
+(
+  submoduleid   VARCHAR2(20) not null,
+  moduleid      VARCHAR2(20) not null,
+  submodulename VARCHAR2(20)
+);
+
+
+alter table AUTO_SUBMODULE
+  add constraint PK_SUBMODULE primary key (SUBMODULEID)
+  using index;
+  
+alter table AUTO_SUBMODULE
+  add constraint UK_SUBMODULE unique (SUBMODULENAME)
+  using index;
+  
+alter table AUTO_SUBMODULE
+  add constraint FK_SUBMODULEID foreign key (MODULEID)
+  references AUTO_MODULE (MODULEID) on delete set null;
+  
+  

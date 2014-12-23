@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="com.asiainfo.aiga.common.security.user.bo">
+
+	<class name="AigaMenu" table="aiga_menu" catalog="aiga">
+		<id name="menuId" column="menu_id"  type="java.lang.Long">
+			<generator class="sequence">
+				<param name="sequence">AIGA_MENU$SEQ</param>
+			</generator>
+		</id>
+		<property name="parentId" column="parent_id" type="java.lang.Long"></property>
+		<property name="sort" column="sort" type="java.lang.Long"></property>
+		<property name="leaf" column="leaf" type="java.lang.String"></property>
+		<property name="type" column="type" type="java.lang.String"></property>
+		<property name="component" column="component" type="java.lang.String"></property>
+		<property name="menuText" column="menu_text" type="java.lang.String"></property>
+		<property name="discription" column="discription" type="java.lang.String"></property>
+		<property name="iconCls" column="icon_cls" type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>

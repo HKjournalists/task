@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETAlmWorkflow" BOName="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" MainField="WF_ITEM_ID" Title="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" ActBOName="com.asiainfo.csc.common.bo.BOWorkflow" Package="com.asiainfo.csc.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>BACK_COND</Name>
+        <BOAttrName>BACK_COND</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BACK_COND</ID>
+        <Title>回退条件</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="BACK_COND" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>BACK_LINK_NO</Name>
+        <BOAttrName>BACK_LINK_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>BACK_LINK_NO</ID>
+        <Title>回退至环节编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="BACK_LINK_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CONNECT_POINT</Name>
+        <BOAttrName>CONNECT_POINT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONNECT_POINT</ID>
+        <Title>关联节点</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="CONNECT_POINT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CREATE_STAFF_ID</Name>
+        <BOAttrName>CREATE_STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_STAFF_ID</ID>
+        <Title>创建人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="CREATE_STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>CREATE_TIME</Name>
+        <BOAttrName>CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_TIME</ID>
+        <Title>流程模版创建时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>END_TIME</Name>
+        <BOAttrName>END_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>END_TIME</ID>
+        <Title>该流程终止时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="END_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>HTML_TAG_DESC</Name>
+        <BOAttrName>HTML_TAG_DESC</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HTML_TAG_DESC</ID>
+        <Title>页面选择干系人控件描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="HTML_TAG_DESC" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>HTML_TAG_NAME</Name>
+        <BOAttrName>HTML_TAG_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>HTML_TAG_NAME</ID>
+        <Title>页面选择干系人控件名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="HTML_TAG_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>INIT_LINK_ID</Name>
+        <BOAttrName>INIT_LINK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INIT_LINK_ID</ID>
+        <Title>初始化干系人来源于指定的LINK_ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="INIT_LINK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>INIT_LINK_NO</Name>
+        <BOAttrName>INIT_LINK_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>INIT_LINK_NO</ID>
+        <Title>初始化干系人来源于指定的LINK_NO</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="INIT_LINK_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>IS_BACK</Name>
+        <BOAttrName>IS_BACK</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_BACK</ID>
+        <Title>是否可以回退到上个环节</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_BACK" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>IS_COMPANY</Name>
+        <BOAttrName>IS_COMPANY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_COMPANY</ID>
+        <Title>人员选择控件是否限制同一公司</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_COMPANY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>IS_DEPART</Name>
+        <BOAttrName>IS_DEPART</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_DEPART</ID>
+        <Title>人员选择控件是否限制同一部门</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_DEPART" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>IS_DISCUSS</Name>
+        <BOAttrName>IS_DISCUSS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_DISCUSS</ID>
+        <Title>是否讨论</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_DISCUSS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>IS_DISPLAY</Name>
+        <BOAttrName>IS_DISPLAY</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_DISPLAY</ID>
+        <Title>工单是否显示</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_DISPLAY" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>IS_GROUP</Name>
+        <BOAttrName>IS_GROUP</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_GROUP</ID>
+        <Title>人员选择控件是否限制同一工作组</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_GROUP" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>IS_NOTICE</Name>
+        <BOAttrName>IS_NOTICE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_NOTICE</ID>
+        <Title>是否通知</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_NOTICE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="17" IsEnabled="Y">
+        <Name>IS_PRINT</Name>
+        <BOAttrName>IS_PRINT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_PRINT</ID>
+        <Title>是否需要打单</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_PRINT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="18" IsEnabled="Y">
+        <Name>IS_REAUTHORIZE</Name>
+        <BOAttrName>IS_REAUTHORIZE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_REAUTHORIZE</ID>
+        <Title>是否可以转派</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_REAUTHORIZE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="19" IsEnabled="Y">
+        <Name>IS_ROLE</Name>
+        <BOAttrName>IS_ROLE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_ROLE</ID>
+        <Title>是否使用A-B角分派工单</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_ROLE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="20" IsEnabled="Y">
+        <Name>IS_TERMINATE</Name>
+        <BOAttrName>IS_TERMINATE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>IS_TERMINATE</ID>
+        <Title>流程是否可在此环节终止</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="IS_TERMINATE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="21" IsEnabled="Y">
+        <Name>LINK_ID</Name>
+        <BOAttrName>LINK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_ID</ID>
+        <Title>环节ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="LINK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="22" IsEnabled="Y">
+        <Name>LINK_NO</Name>
+        <BOAttrName>LINK_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_NO</ID>
+        <Title>环节编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="LINK_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>LINK_NO_TYPE</Name>
+        <BOAttrName>LINK_NO_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_NO_TYPE</ID>
+        <Title>环节类型 start\end\user\sign\auto</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="LINK_NO_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="24" IsEnabled="Y">
+        <Name>LINK_URL</Name>
+        <BOAttrName>LINK_URL</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_URL</ID>
+        <Title>页面链接</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="LINK_URL" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="25" IsEnabled="Y">
+        <Name>NEED_INIT_STAFF</Name>
+        <BOAttrName>NEED_INIT_STAFF</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NEED_INIT_STAFF</ID>
+        <Title>是否需要初始化干系人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="NEED_INIT_STAFF" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="26" IsEnabled="Y">
+        <Name>NEXT_LINK_COND_TREE</Name>
+        <BOAttrName>NEXT_LINK_COND_TREE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>NEXT_LINK_COND_TREE</ID>
+        <Title>下个环节可选条件树根节点 ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="NEXT_LINK_COND_TREE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="27" IsEnabled="Y">
+        <Name>PHASE_ID</Name>
+        <BOAttrName>PHASE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PHASE_ID</ID>
+        <Title>阶段编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="PHASE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="28" IsEnabled="Y">
+        <Name>PHASE_NAME</Name>
+        <BOAttrName>PHASE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PHASE_NAME</ID>
+        <Title>阶段名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="PHASE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="29" IsEnabled="Y">
+        <Name>ROLE_CODE</Name>
+        <BOAttrName>ROLE_CODE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ROLE_CODE</ID>
+        <Title>权限ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="40" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="ROLE_CODE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="30" IsEnabled="Y">
+        <Name>START_TIME</Name>
+        <BOAttrName>START_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>START_TIME</ID>
+        <Title>该流程启用时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="START_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="31" IsEnabled="Y">
+        <Name>TEMPLATE_ID</Name>
+        <BOAttrName>TEMPLATE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMPLATE_ID</ID>
+        <Title>来源于 vm_template</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="TEMPLATE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="32" IsEnabled="Y">
+        <Name>TEMPLATE_NAME</Name>
+        <BOAttrName>TEMPLATE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMPLATE_NAME</ID>
+        <Title>模版名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="TEMPLATE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="33" IsEnabled="Y">
+        <Name>TEMPLATE_TYPE</Name>
+        <BOAttrName>TEMPLATE_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMPLATE_TYPE</ID>
+        <Title>模版类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="2" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="TEMPLATE_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="34" IsEnabled="Y">
+        <Name>VALID_TAG</Name>
+        <BOAttrName>VALID_TAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>VALID_TAG</ID>
+        <Title>1 有效 2 无效 3 其他</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1" Decimal="0">Integer</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="VALID_TAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="35" IsEnabled="Y">
+        <Name>VERSION</Name>
+        <BOAttrName>VERSION</BOAttrName>
+        <BODisplayAttrName />
+        <ID>VERSION</ID>
+        <Title>版本号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="VERSION" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="36" IsEnabled="Y">
+        <Name>VM_LINK_ID</Name>
+        <BOAttrName>VM_LINK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>VM_LINK_ID</ID>
+        <Title>任务ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="VM_LINK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="37" IsEnabled="Y">
+        <Name>VM_TASK_NAME</Name>
+        <BOAttrName>VM_TASK_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>VM_TASK_NAME</ID>
+        <Title>任务名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="VM_TASK_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="38" IsEnabled="Y">
+        <Name>VM_TASK_NO</Name>
+        <BOAttrName>VM_TASK_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>VM_TASK_NO</ID>
+        <Title>任务编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="VM_TASK_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="39" IsEnabled="Y">
+        <Name>WF_ITEM_ID</Name>
+        <BOAttrName>WF_ITEM_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>WF_ITEM_ID</ID>
+        <Title>模版项ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>Y</IsNull>
+        <IsPk>Y</IsPk>
+        <ActBO Name="com.asiainfo.csc.matrix.bo.BOAlmWorkflow" Attr="WF_ITEM_ID" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

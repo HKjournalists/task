@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/script/20141113
+svn://20.26.11.20/products
+
+
+
+2014-11-13T17:32:10.146606Z
+1544797
+lixb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+pdb_aiga_UPDATE_20141113_任志强_增加aiga_r_elem_sec字段.sql
+file
+
+
+
+
+2014-12-13T03:47:24.464295Z
+923fda031f9eb2e535cc606ec33770f4
+2014-11-13T17:32:10.146606Z
+1544797
+lixb
+
+add SYS_ID_GENERATE.sql
+file
+
+
+
+
+2014-12-13T03:47:24.467297Z
+2b3daee8146c38b134d5cd31f8ae6bc1
+2014-11-13T07:30:49.089492Z
+1544051
+yeteng
+

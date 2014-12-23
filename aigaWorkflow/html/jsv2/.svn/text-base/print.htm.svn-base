@@ -1,0 +1,22 @@
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>sss</title>
+</head>
+
+<body >
+<SCRIPT LANGUAGE="JavaScript" for="window" even="onload">
+<!--
+ var html = window.dialogArguments;
+ document.title = html[0];
+ document.write("<p align='center'><b><font size='6'>" +html[0] + "</font></b></p>");
+ document.write(html[1]);
+-->
+</SCRIPT>
+
+</body>
+</html>
+
+<SCRIPT LANGUAGE="JavaScript" for="window">
+  self.print();
+</SCRIPT>

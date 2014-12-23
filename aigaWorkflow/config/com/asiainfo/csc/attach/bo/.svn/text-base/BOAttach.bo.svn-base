@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAttach" mainattr="ATT_ID">
+        <mapingenty type="table">ALM_ATTACHMENT</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ATT_ID" maxlength="12" datatype="Long" type="PK" remark="附件ID">
+                <mapingcol datatype="NUMBER">ATT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_NAME" maxlength="1024" datatype="String" type="COL" remark="附件名称">
+                <mapingcol datatype="VARCHAR2">ATT_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_PATH" maxlength="1024" datatype="String" type="COL" remark="附件路径">
+                <mapingcol datatype="VARCHAR2">ATT_PATH</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_TYPE" maxlength="32" datatype="String" type="COL" remark="附件类型">
+                <mapingcol datatype="VARCHAR2">ATT_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_DESC" maxlength="1024" datatype="String" type="COL" remark="附件说明">
+                <mapingcol datatype="VARCHAR2">ATT_DESC</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMITTER_TAG" maxlength="32" datatype="String" type="COL" remark="提交人">
+                <mapingcol datatype="VARCHAR2">SUBMITTER_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_TIME" maxlength="20" datatype="DateTime" type="COL" remark="提交时间">
+                <mapingcol datatype="DATE">SUBMIT_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_LINK" maxlength="32" datatype="String" type="COL" remark="提交环节">
+                <mapingcol datatype="VARCHAR2">SUBMIT_LINK</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

@@ -1,0 +1,55 @@
+package com.lb.app.automation.model;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+@Entity
+@Table(name="auto_submodule")
+public class AutoSubModule {
+
+	@Id
+	@GeneratedValue(generator = "prefixsequence_gen")  
+	@GenericGenerator(name = "prefixsequence_gen", strategy = "com.lb.app.common.id.PrefixIDSequence",   
+	     parameters = { @Parameter(name = "prefix", value = "SMD"),  
+			@Parameter(name = "sequence", value = "auto_submodule$seq")})
+	String submoduleid;
+	//String moduleid;
+	String submodulename;
+	
+	@ManyToOne(cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
+    @JoinColumn(name = "moduleid")
+	AutoModule module;
+
+	public String getSubmoduleid() {
+		return submoduleid;
+	}
+
+	public void setSubmoduleid(String submoduleid) {
+		this.submoduleid = submoduleid;
+	}
+
+	public String getSubmodulename() {
+		return submodulename;
+	}
+
+	public void setSubmodulename(String submodulename) {
+		this.submodulename = submodulename;
+	}
+
+	public AutoModule getModule() {
+		return module;
+	}
+
+	public void setModule(AutoModule module) {
+		this.module = module;
+	}
+}

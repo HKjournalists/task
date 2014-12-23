@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAlmWorkflowDriving" mainattr="DRIVING_ID">
+        <mapingenty type="table">ALM_WORKFLOW_DRIVING</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="DRIVING_ID" maxlength="20" datatype="Long" type="PK">
+                <mapingcol datatype="NUMBER">DRIVING_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PASSIVE_POINT" maxlength="1000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">PASSIVE_POINT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ACTIVE_POINT" maxlength="1000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">ACTIVE_POINT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PASSIVE_TEMPLATE_ID" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">PASSIVE_TEMPLATE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ACTIVE_TEMPLATE_ID" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">ACTIVE_TEMPLATE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_RELATIVE_PHASE" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">LINK_RELATIVE_PHASE</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

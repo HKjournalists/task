@@ -1,0 +1,2 @@
+insert into aiga_sub_sys_folder(subsys_id,sys_name,sys_id)values(aiga_fun_folder$seq.nextval,'´æ´¢¹ý³Ì',8);
+insert into aiga_sub_sys_folder(subsys_id,sys_name,sys_id)values(aiga_fun_folder$seq.nextval,'12580²Ëµ¥',8);  

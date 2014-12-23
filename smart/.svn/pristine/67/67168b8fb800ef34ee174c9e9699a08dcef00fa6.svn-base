@@ -1,0 +1,20 @@
+Ext.onReady(function(){
+
+    Ext.QuickTips.init();
+    Ext.form.Field.prototype.msgTarget='side';
+    Ext.Loader.setConfig({
+        enabled: true,
+        disableCaching: true
+    });
+	Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
+
+    Ext.application({
+        name: 'SmartApp',
+        appFolder: 'app',
+        autoCreateViewport: true,
+        controllers: ["Main", "UserCtrl", "RoleCtrl", "CaseManageCtrl", "ActionCtrl", "RuleCtrl"]
+
+    });
+
+
+});

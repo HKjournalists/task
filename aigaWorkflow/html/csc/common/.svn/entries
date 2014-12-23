@@ -1,0 +1,190 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/html/csc/common
+svn://20.26.11.20/products
+
+
+
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+SelectMultiPsn_NEW.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.803874Z
+7ffb2ff1e485726ddcbc83387dbffa6c
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+operateConfig.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.819497Z
+e863c632f31ef4f22576d7d908f05dba
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+FilterDiv.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.819497Z
+37d644df7c7e76e8491aaf2db6dfd7cb
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+helpPic
+dir
+
+aialmHelp.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.819497Z
+486708a3e66094560b5a7ac48213705e
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+css
+dir
+
+helpfile
+dir
+
+ShowPointWO.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.819497Z
+2550deb9cb7c77004d6fe1152e92767a
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+reqCommon.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.819497Z
+45d5af57f63973ea9c16b31dafdecb98
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+taglib.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.835124Z
+651493715e0c72701658f98bd832200e
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+SelectStaff.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.835124Z
+28b7243eeaa020987d8f6da3fd266030
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+WorkorderList.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.835124Z
+edf170c1664398665af68e3c5428e33d
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+includes
+dir
+
+SelectMultiPsn.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.835124Z
+94e874c94673337ea4ef2f4a6f4a5121
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+SelectStaff_NEW.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.835124Z
+e72525e3074d099953199a55f048f974
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+ViewWO.jsp
+file
+
+
+
+
+2014-12-13T04:18:07.835124Z
+af13a8c8071abdd4f9ea92ed201da7db
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+JS
+dir
+
+sys
+dir
+

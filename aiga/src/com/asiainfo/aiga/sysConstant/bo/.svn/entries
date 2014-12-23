@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/sysConstant/bo
+svn://20.26.11.20/products
+
+
+
+2014-11-04T08:10:15.031346Z
+1525447
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+SysConstant.java
+file
+
+
+
+
+2014-12-13T03:48:08.173628Z
+f4d722cdcf5d72ee48bb2f4b71a552e8
+2014-11-04T08:10:15.031346Z
+1525447
+wenghy
+
+SysConstant.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:08.176633Z
+204659908287cd49cd463d1bb2c70c1c
+2014-11-04T08:10:15.031346Z
+1525447
+wenghy
+

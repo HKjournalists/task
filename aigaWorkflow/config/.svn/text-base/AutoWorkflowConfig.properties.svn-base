@@ -1,0 +1,19 @@
+ReqInput=nextLinkNo\:ReqVerify,backLinkNo\:none
+ReqChange=nextLinkNo\:ReqVerify,backLinkNo\:none
+IntegrateTest=nextLinkNo\:ReqConfirm2,backLinkNo\:none
+InfoCorrect=nextLinkNo\:ReqConfirm2,backLinkNo\:none
+ReqVerify=nextLinkNo\:ReqPlan,nextCond\:<cond name\="isSupport" value\="Y"></cond><cond name\="result" value\="Y"></cond>,backLinkNo\:ReqInput,hideIcon\:ReqChange|ReqStop|ReqVerify
+ReqDevelop2=nextLinkNo\:FunctionTest,backLinkNo\:ReqPlan
+ReqPlan=nextLinkNo\:ReqDevelop2,backLinkNo\:ReqVerify
+FunctionTest=nextLinkNo\:FuncTestVerify,backLinkNo\:ReqDevelop2
+FuncTestVerify=nextLinkNo\:ReqPrePublic,backLinkNo\:FunctionTest,nextCond\:<cond name\="isIntegrate" value\="N"></cond>,hideIcon\:IntegrateTest
+ReqPrePublic=nextLinkNo\:ReqConfirm2,isDriving\:true,backLinkNo\:FuncTestVerify
+ReqConfirm2=nextLinkNo\:ReqRecord,nextCond\:<cond name\="result" value\="Y"></cond>,backLinkNo\:FuncTestVerify,hideIcon\:InfoCorrect|ReqStop
+ReqRecord=nextLinkNo\:ReqStop,backLinkNo\:ReqConfirm2
+ReqStop=backLinkNo\:ReqRecord
+VersionPlan=nextLinkNo\:VersionPrePublic,backLinkNo\:none
+VersionPrePublic=nextLinkNo\:VersionPublic,backLinkNo\:VersionPlan
+VersionPublic=nextLinkNo\:VerPublicCheck,backLinkNo\:VersionPrePublic
+VerPublicCheck=nextLinkNo\:VersionRecord,backLinkNo\:VersionPublic,nextCond\:<cond name\="result" value\="Y"></cond>
+VersionRecord=nextLinkNo\:VersionEnd,backLinkNo\:VerPublicCheck
+VersionEnd=backLinkNo\:VersionRecord

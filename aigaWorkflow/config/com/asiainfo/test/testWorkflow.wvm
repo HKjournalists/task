@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<workflow label="testWorkflow" tasktype="workflow" tasktag="com.asiainfo.test.testWorkflow">
+  <vars name="_TASK_JUGE_RESULT" datatype="java.lang.String" inouttype="inner" description="判断节点结果"/>
+  <task id="1" label="开始" tasktype="start" isstart="true">
+    <uiinfo>146,86,80,25</uiinfo>
+    <gotoitem goto="3"/>
+  </task>
+  <task id="2" label="结束" tasktype="finish">
+    <uiinfo>524,89,80,25</uiinfo>
+  </task>
+  <task id="3" label="A" tasktype="user" tasktag="A">
+    <uiinfo>273,87,80,25</uiinfo>
+    <gotoitem goto="4"/>
+    <user taskusertype="staff" taskuserid="1"/>
+  </task>
+  <task id="4" label="B" tasktype="user" tasktag="B">
+    <uiinfo>400,88,80,25</uiinfo>
+    <gotoitem goto="2"/>
+    <user taskusertype="staff" taskuserid="1"/>
+  </task>
+  <join taska="1" taskb="3">
+    <uiinfo>10.0,10.0,500,500,186,98,273,99</uiinfo>
+  </join>
+  <join taska="3" taskb="4">
+    <uiinfo>10.0,10.0,500,500,313,99,400,100</uiinfo>
+  </join>
+  <join taska="4" taskb="2">
+    <uiinfo>10.0,10.0,500,500,440,100,524,101</uiinfo>
+  </join>
+</workflow>

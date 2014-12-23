@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<module name="管控规则模块" html-dir="" java-package="">
+  <initial name="com.ai.appframe2.monitor.poster.rule.MonitorRuleInitial">
+    <configdata>
+		<ruleconfig type="file" name="monitor-rule-config.xml"/>
+    </configdata>
+  </initial>
+  
+  <service id="service/monitor.service" />
+</module>

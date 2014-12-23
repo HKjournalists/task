@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAigaTestTaskChange" mainattr="ATC_ID">
+        <mapingenty type="table">AIGA_TESTTASK_CHANGE</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ATC_ID" maxlength="20" datatype="Long" type="PK" remark="测试任务变更主键id">
+                <mapingcol datatype="NUMBER">ATC_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_TIME" maxlength="20" datatype="DateTime" type="COL" remark="变更时间">
+                <mapingcol datatype="DATE">CREATE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_STAFF_ID" maxlength="12" datatype="Long" type="COL" remark="变更发起人id">
+                <mapingcol datatype="NUMBER">CHANGE_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHAGNE_STAFF_NAME" maxlength="255" datatype="String" type="COL" remark="变更发起人名称">
+                <mapingcol datatype="VARCHAR2">CHAGNE_STAFF_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_TASK_ID" maxlength="20" datatype="Long" type="COL" remark="变更任务id">
+                <mapingcol datatype="NUMBER">CHANGE_TASK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_TASK_TAG" maxlength="200" datatype="String" type="COL" remark="变更任务编号">
+                <mapingcol datatype="VARCHAR2">CHANGE_TASK_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CHANGE_RESON" maxlength="4000" datatype="String" type="COL" remark="变更原因">
+                <mapingcol datatype="VARCHAR2">CHANGE_RESON</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PLANID_O" maxlength="12" datatype="Long" type="COL" remark="原测试排期id">
+                <mapingcol datatype="NUMBER">PLANID_O</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PLANID_N" maxlength="12" datatype="Long" type="COL" remark="新测试排期id">
+                <mapingcol datatype="NUMBER">PLANID_N</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ONLINE_TIME_O" maxlength="20" datatype="DateTime" type="COL" remark="原测试上线时间">
+                <mapingcol datatype="DATE">ONLINE_TIME_O</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ONLINE_TIME_N" maxlength="20" datatype="DateTime" type="COL" remark="新测试上线时间">
+                <mapingcol datatype="DATE">ONLINE_TIME_N</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

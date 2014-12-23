@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETWorkorderListForQry" BOName="com.asiainfo.csc.common.bo.BOWorkorderList" MainField="ORDER_ID" Title="com.asiainfo.csc.common.bo.BOWorkorderList" ActBOName="com.asiainfo.csc.common.bo.BOWorkorderList" Package="com.asiainfo.csc.common.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>APPLY_STAFF_NAME</Name>
+        <BOAttrName>APPLY_STAFF_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>APPLY_STAFF_NAME</ID>
+        <Title>提出人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="APPLY_STAFF_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>CREATE_BEGIN_TIME</Name>
+        <BOAttrName>CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_BEGIN_TIME</ID>
+        <Title>创建时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>EMPLOYEE_NAME</Name>
+        <BOAttrName>EMPLOYEE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EMPLOYEE_NAME</ID>
+        <Title>执行人姓名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="EMPLOYEE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>CONNECT_POINT</Name>
+        <BOAttrName>CONNECT_POINT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CONNECT_POINT</ID>
+        <Title>关联LINK</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="500" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="CONNECT_POINT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>EXEC_STAFF_ID</Name>
+        <BOAttrName>EXEC_STAFF_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXEC_STAFF_ID</ID>
+        <Title>执行人ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="EXEC_STAFF_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>CREATE_TIME</Name>
+        <BOAttrName>CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_TIME</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>EXEC_STAFF_NO</Name>
+        <BOAttrName>EXEC_STAFF_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EXEC_STAFF_NO</ID>
+        <Title>执行人用户名</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="EXEC_STAFF_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>FINISH_TIME</Name>
+        <BOAttrName>FINISH_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>FINISH_TIME</ID>
+        <Title>完成时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="FINISH_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>GROUP_NAME</Name>
+        <BOAttrName>GROUP_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>GROUP_NAME</ID>
+        <Title>项目组</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="0" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="GROUP_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>LINK_ID</Name>
+        <BOAttrName>LINK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_ID</ID>
+        <Title>所属环节</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="Y" type="0" LSName="com.asiainfo.csc.common.web.DSCurStatusForPhase" hasNull="true">
+          <ListParameter LSPName="phaseId" LSPValue="PHASE_ID" LSPType="Field" />
+        </ListDataSource>
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="LINK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>LINK_NO</Name>
+        <BOAttrName>LINK_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_NO</ID>
+        <Title>环节编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="LINK_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>LINK_NO_TYPE</Name>
+        <BOAttrName>LINK_NO_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>LINK_NO_TYPE</ID>
+        <Title>环节类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="LINK_NO_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>OBJ_ID</Name>
+        <BOAttrName>OBJ_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_ID</ID>
+        <Title>对象ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="OBJ_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>OBJ_NAME</Name>
+        <BOAttrName>OBJ_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_NAME</ID>
+        <Title>名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="OBJ_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>OBJ_TAG</Name>
+        <BOAttrName>OBJ_TAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_TAG</ID>
+        <Title>编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="OBJ_TAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>OBJ_TYPE</Name>
+        <BOAttrName>OBJ_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_TYPE</ID>
+        <Title>类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="4" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.csc.common.web.DSObjType" hasNull="false" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="OBJ_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>OPINION</Name>
+        <BOAttrName>OPINION</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OPINION</ID>
+        <Title>备注</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="OPINION" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>ORDER_ID</Name>
+        <BOAttrName>ORDER_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORDER_ID</ID>
+        <Title>工单ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="ORDER_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="16" IsEnabled="Y">
+        <Name>ORDER_TYPE</Name>
+        <BOAttrName>ORDER_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ORDER_TYPE</ID>
+        <Title>工单类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="4" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.csc.common.web.DSOrderType" hasNull="true" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="ORDER_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="17" IsEnabled="Y">
+        <Name>PARENT_VM_TASK_ID</Name>
+        <BOAttrName>PARENT_VM_TASK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PARENT_VM_TASK_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="PARENT_VM_TASK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="18" IsEnabled="Y">
+        <Name>PHASE_ID</Name>
+        <BOAttrName>PHASE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>PHASE_ID</ID>
+        <Title>所处阶段</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.csc.common.web.DSCurPhase" hasNull="true" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="PHASE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="19" IsEnabled="Y">
+        <Name>RESULT</Name>
+        <BOAttrName>RESULT</BOAttrName>
+        <BODisplayAttrName />
+        <ID>RESULT</ID>
+        <Title>执行结果</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="15" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="RESULT" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="20" IsEnabled="Y">
+        <Name>STATUS</Name>
+        <BOAttrName>STATUS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATUS</ID>
+        <Title>工单状态</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="2" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.csc.common.web.DSOrderStatus" hasNull="false" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="STATUS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="21" IsEnabled="Y">
+        <Name>STATUS_STEP</Name>
+        <BOAttrName>STATUS_STEP</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATUS_STEP</ID>
+        <Title>状态</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="20" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="STATUS_STEP" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="22" IsEnabled="Y">
+        <Name>SUBMIT_STAFF_NAME</Name>
+        <BOAttrName>SUBMIT_STAFF_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SUBMIT_STAFF_NAME</ID>
+        <Title>创建人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="SUBMIT_STAFF_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="23" IsEnabled="Y">
+        <Name>VM_TASK_NAME</Name>
+        <BOAttrName>VM_TASK_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>VM_TASK_NAME</ID>
+        <Title>环节名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="VM_TASK_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="25" IsEnabled="Y">
+        <Name>TEMPLATE_ID</Name>
+        <BOAttrName>TEMPLATE_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>TEMPLATE_ID</ID>
+        <Title />
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="TEMPLATE_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>OPERATE</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>OPERATE</ID>
+        <Title>操作</Title>
+        <Authority>U</Authority>
+        <EditType>DBHtml</EditType>
+        <DataType MaxLength="0" Decimal="0">Varchar</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>CREATE_END_TIME</Name>
+        <BOAttrName>CREATE_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>CREATE_END_TIME</ID>
+        <Title>开始时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDateTime</EditType>
+        <DataType MaxLength="20" Decimal="0">DateTime</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="CREATE_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>COND</Name>
+        <BOAttrName>COND</BOAttrName>
+        <BODisplayAttrName />
+        <ID>COND</ID>
+        <Title>执行结果</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="4000" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.common.bo.BOWorkorderList" Attr="COND" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

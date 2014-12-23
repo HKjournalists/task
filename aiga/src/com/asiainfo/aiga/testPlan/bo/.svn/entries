@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/testPlan/bo
+svn://20.26.11.20/products
+
+
+
+2014-11-04T10:50:11.350494Z
+1525909
+yeteng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaTestPlan.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:03.396746Z
+7cbbe43cb0750618585b1f08a068c2a1
+2014-11-04T10:50:11.350494Z
+1525909
+yeteng
+
+AigaTestPlan.java
+file
+
+
+
+
+2014-12-13T03:48:03.399884Z
+ad97565d1bc34ba210879ce9a65d4c18
+2014-11-04T10:50:11.350494Z
+1525909
+yeteng
+

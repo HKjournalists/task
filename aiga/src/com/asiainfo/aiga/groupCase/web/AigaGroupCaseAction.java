@@ -1,0 +1,326 @@
+package com.asiainfo.aiga.groupCase.web;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.asiainfo.aiga.common.BaseAction;
+import com.asiainfo.aiga.common.Tree;
+import com.asiainfo.aiga.common.helper.ActionHelper;
+import com.asiainfo.aiga.common.security.user.bo.AigaUser;
+import com.asiainfo.aiga.groupCase.bo.AigaGroupCase;
+import com.asiainfo.aiga.groupCase.service.IAigaGroupCaseSV;
+import com.asiainfo.aiga.sysConstant.bo.SysConstant;
+import com.asiainfo.aiga.sysConstant.util.SysContentUtil;
+import com.asiainfo.aiga.userCase.bo.AigaTestSubElem;
+
+@Controller
+public class AigaGroupCaseAction extends BaseAction {
+	private static Map<Integer,AigaGroupCase[]> map = new HashMap<Integer,AigaGroupCase[]>();
+
+	@Resource(name="groupCaseSV")
+	private IAigaGroupCaseSV aigaGroupCaseSV;
+	
+	@RequestMapping("/saveGroupCase.do")
+	public void saveGroupCase(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		try{
+			Object[] aValue = this.transFormToObj(request, new Class[]{AigaGroupCase.class});
+			if(aValue.length==1&&aValue[0] instanceof AigaGroupCase){
+				String contentsType = request.getParameter("contentsType");
+				String subTaskTag = request.getParameter("subTaskTag");
+				if(contentsType!=null&&!contentsType.equals("")&&!contentsType.equals("null")&&subTaskTag!=null&&!subTaskTag.equals("")&&!subTaskTag.equals("null")){//变更单-->内容类型
+					AigaUser user = (AigaUser)request.getSession().getAttribute("aigaUser");
+					aigaGroupCaseSV.saveGroupCaseByChange((AigaGroupCase)aValue[0], contentsType, subTaskTag, user);
+				}else{//不经过变更单直接修改
+					AigaUser user = (AigaUser)request.getSession().getAttribute("aigaUser");
+					//获取subTaskTag
+					aigaGroupCaseSV.saveGroupCase((AigaGroupCase)aValue[0], user);
+				}
+				this.setPostInfo("success", true);
+			}else{
+				this.setPostInfo("success", false);
+				this.setPostInfo("message", "保存失败!");
+			}
+			
+		}catch(Exception e){
+			this.setPostInfo("success", false);
+			this.setPostInfo("message", e.getCause());
+		}finally{
+			this.postInfo(request, response);
+		}
+	}
+	
+	@RequestMapping("/getGroupCase.do")
+	public void getGroupCase(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		try{
+			String caseId = request.getParameter("caseId");
+			if(caseId==null||caseId.equals(""))
+				throw new Exception("缺少请求参数caseId");
+			AigaGroupCase[] aigaGroupCases = aigaGroupCaseSV.getGroupCase(Integer.valueOf(caseId));
+			if(aigaGroupCases.length==1)
+				this.setFormData(aigaGroupCases[0]);
+			else
+				this.setFormData(new AigaGroupCase());
+			this.setPostInfo("success", true);
+		}catch(Exception e){
+			this.setPostInfo("success", false);
+			this.setPostInfo("message", e.getCause());
+		}finally{
+			this.postInfo(request, response);
+		}
+	}
+	
+	@RequestMapping("/getGroupCaseTree.do")
+	public void getGroupCaseTree(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		String node = request.getParameter("node");
+		String subTaskId = request.getParameter("subTaskId");
+		List<Object> resultTrees = new ArrayList<Object>();
+		if(subTaskId!=null&&!subTaskId.equals("")){//通过子任务展开集团用例树
+			if(node.equals("-1")){
+				//集团用例树添加叶子结点(集团用例)
+				AigaGroupCase[] aigaGroupCases = aigaGroupCaseSV.getGroupCaseListBySubTaskId(subTaskId);
+				Set<Integer> childrenNodeIdSet = new HashSet<Integer>();
+				for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+					childrenNodeIdSet.add(aigaGroupCase.getParentId());
+				}
+				this.putObjectToMap(childrenNodeIdSet.iterator(), aigaGroupCases);
+				//由叶子结点获取三级结点(系统子类)
+				aigaGroupCases = aigaGroupCaseSV.getGroupCaseTreeByChildrenNodeIdList(childrenNodeIdSet);
+				childrenNodeIdSet.clear();
+				for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+					childrenNodeIdSet.add(aigaGroupCase.getParentId());
+				}
+				this.putObjectToMap(childrenNodeIdSet.iterator(), aigaGroupCases);
+				//由三级结点获取二级结点(集团联调需求)
+				aigaGroupCases = aigaGroupCaseSV.getGroupCaseTreeByChildrenNodeIdList(childrenNodeIdSet);
+				childrenNodeIdSet.clear();
+				for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+					childrenNodeIdSet.add(aigaGroupCase.getParentId());
+				}
+				this.putObjectToMap(childrenNodeIdSet.iterator(), aigaGroupCases);
+				//由二级结点获取一级结点(年月)
+				aigaGroupCases = aigaGroupCaseSV.getGroupCaseTreeByChildrenNodeIdList(childrenNodeIdSet);
+				List<Object> yearMonthTrees = new ArrayList<Object>();
+				for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+					Tree tree = new Tree();
+					tree.setExpanded(true);
+					tree.setId(aigaGroupCase.getCaseId());
+					tree.setLeaf(false);
+					tree.setParentId(aigaGroupCase.getParentId());
+					tree.setText(aigaGroupCase.getCaseName());
+					tree.setValue(aigaGroupCase.getCaseId().toString());
+					yearMonthTrees.add(tree);
+				}
+				resultTrees = yearMonthTrees;
+			}else{
+				AigaGroupCase[] aigaGroupCases = map.get(Integer.parseInt(node));
+				for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+					if(aigaGroupCase==null)continue;
+					Tree tree = new Tree();
+					tree.setExpanded(true);
+					tree.setId(aigaGroupCase.getCaseId());
+					if(aigaGroupCase.getIsLeaf().equals("Y"))
+						tree.setLeaf(true);
+					else
+						tree.setLeaf(false);
+					tree.setParentId(aigaGroupCase.getParentId());
+					tree.setText(aigaGroupCase.getCaseName());
+					tree.setValue(aigaGroupCase.getCaseId().toString());
+					resultTrees.add(tree);
+				}
+			}
+		}else{
+			AigaGroupCase[] aigaGroupCases = aigaGroupCaseSV.getGroupCaseByParentId(Integer.valueOf(node));
+			for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+				Tree tree = new Tree();
+				tree.setExpanded(false);
+				tree.setId(aigaGroupCase.getCaseId());
+				if(aigaGroupCase.getIsLeaf().equals("Y"))
+					tree.setLeaf(true);
+				else
+					tree.setLeaf(false);
+				tree.setText(aigaGroupCase.getCaseName());
+				tree.setValue(aigaGroupCase.getCaseId().toString());
+				
+				resultTrees.add(tree);
+			}
+		}
+		this.setPostInfo("children", resultTrees);
+		this.postInfo(request, response);
+	}
+	@RequestMapping(value = "/uploadGroupCaseExcel.do")
+	public void dealGroupCaseExcel(HttpServletRequest request,HttpServletResponse response) throws Exception {
+		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+		AigaUser user = (AigaUser)request.getSession().getAttribute("aigaUser");
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		String subTaskId = request.getParameter("subTaskId");
+		String subType = request.getParameter("subType"); 
+		boolean success=false;
+		if (isMultipart) {
+			FileItemFactory factory = new DiskFileItemFactory();
+			ServletFileUpload upload = new ServletFileUpload(factory);
+			try {
+				List<FileItem> items = upload.parseRequest(request);
+				aigaGroupCaseSV.saveGroupCaseForExcel(items,subTaskId,subType,user);
+			} catch (Exception e) {
+				resultMap.put("msg", e.getMessage());
+				resultMap.put("error", true);
+			}
+			success=true;
+			resultMap.put("msg", "导入成功");
+		}
+		resultMap.put("success", success);
+	
+		ActionHelper.responseFileUpload(request, response, resultMap);
+
+	}
+	
+	
+	@RequestMapping("/getGroupCaseListBySubTaskId.do")
+	public void getGroupCaseListBySubTaskId(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		JSONArray json = new JSONArray();
+		try{
+			
+			String subTaskId = request.getParameter("subTaskId");
+			if(subTaskId==null||subTaskId.equals(""))
+				throw new Exception("缺少请求参数subTaskId");
+			AigaGroupCase[] aigaGroupCases = aigaGroupCaseSV.getGroupCaseListBySubTaskId(subTaskId);
+			if(aigaGroupCases.length==1)
+				this.setFormData(aigaGroupCases[0]);
+			else
+				this.setFormData(new AigaGroupCase());
+			json = JSONArray.fromObject(aigaGroupCases, this.jsonConfig);
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("data", json);
+			jsonObj.put("success", true);
+			ActionHelper.responseData4JSON(request, response, jsonObj);
+		}catch(Exception e){
+			this.setPostInfo("success", false);
+			this.setPostInfo("message", e.getCause());
+			this.postInfo(request, response);
+		}finally{
+		}
+	}
+	
+	@RequestMapping("/getGroupCaseListBySubTaskTag.do")
+	public void getGroupCaseListBySubTaskTag(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		JSONArray jsonArray = new JSONArray();
+		try{
+			String subTaskTag = request.getParameter("subTaskTag");
+			if(subTaskTag==null||subTaskTag.equals(""))
+				throw new Exception("缺少请求参数subTaskTag");
+			AigaGroupCase[] aigaGroupCases = aigaGroupCaseSV.getGroupCaseListBySubTaskTag(subTaskTag);
+			for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+				JSONObject json = new JSONObject();
+				json.put("caseId", aigaGroupCase.getCaseId());
+				json.put("caseName", aigaGroupCase.getCaseName());
+				json.put("caseDesc", aigaGroupCase.getCaseDesc());
+				json.put("testPurpose", aigaGroupCase.getTestPurpose());
+				json.put("preCondition", aigaGroupCase.getPreCondition());
+				json.put("testDataDesc", aigaGroupCase.getTestDataDesc());
+				json.put("testStep", aigaGroupCase.getTestStep());
+				json.put("remark", aigaGroupCase.getRemark());
+				json.put("preResult", aigaGroupCase.getPreResult());
+				json.put("isDelete", aigaGroupCase.getIsDelete());
+				json.put("createTime", aigaGroupCase.getCreateTime());
+				json.put("creatorId", aigaGroupCase.getCreatorId());
+				json.put("creatorName", aigaGroupCase.getCreatorName());
+				json.put("isNeedMessage", aigaGroupCase.getIsNeedMessage());
+				json.put("checked", true);
+				jsonArray.add(json);
+			}
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("data", jsonArray);
+			jsonObj.put("success", true);
+			ActionHelper.responseData4JSON(request, response, jsonObj);
+		}catch(Exception e){
+			this.setPostInfo("success", false);
+			this.setPostInfo("message", e.getCause());
+			this.postInfo(request, response);
+		}finally{
+		}
+	}
+	
+	@RequestMapping("/getGroupCaseListByChangeId.do")
+	public void getGroupCaseListByChangeId(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		JSONArray json = new JSONArray();
+		try{
+			
+			String changeId = request.getParameter("changeId");
+			if(changeId==null||changeId.equals(""))
+				throw new Exception("缺少请求参数changeId");
+			AigaGroupCase[] aigaGroupCases = aigaGroupCaseSV.getGroupCaseListByChangeId(changeId);
+			if(aigaGroupCases.length==1)
+				this.setFormData(aigaGroupCases[0]);
+			else
+				this.setFormData(new AigaGroupCase());
+			json = JSONArray.fromObject(aigaGroupCases, this.jsonConfig);
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("data", json);
+			jsonObj.put("success", true);
+			ActionHelper.responseData4JSON(request, response, jsonObj);
+		}catch(Exception e){
+			this.setPostInfo("success", false);
+			this.setPostInfo("message", e.getCause());
+			this.postInfo(request, response);
+		}finally{
+		}
+	}
+	private void putObjectToMap(Iterator it,AigaGroupCase[] aigaGroupCases){
+		while(it.hasNext()){
+			int parentId = (Integer)it.next();
+			AigaGroupCase[] aigaGroupCaseArray = new AigaGroupCase[aigaGroupCases.length];
+			int i = 0;
+			for(AigaGroupCase aigaGroupCase : aigaGroupCases){
+				if(aigaGroupCase.getParentId()==parentId){
+					aigaGroupCaseArray[i++] = aigaGroupCase;
+				}
+			}
+			map.put(parentId, aigaGroupCaseArray);
+		}
+	}
+	
+	
+	@RequestMapping("/getComBoxForGroupCase.do")
+	public void getComBoxForGroupCase(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		SysConstant[] sysConstants = SysContentUtil
+				.getSysContant("AIGA_GROUP_CASE");
+		String queryFlag = request.getParameter("query");
+		
+		JSONArray jsonAry = new JSONArray();
+		for (SysConstant sysConstant : sysConstants) {
+			if (!sysConstant.getCategoryName().equals(queryFlag))
+				continue;
+			JSONObject json = new JSONObject();
+			json.put("value", sysConstant.getValue());
+			json.put("show", sysConstant.getShow());
+			jsonAry.add(json);
+		}
+		JSONObject json = new JSONObject();
+		
+		json.put("success", true);
+		json.put("data", jsonAry);
+
+		ActionHelper.responseData4JSON(request, response, json);
+	}
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eos__service__endpoints>
+<servicepoints>
+  <service__end__point>
+    <globalId>a990d033-d575-43da-aedc-b69fe83b3fb0</globalId>
+    <host>10.70.191.244</host>
+    <port>8888</port>
+    <protocol>http</protocol>
+    <context>default</context>
+    <type>service</type>
+    <priority>1</priority>
+    <logicName>default</logicName>
+    <serviceName>com.eos.workflow.*</serviceName>
+  </service__end__point>
+</servicepoints>
+</eos__service__endpoints>

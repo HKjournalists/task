@@ -1,0 +1,7 @@
+EXPORTHANDLER = FCExporter_ 
+RESOURCEPATH = /resources/    
+SAVEPATH = /savefiles/
+#HTTP_URI = http\://localhost\:8090/Export/savefiles/  
+OVERWRITEFILE = true  
+INTELLIGENTFILENAMING = true  
+FILESUFFIXFORMAT =TIMESTAMP

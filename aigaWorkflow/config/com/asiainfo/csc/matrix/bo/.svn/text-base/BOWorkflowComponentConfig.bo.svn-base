@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOWorkflowComponentConfig" mainattr="WCC_ID">
+        <mapingenty type="table">WORKFLOW_COMPONENT_CONFIG</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="WCC_ID" maxlength="20" datatype="Long" type="PK">
+                <mapingcol datatype="NUMBER">WCC_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CURRENT_LINKNO" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">CURRENT_LINKNO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NEXT_LINKNO" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">NEXT_LINKNO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="COND_XML" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">COND_XML</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BUTTON_ONCLICK" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">BUTTON_ONCLICK</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BUTTONIMG_URL" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">BUTTONIMG_URL</mapingcol>
+            </attr>
+            <attr floatlength="0" name="RESULT" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">RESULT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BUTTON_ORDER" maxlength="20" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">BUTTON_ORDER</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_URL" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMIT_URL</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_SUCCESS_MSG" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMIT_SUCCESS_MSG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_FAIL_MSG" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMIT_FAIL_MSG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SUBMIT_RESULT_VAR" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">SUBMIT_RESULT_VAR</mapingcol>
+            </attr>
+            <attr floatlength="0" name="HTML_DES" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">HTML_DES</mapingcol>
+            </attr>
+            <attr floatlength="0" name="HTML_BUTTON_TEXT" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">HTML_BUTTON_TEXT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_CHOICE_STAKEHOLDER" maxlength="2" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">IS_CHOICE_STAKEHOLDER</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NEED_REFRESH_STAKEHOLDER" maxlength="2" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">NEED_REFRESH_STAKEHOLDER</mapingcol>
+            </attr>
+            <attr floatlength="0" name="REFRESH_STAKEHOLDER_LINKNO" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">REFRESH_STAKEHOLDER_LINKNO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NEED_OPTION" maxlength="2" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">NEED_OPTION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OPTION_DEFAULT_VALUE" maxlength="2000" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">OPTION_DEFAULT_VALUE</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

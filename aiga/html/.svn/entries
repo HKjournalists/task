@@ -1,0 +1,85 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/html
+svn://20.26.11.20/products
+
+
+
+2014-12-16T14:30:16.099461Z
+1600101
+yinsx
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+jquery
+dir
+
+META-INF
+dir
+
+aiga
+dir
+
+chart
+dir
+
+index.jsp
+file
+
+
+
+
+2014-12-13T03:47:24.364193Z
+ae84b85f7591eddbd1d69f92837c39b9
+2014-11-18T02:25:48.480140Z
+1548908
+lixb
+
+advert
+dir
+
+images
+dir
+
+WEB-INF
+dir
+
+css
+dir
+
+refresh.jsp
+file
+
+
+
+
+2014-12-13T03:47:24.367209Z
+394e16402ca9df9253f9fb21f63142c1
+2014-11-17T04:02:15.391571Z
+1546953
+wenghy
+
+SimpleExcel
+dir
+
+excelTemplate
+dir
+
+extJs
+dir
+

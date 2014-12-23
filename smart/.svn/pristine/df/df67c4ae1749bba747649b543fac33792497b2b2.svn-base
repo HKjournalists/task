@@ -1,0 +1,714 @@
+Ext.define('SmartApp.controller.CaseManageCtrl', {
+    extend: 'Ext.app.Controller',
+    views: ['Case.CaseManageView', 'Case.ModuleTreeView', 'Case.KeywordView', 'Case.ScriptView', 'Case.TestcaseView'],
+    models: ['Keyword', 'KeywordDetail', 'Script', 'ScriptDetail'],
+    stores: ['ModuleTreeStore', 'KeywordStore', 'KeywordDetailStore', 'ScriptStore', 'ScriptDetailStore', 'KeywordDetailFScriptStore'],
+    
+    init: function () {
+        this.control({
+        	"casemanageview moduletreeview button[action=addModule]":{
+        		click: this.addModule
+        	},
+        	"casemanageview moduletreeview button[action=addSubModule]":{
+        		click: this.addSubModule
+        	},
+        	"casemanageview moduletreeview button[action=delete]":{
+        		click: this.deleteModule
+        	},
+        	"casemanageview moduletreeview button[action=edit]":{
+        		click: this.updateModule
+        	},
+        	"casemanageview moduletreeview button[action=refresh]":{
+        		click: this.refreshModule
+        	},
+        	"casemanageview moduletreeview":{
+        		itemclick: this.openModule
+        	},
+        	"casemanageview keywordview #keywordUpGrid button[action=append]":{
+        		click: this.addKeyword
+        	},
+        	"casemanageview keywordview #keywordUpGrid button[action=delete]":{
+        		click: this.deleteKeyword
+        	},
+        	"casemanageview keywordview #keywordUpGrid button[action=refresh]":{
+        		click: this.freshKeyword
+        	},
+        	"casemanageview keywordview #keywordUpGrid button[action=save]":{
+        		click: this.saveKeyword
+        	},
+        	"casemanageview keywordview #keywordUpGrid":{
+        		itemdblclick: this.showKeywordDetails
+        	},
+        	"casemanageview keywordview #keywordUpGrid button[action=show]":{
+        		click: this.showKeywordDetails
+        	},
+        	"casemanageview keywordview #keyworddetailDownGrid button[action=append]":{
+        		click: this.addKeywordDetail
+        	},
+        	"casemanageview keywordview #keyworddetailDownGrid button[action=delete]":{
+        		click: this.deleteKeywordDetail
+        	},
+        	"casemanageview keywordview #keyworddetailDownGrid button[action=refresh]":{
+        		click: this.refreshKeywordDetail
+        	},
+        	"casemanageview keywordview #keyworddetailDownGrid button[action=save]":{
+        		click: this.saveKeywordDetail
+        	},
+        	"casemanageview keywordview #keyworddetailDownGrid dataview":{
+        		drop: this.dropKeywordDetail
+        	},
+        	"casemanageview scriptview #scriptUpGrid button[action=append]":{
+        		click: this.addScript
+        	},
+        	"casemanageview scriptview #scriptUpGrid button[action=delete]":{
+        		click: this.deleteScript
+        	},
+        	"casemanageview scriptview #scriptUpGrid button[action=refresh]":{
+        		click: this.refreshScript
+        	},
+        	"casemanageview scriptview #scriptUpGrid button[action=save]":{
+        		click: this.saveScript
+        	},
+        	"casemanageview scriptview #scriptUpGrid button[action=show]":{
+        		click: this.showScriptDetails
+        	},
+        	"casemanageview scriptview #scriptUpGrid":{
+        		itemdblclick: this.showScriptDetails
+        	},
+        	"casemanageview scriptview #scriptdetailDownGrid button[action=append]":{
+        		click: this.addScriptDetail
+        	},
+        	"casemanageview scriptview #scriptdetailDownGrid button[action=delete]":{
+        		click: this.deleteScriptDetail
+        	},
+        	"casemanageview scriptview #scriptdetailDownGrid button[action=refresh]":{
+        		click: this.refreshScriptDetail
+        	},
+        	"casemanageview scriptview #scriptdetailDownGrid button[action=save]":{
+        		click: this.saveScriptDetail
+        	},
+           	"casemanageview scriptview #scriptdetailDownGrid dataview":{
+        		drop: this.dropScriptDetail
+        	},
+        	"casemanageview testcaseview #testcaseUpGrid button[action=append]":{
+        		click: this.addTestcase
+        	},
+        	"casemanageview testcaseview #testcaseUpGrid button[action=delete]":{
+        		click: this.deleteTestcase
+        	},
+        	"casemanageview testcaseview #testcaseUpGrid button[action=refresh]":{
+        		click: this.refreshTestcase
+        	},
+        	"casemanageview testcaseview #testcaseUpGrid button[action=save]":{
+        		click: this.saveTestcase
+        	},
+        	"casemanageview testcaseview #testcaseUpGrid button[action=show]":{
+        		click: this.showTestcase
+        	},
+          	"casemanageview testcaseview #testcaseUpGrid":{
+        		itemdblclick: this.showTestcase
+        	},
+        	"casemanageview testcaseview #testcasedetailDownGrid button[action=append]":{
+        		click: this.addTestcaseDetail
+        	},
+        	"casemanageview testcaseview #testcasedetailDownGrid button[action=delete]":{
+        		click: this.deleteTestcaseDetail
+        	},
+        	"casemanageview testcaseview #testcasedetailDownGrid button[action=refresh]":{
+        		click: this.refreshTestcaseDetail
+        	},
+        	"casemanageview testcaseview #testcasedetailDownGrid button[action=save]":{
+        		click: this.saveTestcaseDetail
+        	}
+        })
+    },
+    
+    addModule: function(btn, e){
+    	 var treeStore=btn.up("treepanel").getStore();
+    	 var win = new Ext.Window({  
+             width: 220,  
+             height: 100,  
+             x: e.getX(),
+             y: e.getY(),
+             resizable: true,  
+             modal: true,  
+             closable: true,  
+             //maximizable: true,  
+             //minimizable: true,
+             iconCls: "Packageadd",
+             title: "新增模块",
+             layout: "fit",
+             items:[{
+            	 xtype: "form",
+            	 bodyPadding: "7",
+            	 items:[{
+            		 name: "name",
+            		 xtype: "textfield",
+            		 fieldLabel: "名称",
+            		 validator : function(value) {
+            			 if(treeStore.getRootNode().findChild("text", value, 2) == null)
+            				 return true;
+            			 return "已存在相同名称的模块";
+            		 }
+            	 }]
+             }],
+             buttons: [{
+            	 text: '保存',
+            	 handler: function(btn){
+            		 
+            		 if(btn.up("window").down("form").getForm().isValid()){
+            			 var module_name = btn.up("window").down("form").down("textfield").getValue();
+                		 //autoModuleService.createModule({name: module_name}, function(result, e){
+            			 caseManageAction.createModule({name: module_name}, function(result, e){
+                			 treeStore.getRootNode().insertChild(0,{
+                				text: module_name,
+                				id: result,
+                				leaf: false,
+                				children: []
+                			 });
+                			 win.close();
+                		 });
+
+            		 }else{
+            			 Ext.MessageBox.alert("错误", "请验证表单正确后保存");
+            		 }
+            		 
+            		 //btn.up("window").close();
+            	 } 
+            	 }]
+         });  
+    	 win.show();
+    },
+    addSubModule: function(btn, e){
+    	var tree=btn.up("treepanel");
+    	var selections = tree.getSelectionModel().getSelection();
+    	if(selections.length <=0 || selections[0].data.id.substring(0, 3) != "MOD"){
+    		Ext.MessageBox.alert("错误", "请选择模块后，再单击添加子模块的按钮。");
+    		return ;
+    	}
+    	var module_id = selections[0].data.id;
+    	var treeStore=btn.up("treepanel").getStore();
+    	var win = new Ext.Window({  
+            width: 220,  
+            height: 100,  
+            x: e.getX(),
+            y: e.getY(),
+            resizable: true,  
+            modal: true,  
+            closable: true,  
+            //maximizable: true,  
+            //minimizable: true,
+            iconCls: "Packageadd",
+            title: "新增模块",
+            layout: "fit",
+            items:[{
+           	 xtype: "form",
+           	 bodyPadding: "7",
+           	 items:[{
+           		 name: "name",
+           		 xtype: "textfield",
+           		 fieldLabel: "名称",
+           		 validator : function(value) {
+           			 if(treeStore.getRootNode().findChild("text", value, 2) == null)
+           				 return true;
+           			 return "已存在相同名称的模块或者子模块";
+           		 }
+           	 }]
+            }],
+            buttons: [{
+           	 text: '保存',
+           	 handler: function(btn){
+           		 
+           		 if(btn.up("window").down("form").getForm().isValid()){
+           			 var module_name = btn.up("window").down("form").down("textfield").getValue();
+           			 caseManageAction.createSubModule({name: module_name, module_id:module_id}, function(result, e){
+           				ModuleNode = tree.getRootNode().findChild("id", module_id, 2);
+               			
+           				ModuleNode.insertChild(0,{
+            				text: module_name,
+            				id: result,
+            				leaf: true
+            			 });
+           				win.close();
+               		 });
+
+           		 }else{
+           			 Ext.MessageBox.alert("错误", "请验证表单正确后保存");
+           		 }
+           		 
+           		 //btn.up("window").close();
+           	 } 
+           	 }]
+        });  
+   	 	win.show();
+    },
+    deleteModule: function(btn, e){
+    	var tree=btn.up("treepanel");
+    	var selections = tree.getSelectionModel().getSelection();
+    	if(selections.length <=0 || selections[0].data.id == "root"){
+    		Ext.MessageBox.alert("错误", "请选择模块或者子模块，进行删除。");
+    		return ;
+    	}
+    	Ext.MessageBox.confirm( "确认" , "是否要删除该模块：" + selections[0].data.text , function (btn){
+    		if (btn == 'yes'){
+	    		var module_id = selections[0].data.id;
+	    		caseManageAction.deleteModuleOrSubModule({id: module_id}, function(result, e){
+	    		 
+	    			var nodel = selections[0];
+	    			nodel.parentNode.removeChild(nodel);
+	    		});
+    		}
+    	});
+    	
+    },
+    updateModule: function(btn, e){
+    	var tree=btn.up("treepanel");
+    	var selections = tree.getSelectionModel().getSelection();
+    	
+    	if(selections.length <=0  || selections[0].data.id == "root"){
+    		Ext.MessageBox.alert("错误", "请选择需要修改的模块或者子模块");
+    		return ;
+    	}
+    	var node = selections[0];
+    	var module_id = node.data.id;
+    	var treeStore=btn.up("treepanel").getStore();
+    	var win = new Ext.Window({  
+            width: 220,  
+            height: 100,  
+            x: e.getX(),
+            y: e.getY(),
+            resizable: true,  
+            modal: true,  
+            closable: true,  
+            //maximizable: true,  
+            //minimizable: true,
+            iconCls: "Packageedit",
+            title: "新增模块",
+            layout: "fit",
+            items:[{
+	           	 xtype: "form",
+	           	 bodyPadding: "7",
+	           	 items:[{
+	           		 name: "name",
+	           		 xtype: "textfield",
+	           		 fieldLabel: "名称",
+	           		 value: node.data.text,
+	           		 validator : function(value) {
+	           			 if(treeStore.getRootNode().findChild("text", value, 2) == null)
+	           				 return true;
+	           			 return "已存在相同名称的模块或者子模块";
+	           		 }
+	           	 }]
+            }],
+            buttons: [{
+           	 text: '保存',
+           	 handler: function(btn){
+           		 
+           		 if(btn.up("window").down("form").getForm().isValid()){
+           			 var module_name = btn.up("window").down("form").down("textfield").getValue();
+           			 caseManageAction.updateModuleOrSubModule({name: module_name, id:module_id}, function(result, e){
+           				ModuleNode = tree.getRootNode().findChild("id", module_id, 2);
+           				ModuleNode.set("text", module_name);
+           				ModuleNode.commit();
+           				win.close();
+               		 });
+
+           		 }else{
+           			 Ext.MessageBox.alert("错误", "请验证表单正确后保存");
+           		 }
+           		 
+           		 //btn.up("window").close();
+           	 } 
+           	 }]
+        });  
+   	 	win.show();
+    },
+    refreshModule: function(btn){
+    	var tree=btn.up("treepanel");
+    	tree.getStore().load();
+    },
+    openModule: function(tree, record, item, index, e){
+    	var id = record.raw.id;
+    	if(id != null && id.substring(0, 3) == "SMD"){
+    		var main_panel = Ext.getCmp("ModuleViewPanel");
+    		main_panel.removeAll();
+    		var mview = Ext.create("SmartApp.view.Case.ModuleView");
+    		mview.title = "子模块_" + record.raw.text + "";
+    		mview.submoduleid = id;
+    		main_panel.add(mview);
+    		
+    		tree.up("casemanageview").down("#keywordUpGrid").getStore().load({params:{submodule_id: id}});
+    		tree.up("casemanageview").down("#scriptUpGrid").getStore().load({params:{submoduleid: id}});
+    		tree.up("casemanageview").down("#testcaseUpGrid").getStore().load({params:{submoduleid: id}});
+    		
+    	}
+    	
+    	
+    	
+    	
+    },
+    addKeyword: function(btn){
+    	var submodule_id= btn.up("moduleview").submoduleid;
+    	
+    	var store = btn.up('gridpanel').getStore();
+        var r = Ext.create('SmartApp.model.Keyword',{
+        	keywordid: "",
+            keywordname: "",
+            submodule_id: submodule_id
+        });
+        store.insert(0,r);
+        var rowEditing = btn.up('gridpanel').editingPlugin;
+        rowEditing.startEdit(0, 0);
+    },
+    
+    deleteKeyword: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        var grid = btn.up('gridpanel');
+        var sm = grid.getSelectionModel();
+        store.remove(sm.getSelection());
+        if (store.getCount() > 0) {
+            sm.select(0);
+        };
+    },
+    
+    freshKeyword: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        store.load({params:{submodule_id: btn.up("moduleview").submoduleid}});
+    },
+    
+    saveKeyword: function(btn){
+    	var keyword_store = btn.up('gridpanel').getStore();
+        keyword_store.sync({
+        	 callback : function(result){
+             	if(!result.hasException)
+             		Ext.Msg.alert('提示', '保存完毕');
+             }
+        });
+    },
+    
+    showKeywordDetails: function(btn){
+    	var store = btn.up('gridpanel').getStore();
+        store.sync({
+            callback : function(result){
+            	if(result.type && result.type == "exception"){
+            		Ext.MessageBox.show({
+            	        title: '错误',
+            	        msg: result.message,
+            	        buttons: Ext.MessageBox.OK,
+            	        icon: Ext.MessageBox.ERROR
+            	    });
+            		return;
+            	}
+            }
+        });
+    	var selections = btn.up('gridpanel').getSelectionModel().getSelection();
+    	if(selections.length <= 0){
+    		Ext.MessageBox.alert("提示", "请单击选择具体的关键字后，再查看其细节");
+    		return ;
+    	}
+    	var node = selections[0];
+    	
+    	var detail_store = btn.up('gridpanel').up('panel').down("#keyworddetailDownGrid").getStore();
+    	detail_store.load({params:{keywordid:node.data.keywordid}});
+    	
+    	var down_grid_keydetail = btn.up('gridpanel').up('panel').down("#keyworddetailDownGrid");
+    	down_grid_keydetail.setTitle("关键字_" + node.data.keywordname + "_细节");
+    	down_grid_keydetail.keywordid = node.data.keywordid;
+    	
+    },
+    
+    addKeywordDetail: function(btn){
+    	
+    	if( btn.up("gridpanel").keywordid == undefined){
+    		Ext.Msg.alert("提示", "请先选择关键字，再增加关键字细节。");
+    		return ;
+    	}
+    	
+    	
+    	var store = btn.up('gridpanel').getStore();
+        var r = Ext.create('SmartApp.model.KeywordDetail',{
+        	keyworddetailid: "",
+        	keywordid: btn.up("gridpanel").keywordid,
+        	object: "",
+            operation: "",
+            parameter: "",
+            actioniffail: ""
+        });
+        store.add(r);
+        var rowEditing = btn.up('gridpanel').editingPlugin;
+        rowEditing.startEdit(0, 0);
+    },
+    deleteKeywordDetail: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        var grid = btn.up('gridpanel');
+        var sm = grid.getSelectionModel();
+        store.remove(sm.getSelection());
+        if (store.getCount() > 0) {
+            sm.select(0);
+        };
+    },
+    refreshKeywordDetail: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        store.load({params:{keywordid: btn.up("gridpanel").keywordid}});
+    },
+    saveKeywordDetail: function(btn){
+    	var detail_store = btn.up('gridpanel').getStore();
+    	detail_store.sync({
+            callback : function(result){
+            	if(!result.hasException)
+            		Ext.Msg.alert('提示', "保存成功");
+            }
+        });
+    },
+    dropKeywordDetail: function(node, data, overModel, dropPosition, eOpts){
+    	var this_store = overModel.store;
+    	var all_ids = [];
+    	for(var i = 0 ; i < this_store.getCount(); i++ )
+    		all_ids.push(this_store.getAt(i).data.keyworddetailid);
+    	for(i = 0 ; i < all_ids.length - 1; i++){
+    		for(j = i + 1; j < all_ids.length; j++){
+    			if(all_ids[i] > all_ids[j]){
+    				tmp = all_ids[i];
+    				all_ids[i] = all_ids[j];
+    				all_ids[j] = tmp;
+    			}
+    		}
+    	}
+    	for(var i = 0 ; i < this_store.getCount(); i++ ){
+    		this_store.getAt(i).set("keyworddetailid", all_ids[i]);
+    	}
+    		
+    },
+    addScript: function(btn){
+    	var store = btn.up('gridpanel').getStore();
+    	var submoduleid= btn.up("moduleview").submoduleid;
+        var r = Ext.create('SmartApp.model.Script',{
+        	scriptid: "",
+        	submoduleid: submoduleid,
+            scriptname: ""
+        });
+        store.insert(0,r);
+        var rowEditing = btn.up('gridpanel').editingPlugin;
+        rowEditing.startEdit(0, 0);
+    },
+    deleteScript: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        var grid = btn.up('gridpanel');
+        var sm = grid.getSelectionModel();
+        store.remove(sm.getSelection());
+        if (store.getCount() > 0) {
+            sm.select(0);
+        };
+    },
+    refreshScript: function(btn){
+        var script_store = btn.up('gridpanel').getStore();
+        script_store.load({params:{submoduleid: btn.up("moduleview").submoduleid}});
+    },
+    saveScript: function(btn){
+    	var save_script_store = btn.up('gridpanel').getStore();
+    	save_script_store.sync({
+            callback : function(result){
+            	if(!result.hasException)
+            		Ext.Msg.alert('提示', '保存完毕');
+            }
+        });
+    },
+    showScriptDetails: function(btn){
+    	var script_store = btn.up('gridpanel').getStore();
+    	script_store.sync({
+            callback : function(result){
+            	if(result.hasException)
+            		Ext.Msg.alert('错误', "服务器错误导致提交失败");
+            	else
+            		Ext.Msg.alert('提示', '保存完毕');
+            }
+        });
+    	var selections = btn.up('gridpanel').getSelectionModel().getSelection();
+    	if(selections.length <= 0){
+    		Ext.MessageBox.alert("提示", "请单击选择具体的脚本后，再查看其细节");
+    		return ;
+    	}
+    	var node = selections[0];
+    	
+
+    	
+    	var down_grid_scriptdetail = btn.up('gridpanel').up('panel').down("#scriptdetailDownGrid");
+    	down_grid_scriptdetail.setTitle("脚本_" + node.data.scriptname + "_细节");
+    	down_grid_scriptdetail.scriptid = node.data.scriptid;
+    	//btn.up("gridpanel").up("panel").down("#scriptdetailDownGrid").down("combobox").getStore().load({param:{submoduleid:btn.up("moduleview").submoduleid}})
+    	
+    	var detail_store = btn.up('gridpanel').up('panel').down("#scriptdetailDownGrid").getStore();
+    	var keyword_store = Ext.create("SmartApp.store.KeywordStore");
+    	keyword_store.load({
+    			params:{submoduleid:btn.up('moduleview').submoduleid}, 
+    			callback: function(records, operation, success) {
+    				down_grid_scriptdetail.keyword_store = keyword_store;
+    				detail_store.load({params:{scriptid:node.data.scriptid}});
+    			}
+    		 
+    	});
+    	
+    },
+    
+    addScriptDetail: function(btn){
+    	if(btn.up('gridpanel').scriptid == undefined){
+    		Ext.Msg.alert("提示", "请在上面的表格中选择具体的脚本后再增加脚本细节");
+    		return;
+    	}
+    	var store = btn.up('gridpanel').getStore();
+        var r = Ext.create('SmartApp.model.ScriptDetail',{
+        	scriptdetailid: "",
+        	scriptid: btn.up("gridpanel").scriptid,
+        	keywordid: "",
+            keywordsubmoduleid: "",
+            version: ""
+        });
+        store.insert(0,r);
+        var rowEditing = btn.up('gridpanel').editingPlugin;
+        rowEditing.startEdit(0, 0);
+    },
+    deleteScriptDetail: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        var grid = btn.up('gridpanel');
+        var sm = grid.getSelectionModel();
+        store.remove(sm.getSelection());
+        if (store.getCount() > 0) {
+            sm.select(0);
+        };
+    },
+    refreshScriptDetail: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        store.load({params:{scriptid: btn.up("gridpanel").scriptid}});
+    },
+    saveScriptDetail: function(btn){
+    	var script_detail_store = btn.up('gridpanel').getStore();
+    	script_detail_store.sync({
+            callback : function(result){
+            	if(!result.hasException)
+            		Ext.Msg.alert('提示', '保存完毕');
+            }
+        });
+    },
+    dropScriptDetail:  function(node, data, overModel, dropPosition, eOpts){
+    	var this_store = overModel.store;
+    	var all_ids = [];
+    	for(var i = 0 ; i < this_store.getCount(); i++ )
+    		all_ids.push(this_store.getAt(i).data.scriptdetailid);
+    	for(i = 0 ; i < all_ids.length - 1; i++){
+    		for(j = i + 1; j < all_ids.length; j++){
+    			if(all_ids[i] > all_ids[j]){
+    				tmp = all_ids[i];
+    				all_ids[i] = all_ids[j];
+    				all_ids[j] = tmp;
+    			}
+    		}
+    	}
+    	for(var i = 0 ; i < this_store.getCount(); i++ ){
+    		this_store.getAt(i).set("scriptdetailid", all_ids[i]);
+    	}
+    		
+    },
+    addTestcase: function(btn){
+    	var store = btn.up('gridpanel').getStore();
+    	var submoduleid= btn.up("moduleview").submoduleid;
+        var r = Ext.create('SmartApp.model.Testcase',{
+        	testcaseid: "",
+        	scriptid: "",
+            testcasename: "",
+            testcaselevel: "",
+            expectedresult: ""
+        });
+        store.insert(0,r);
+        var rowEditing = btn.up('gridpanel').editingPlugin;
+        rowEditing.startEdit(0, 0);
+    },
+    deleteTestcase: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        var grid = btn.up('gridpanel');
+        var sm = grid.getSelectionModel();
+        store.remove(sm.getSelection());
+        if (store.getCount() > 0) {
+            sm.select(0);
+        };
+    },
+    refreshTestcase: function(btn){
+    	var testcase_store = btn.up('gridpanel').getStore();
+    	testcase_store.load({params:{submoduleid: btn.up("moduleview").submoduleid}});
+    },
+    saveTestcase: function(btn){
+    	var testcase_store = btn.up('gridpanel').getStore();
+    	testcase_store.sync({
+            callback : function(result){
+            	if(!result.hasException)
+            		Ext.Msg.alert('提示', '保存完毕');
+            }
+        });
+    },
+    showTestcase: function(btn){
+    	var testcase_store = btn.up('gridpanel').getStore();
+    	testcase_store.sync({
+            callback : function(result){
+            	if(result.hasException)
+            		Ext.Msg.alert('错误', "服务器错误导致提交失败");
+            	else
+            		Ext.Msg.alert('提示', '保存完毕');
+            }
+        });
+    	
+    	var selections = btn.up('gridpanel').getSelectionModel().getSelection();
+    	if(selections.length <= 0){
+    		Ext.MessageBox.alert("提示", "请单击选择具体的测试用例后，再查看其细节");
+    		return ;
+    	}
+    	var node = selections[0];
+    	
+    	var down_grid_testcasedetail = btn.up('gridpanel').up('panel').down("#testcasedetailDownGrid");
+    	down_grid_testcasedetail.setTitle("测试用例_" + node.data.testcasename + "_细节");
+    	down_grid_testcasedetail.testcaseid = node.data.testcaseid;
+    	down_grid_testcasedetail.scriptid = node.data.scriptid;
+    	down_grid_testcasedetail.getStore().load({params:{testcaseid:node.data.testcaseid}});
+    	
+    	
+    	
+    },
+    addTestcaseDetail: function(btn){
+    	if(btn.up("gridpanel").testcaseid == undefined){
+    		Ext.Msg.alert("提示", "请先选择上面的具体用例，再增加用例细节.");
+    		return ;
+    	}
+    	var store = btn.up('gridpanel').getStore();
+        var r = Ext.create('SmartApp.model.TestcaseDetail',{
+        	no: "",
+        	testcaseid: btn.up("gridpanel").testcaseid,
+        	parameter: "",
+            value: "",
+            testcasename: ""
+        });
+        store.insert(0,r);
+        var rowEditing = btn.up('gridpanel').editingPlugin;
+        rowEditing.startEdit(0, 0);
+    },
+    deleteTestcaseDetail: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        var grid = btn.up('gridpanel');
+        var sm = grid.getSelectionModel();
+        store.remove(sm.getSelection());
+        if (store.getCount() > 0) {
+            sm.select(0);
+        };
+    },
+    refreshTestcaseDetail: function(btn){
+        var store = btn.up('gridpanel').getStore();
+        store.load({params:{testcaseid: btn.up("gridpanel").testcaseid}});
+    },
+    saveTestcaseDetail: function(btn){
+    	var testcase_detail_store = btn.up('gridpanel').getStore();
+    	testcase_detail_store.sync({
+            callback : function(result){
+            	if(!result.hasException)
+            		Ext.Msg.alert('提示', '保存完毕');
+            }
+        });
+    }
+    
+});

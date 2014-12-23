@@ -1,0 +1,27 @@
+#app-header {
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #f3f6fc), color-stop(100%, #cbdaf0));
+    background-image: -webkit-linear-gradient(top, #f3f6fc, #cbdaf0);
+    background-image: -moz-linear-gradient(top, #f3f6fc, #cbdaf0);
+    background-image: -o-linear-gradient(top, #f3f6fc, #cbdaf0);
+    background-image: linear-gradient(top, #f3f6fc, #cbdaf0);
+    border-bottom: 1px solid #a3bde5
+}
+
+#app-header-title {
+
+    padding: 15px 10px 10px 51px;
+    background: url(../images/logo.png) no-repeat 10px 11px;
+    color: #04408c;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 gray
+}
+.x-btn-default-small .x-btn-inner, .x-btn-default-medium .x-btn-inner, .x-btn-default-large .x-btn-inner, .x-btn-default-toolbar-small .x-btn-inner, .x-btn-default-toolbar-medium .x-btn-inner, .x-btn-default-toolbar-large .x-btn-inner, .x-menu-item-text, .x-html-editor-tb .x-font-select, .x-panel-header-default, .x-panel-header-text-default, .x-panel-header-default-framed, .x-tip-header, .x-tip-body, .x-form-invalid-tip-body, .x-tip-header-text, .x-progress-text, .x-toolbar, .x-toolbar .x-form-item-label, .x-toolbar .x-toolbar-text, .x-window-header-text-default, .x-tab-bar, .x-tab button, .x-grid-rowbody, .x-grid-row .x-grid-cell, .x-grid-group-title, .x-grid-row-editor .x-form-field, .x-grid-row-editor .x-form-display-field, .x-form-invalid-under, .x-fieldset-header, .x-column-header, .x-mask-msg div, .x-btn-group-header-text-default-framed, table.x-datepicker-inner a, .x-monthpicker-item, .x-dd-drag-ghost
+{
+    font-size: 12px;
+}
+
+.x-column-header
+{
+    text-shadow:0 0 0 rgba(255, 255, 255, 0.3);
+}

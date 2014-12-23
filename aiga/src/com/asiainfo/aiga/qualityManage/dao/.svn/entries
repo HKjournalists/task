@@ -1,0 +1,43 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/qualityManage/dao
+svn://20.26.11.20/products
+
+
+
+2014-10-28T12:44:14.232367Z
+1515986
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+IAigaQualityManageDAO.java
+file
+
+
+
+
+2014-12-13T03:48:12.002286Z
+a60546e3cc86561a030095762ede757a
+2014-10-28T12:44:14.232367Z
+1515986
+liuchao
+
+impl
+dir
+

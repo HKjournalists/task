@@ -1,0 +1,79 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/search/dao
+svn://20.26.11.20/products
+
+
+
+2014-11-09T06:24:07.212645Z
+1537954
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+FileDAO.java
+file
+
+
+
+
+2014-12-13T03:48:06.203772Z
+290fdbd0466de0dc6fbc8dda694732dc
+2014-10-23T03:51:56.673709Z
+1509866
+wenghy
+
+DbSingleton.java
+file
+
+
+
+
+2014-12-13T03:48:06.208968Z
+8ea4f987189cffa8f6356bf74918279f
+2014-08-08T07:57:49.883226Z
+1383358
+wenghy
+
+BaseDAO.java
+file
+
+
+
+
+2014-12-13T03:48:06.213203Z
+36271ad11ba812425508fa1612856e97
+2014-10-23T05:08:39.295557Z
+1509969
+wenghy
+
+ILuceneSearchDAO.java
+file
+
+
+
+
+2014-12-13T03:48:06.218206Z
+04846e66127cf8c29416427692236946
+2014-11-09T06:24:07.212645Z
+1537954
+wenghy
+

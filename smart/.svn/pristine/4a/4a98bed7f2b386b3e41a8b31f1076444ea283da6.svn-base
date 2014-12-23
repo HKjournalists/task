@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+    <title>登录界面</title>
+    <!--ExtJs框架开始-->
+    <script src="assets/extjs/ext-all.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/extjs/resources/css/ext-all.css" />
+    <link rel="stylesheet" href="resources/css/icon.css" />
+    <style type="text/css">
+        body {background:url("images/bg.jpg") repeat fixed!important;}
+    </style>
+    <!--ExtJs框架结束-->
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            //初始化标签中的Ext:Qtip属性。
+            Ext.QuickTips.init();
+            Ext.form.Field.prototype.msgTarget = 'side';
+            //提交按钮处理方法
+            var btnsubmitclick = function () {
+                if (form.getForm().isValid()) {
+                    //通常发送到服务器端获取返回值再进行处理，我们在以后的教程中再讲解表单与服务器的交互问题。
+                    //userlogin/login?username=admin&password=123456
+                    		
+                    Ext.Ajax.request({     
+						url:'userlogin/login',  
+						params:{  
+				       		username: form.getForm().getValues()["username"],
+				       		password: form.getForm().getValues()["password"]
+				        },  
+				        success: function(resp,opts) {
+				        	var result =  Ext.decode(resp.responseText);
+				        	console.dir(result);
+				        	if(result.result === "true"){
+				        		window.location = "index.jsp";
+				        	}
+				        	else
+				        		Ext.Msg.alert("失败", result.message);
+				        	
+				        },
+				        failure: function(resp,opts) {   
+                            var respText = Ext.util.JSON.decode(resp.responseText);   
+                            Ext.Msg.alert('错误', respText.error);   
+                     	}     
+				    });
+                    
+                }
+            }
+            //重置按钮"点击时"处理方法
+            var btnresetclick = function () {
+                form.getForm().reset();
+            }
+            //提交按钮
+            var btnsubmit = new Ext.Button({
+                text: '登录',
+                margin: '5 10 5 10',
+                handler: btnsubmitclick
+            });
+            //重置按钮
+            var btnreset = new Ext.Button({
+                text: '重 置',
+                margin: '5 10 5 10',
+                handler: btnresetclick
+            });
+            //用户名input
+            var txtusername = new Ext.form.TextField({
+                allowBlank: false,
+                maxLength: 20,
+                name: 'username',
+                fieldLabel: '用户名',
+                blankText: '请输入用户名',
+                maxLengthText: '用户名不能超过20个字符'
+            });
+            //密码input
+            var txtpassword = new Ext.form.TextField({
+                allowBlank: false,
+                maxLength: 20,
+                inputType: 'password',
+                name: 'password',
+                fieldLabel: '密　码',
+                blankText: '请输入密码',
+                maxLengthText: '密码不能超过20个字符',
+                listeners: {  
+                    specialkey: function(field,e){    
+                        if (e.getKey()==Ext.EventObject.ENTER){    
+                        	btnsubmitclick();  
+                        }  
+                    }  
+                }
+            });
+            //表单
+            var form = new Ext.form.FormPanel({
+                url: '******',
+                labelAlign: 'right',
+                //frame: true,
+				region: 'center',
+                buttonAlign: 'center',
+                border: false,
+                bodyStyle: 'padding:6px 0px 0px 15px',
+                defaults:{
+                	margin:'15 0 5 5'
+                },
+                items: [txtusername, txtpassword],
+                buttons: [btnsubmit, btnreset]
+            });
+            //窗体
+            var win = new Ext.Window({
+                title: '自动化测试系统v1.0',
+                iconCls: 'User',
+                plain: true,
+                width: 440,
+                height: 280,
+                resizable: false,
+                shadow: true,
+                closable: false,
+                animCollapse: true,
+                layout: "border",
+                items: [
+				{
+					xtype: 'panel',
+					height: 120,
+					name:'processImage',
+					id:'investReportImage',
+					region: "north",
+					html: "<img src='images/banner.jpg' height=120/>"
+				},
+				form]
+            });
+            win.show();
+           
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/manualTask/bo
+svn://20.26.11.20/products
+
+
+
+2014-09-26T03:35:23.314118Z
+1471526
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaManualTask.java
+file
+
+
+
+
+2014-12-13T03:48:11.582008Z
+b4248c541d28df6356a153e0d3921cda
+2014-09-25T05:22:30.463940Z
+1470314
+liuchao
+
+AigaManualTask.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:11.585145Z
+38bd575d3163cc87161cc28c04c15a68
+2014-09-26T03:35:23.314118Z
+1471526
+liuchao
+

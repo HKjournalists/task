@@ -1,0 +1,127 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/html/csc/attach
+svn://20.26.11.20/products
+
+
+
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AttachListAddedType.jsp
+file
+
+
+
+
+2014-12-13T04:18:03.022401Z
+f5383368c2d5dc7da56390cf50b07fac
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+AttachListDisplay.jsp
+file
+
+
+
+
+2014-12-13T04:18:03.022401Z
+70425fdae514ed3e8aa732c806f9a1ae
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+fileTrans.jsp
+file
+
+
+
+
+2014-12-13T04:18:03.022401Z
+3d4617bea0c1ac26ae2b69f5754062ae
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+swfupload
+dir
+
+upload
+dir
+
+images
+dir
+
+AttachListFunc.jsp
+file
+
+
+
+
+2014-12-13T04:18:03.022401Z
+8774b2f78ebbb4edf8bf8afab367e6cb
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+css
+dir
+
+AttachList.jsp
+file
+
+
+
+
+2014-12-13T04:18:03.038028Z
+a6fd1349589b119193f01570d1564b4c
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+AttachListForMeeting.jsp
+file
+
+
+
+
+2014-12-13T04:18:03.038028Z
+9034f5ffbcb36fe5162586dadf21339f
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+
+js
+dir
+
+AttachListFuncDisplay.jsp
+file
+
+
+
+
+2014-12-13T04:18:03.038028Z
+37476d68375e06be0900b7ababe27e02
+2014-08-11T03:08:05.306529Z
+1384961
+liuchao
+

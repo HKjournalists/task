@@ -1,0 +1,12 @@
+
+
+ .aipopmenu_backdiv{BORDER-RIGHT: #528EC4 1px solid; BORDER-TOP: #528EC4 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 12px; Z-INDEX: 100; VISIBILITY: hidden; BORDER-LEFT: #528EC4 1px solid; WIDTH: 100px; CURSOR: hand; COLOR: #040608; LINE-HEIGHT: 25px; BORDER-BOTTOM: #528EC4 1px solid; POSITION: absolute; BACKGROUND-COLOR: #D5E7F9;height:25;}
+ .aipopmenu_menu{padding-left:1;padding-top:2;padding-bottom:2;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;COLOR: #040608;height:25;}
+ .aipopmenu_overmenu{BORDER-RIGHT: #528EC4 1px solid; BORDER-TOP: #528EC4 1px solid;BORDER-LEFT: #528EC4 1px solid;BORDER-BOTTOM: #528EC4 1px solid;padding-left:1;padding-top:2;padding-bottom:2;background-color:#F5F8FB;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt; COLOR: #1A2E55;height:25; CURSOR: hand;}
+ .aipopmenu_sepa{}
+
+ .aipopmenu_backdiv_1{background-color: #D8D8D0; border-left: 2 solid #ffffff;border-right: 2 solid #040608; border-top: 2 solid #ffffff; border-bottom: 2 solid #040608 }
+ .aipopmenu_menu_1{padding-left:16;padding-top:2;padding-bottom:2;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;}
+.aipopmenu_overmenu_1{padding-left:16;padding-top:2;padding-bottom:2;background-color:highlight;color:highlighttext;font-family:宋体, Book Antiqua, Times New Roman, Times; font-size: 9pt;}
+.aipopmenu_sepa_1{width:100%;border: 1px inset #f0f0f0}
+.aipopmenu_disablemenutext{color:#c0c0c0;}

@@ -1,0 +1,55 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/component/bo
+svn://20.26.11.20/products
+
+
+
+2014-08-22T03:48:23.399926Z
+1411097
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaComponent.java
+file
+
+
+
+
+2014-12-13T03:48:12.184828Z
+0129520c45f01ff9a90198aae389ebd4
+2014-08-22T03:48:23.399926Z
+1411097
+liuchao
+
+extend
+dir
+
+AigaComponent.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:12.190079Z
+c2c35fc7a718b32f3c56ebf68fba7583
+2014-08-22T03:48:23.399926Z
+1411097
+liuchao
+

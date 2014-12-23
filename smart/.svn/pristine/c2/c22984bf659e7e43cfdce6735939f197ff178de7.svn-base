@@ -1,0 +1,110 @@
+package automation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+
+import com.lb.app.automation.model.AutoKeyword;
+import com.lb.app.automation.model.AutoKeywordDetail;
+import com.lb.app.automation.service.AutoKeywordDetailService;
+import com.lb.app.automation.service.AutoKeywordService;
+import com.lb.app.automation.service.AutoModuleService;
+import com.lb.app.automation.service.AutoSubModuleService;
+
+import common.JUnit4ClassRunner;
+
+
+
+@RunWith(JUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath*:spring/spring-base.xml"})
+@Transactional  
+@TransactionConfiguration(transactionManager = "txManager", defaultRollback = true)
+public class AutoKeywordTest {
+
+	final private static Log log = LogFactory.getLog(AutoKeywordTest.class);
+
+	
+	@Autowired
+	AutoModuleService moduleService = new AutoModuleService();
+	
+	@Autowired 
+	AutoSubModuleService submoduleService = new AutoSubModuleService();
+	
+	@Autowired
+	AutoKeywordService keywordService;
+	
+	@Autowired
+	AutoKeywordDetailService keywordDetailService;
+	
+	
+	String moduleid = null;
+	String submoduleid = null;
+	
+	@Before
+	public void init(){
+		//module
+		this.moduleid = moduleService.createModule("test_module");
+		
+		//submodule
+		this.submoduleid = submoduleService.createSubModule("test_sub_module", this.moduleid);
+	}
+	
+	@Test
+	public void createKeyword(){
+		AutoKeyword keyword = new AutoKeyword();
+		keyword.setKeywordname("test_keyword1");
+		keyword.setVersion("1");
+		
+		List<AutoKeyword> key_list = new ArrayList<AutoKeyword>();
+		key_list.add(keyword);
+		keywordService.saveOrUpdate(key_list);
+		
+		AutoKeywordDetail keyworddetail = new AutoKeywordDetail();
+		keyworddetail.setKeyword(keyword);
+		keyworddetail.setObject("aaa");
+		keyworddetail.setParameter("bb");
+		keyworddetail.setKeywordid(keyword.getKeywordid());
+		List<AutoKeywordDetail> keydetail_list = new ArrayList<AutoKeywordDetail>();
+		keydetail_list.add(keyworddetail);
+		keywordDetailService.saveOrUpdate(keydetail_list);
+		
+	}
+	
+	@Test
+	public void loadKeyword(){
+		
+		AutoKeyword keyword = new AutoKeyword();
+		keyword.setSubmodule_id(this.submoduleid);
+		keyword.setKeywordname("test_keyword1");
+		keyword.setVersion("1");
+		
+		List<AutoKeyword> key_list = new ArrayList<AutoKeyword>();
+		key_list.add(keyword);
+		keywordService.saveOrUpdate(key_list);
+		
+		AutoKeywordDetail keyworddetail = new AutoKeywordDetail();
+		keyworddetail.setKeyword(keyword);
+		keyworddetail.setObject("aaa");
+		keyworddetail.setParameter("bb");
+		keyworddetail.setOperation("c");
+		keyworddetail.setKeywordid(keyword.getKeywordid());
+		List<AutoKeywordDetail> keydetail_list = new ArrayList<AutoKeywordDetail>();
+		keydetail_list.add(keyworddetail);
+		keywordDetailService.saveOrUpdate(keydetail_list);
+		
+		
+		//keywordService.load(this.submoduleid);
+	}
+	
+	
+}

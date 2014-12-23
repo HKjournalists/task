@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/runPlan/httpTrans
+svn://20.26.11.20/products
+
+
+
+2014-09-27T03:56:22.871965Z
+1472060
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaCaseResultListener.java
+file
+
+
+
+
+2014-12-13T03:48:07.173920Z
+191a94e8968a668b8b1cbbcbeed40cde
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+CaseResultHttp.java
+file
+
+
+
+
+2014-12-13T03:48:07.178929Z
+271ad41aadd1917a8e2b70cb569a8789
+2014-09-27T03:56:22.871965Z
+1472060
+liuchao
+

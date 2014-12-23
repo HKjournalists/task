@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<modules>
+  <module name="流程服务模块" value="vm.module" use="true"/>
+  <module name="业务模块" value="busi.module" use="true"/>
+  <module name="异常处理" value="com/ai/comframe/exception/exception.module" use="true"/>
+  <module name="扫描工单发送公告" value="queues.module" use="true" /> 
+
+</modules>

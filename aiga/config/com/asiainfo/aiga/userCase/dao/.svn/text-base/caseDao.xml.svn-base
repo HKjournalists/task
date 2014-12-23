@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="caseDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaCaseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="baseBusiDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaBaseBusiDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="busiDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaBusiDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="sysFolderDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaSystemFolderDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="subSysFolderDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaSubSysFolderDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="funFolderDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaFunFolderDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="caseParamDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaCaseParamDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="autoTestParamDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaAutotestParamsDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="testElementDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaTestElemDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="testSubElemDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaTestSubElemDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="testRFunElemDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaRFunElemDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="seceneDao" class="com.asiainfo.aiga.userCase.dao.impl.AigaSeceneDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+</beans>

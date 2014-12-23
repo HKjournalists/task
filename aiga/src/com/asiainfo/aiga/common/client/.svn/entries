@@ -1,0 +1,49 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/common/client
+svn://20.26.11.20/products
+
+
+
+2014-09-17T04:27:16.692688Z
+1449280
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+bo
+dir
+
+service
+dir
+
+dao
+dir
+
+RecivevClientConfig.java
+file
+
+
+
+
+2014-12-13T03:48:11.153036Z
+c844842bdefbebca16441d82840d12d9
+2014-09-17T04:27:16.692688Z
+1449280
+liuchao
+

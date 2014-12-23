@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOWorkflow" mainattr="WF_ITEM_ID">
+        <mapingenty type="table">ALM_WORKFLOW</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="WF_ITEM_ID" maxlength="12" datatype="Long" type="PK" remark="模版项ID">
+                <mapingcol datatype="NUMBER">WF_ITEM_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMPLATE_ID" maxlength="12" datatype="Long" type="COL" remark="来源于 vm_template">
+                <mapingcol datatype="NUMBER">TEMPLATE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMPLATE_NAME" maxlength="128" datatype="String" type="COL" remark="模版名称">
+                <mapingcol datatype="VARCHAR2">TEMPLATE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="TEMPLATE_TYPE" maxlength="2" datatype="Integer" type="COL" remark="模版类型">
+                <mapingcol datatype="NUMBER">TEMPLATE_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VERSION" maxlength="32" datatype="String" type="COL" remark="版本号">
+                <mapingcol datatype="VARCHAR2">VERSION</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PHASE_ID" maxlength="32" datatype="String" type="COL" remark="阶段编号">
+                <mapingcol datatype="VARCHAR2">PHASE_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="PHASE_NAME" maxlength="128" datatype="String" type="COL" remark="阶段名称">
+                <mapingcol datatype="VARCHAR2">PHASE_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VM_TASK_NAME" maxlength="128" datatype="String" type="COL" remark="任务名称">
+                <mapingcol datatype="VARCHAR2">VM_TASK_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VM_LINK_ID" maxlength="12" datatype="Long" type="COL" remark="任务ID">
+                <mapingcol datatype="NUMBER">VM_LINK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VM_TASK_NO" maxlength="32" datatype="String" type="COL" remark="任务编号">
+                <mapingcol datatype="VARCHAR2">VM_TASK_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_ID" maxlength="12" datatype="Long" type="COL" remark="环节ID">
+                <mapingcol datatype="NUMBER">LINK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_NO" maxlength="32" datatype="String" type="COL" remark="环节编号">
+                <mapingcol datatype="VARCHAR2">LINK_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_NO_TYPE" maxlength="4000" datatype="String" type="COL" remark="环节类型 start\end\user\sign\auto">
+                <mapingcol datatype="VARCHAR2">LINK_NO_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ROLE_CODE" maxlength="40" datatype="String" type="COL" remark="权限ID">
+                <mapingcol datatype="VARCHAR2">ROLE_CODE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="LINK_URL" maxlength="4000" datatype="String" type="COL" remark="页面链接">
+                <mapingcol datatype="VARCHAR2">LINK_URL</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NEXT_LINK_COND_TREE" maxlength="20" datatype="Long" type="COL" remark="下个环节可选条件树根节点 ID">
+                <mapingcol datatype="NUMBER">NEXT_LINK_COND_TREE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_DISPLAY" maxlength="1" datatype="Integer" type="COL" remark="工单是否显示">
+                <mapingcol datatype="NUMBER">IS_DISPLAY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_ROLE" maxlength="1" datatype="Integer" type="COL" remark="是否使用A-B角分派工单">
+                <mapingcol datatype="NUMBER">IS_ROLE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_PRINT" maxlength="1" datatype="Integer" type="COL" remark="是否需要打单">
+                <mapingcol datatype="NUMBER">IS_PRINT</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_REAUTHORIZE" maxlength="1" datatype="Integer" type="COL" remark="是否可以转派">
+                <mapingcol datatype="NUMBER">IS_REAUTHORIZE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_TERMINATE" maxlength="1" datatype="Integer" type="COL" remark="流程是否可在此环节终止">
+                <mapingcol datatype="NUMBER">IS_TERMINATE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_BACK" maxlength="1" datatype="Integer" type="COL" remark="是否可以回退到上个环节">
+                <mapingcol datatype="NUMBER">IS_BACK</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_NOTICE" maxlength="1" datatype="Integer" type="COL" remark="是否通知">
+                <mapingcol datatype="NUMBER">IS_NOTICE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_DISCUSS" maxlength="1" datatype="Integer" type="COL" remark="是否讨论">
+                <mapingcol datatype="NUMBER">IS_DISCUSS</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BACK_COND" maxlength="4000" datatype="String" type="COL" remark="回退条件">
+                <mapingcol datatype="VARCHAR2">BACK_COND</mapingcol>
+            </attr>
+            <attr floatlength="0" name="BACK_LINK_NO" maxlength="32" datatype="String" type="COL" remark="回退至环节编号">
+                <mapingcol datatype="VARCHAR2">BACK_LINK_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="HTML_TAG_NAME" maxlength="500" datatype="String" type="COL" remark="页面选择干系人控件名称">
+                <mapingcol datatype="VARCHAR2">HTML_TAG_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="HTML_TAG_DESC" maxlength="500" datatype="String" type="COL" remark="页面选择干系人控件描述">
+                <mapingcol datatype="VARCHAR2">HTML_TAG_DESC</mapingcol>
+            </attr>
+            <attr floatlength="0" name="INIT_LINK_NO" maxlength="32" datatype="String" type="COL" remark="初始化干系人来源于指定的LINK_NO">
+                <mapingcol datatype="VARCHAR2">INIT_LINK_NO</mapingcol>
+            </attr>
+            <attr floatlength="0" name="INIT_LINK_ID" maxlength="12" datatype="Long" type="COL" remark="初始化干系人来源于指定的LINK_ID">
+                <mapingcol datatype="NUMBER">INIT_LINK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="NEED_INIT_STAFF" maxlength="20" datatype="Long" type="COL" remark="是否需要初始化干系人">
+                <mapingcol datatype="NUMBER">NEED_INIT_STAFF</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_STAFF_ID" maxlength="12" datatype="Long" type="COL" remark="创建人">
+                <mapingcol datatype="NUMBER">CREATE_STAFF_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CREATE_TIME" maxlength="20" datatype="DateTime" type="COL" remark="流程模版创建时间">
+                <mapingcol datatype="DATE">CREATE_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="START_TIME" maxlength="20" datatype="DateTime" type="COL" remark="该流程启用时间">
+                <mapingcol datatype="DATE">START_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="END_TIME" maxlength="20" datatype="DateTime" type="COL" remark="该流程终止时间">
+                <mapingcol datatype="DATE">END_TIME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="VALID_TAG" maxlength="1" datatype="Integer" type="COL" remark="1 有效 2 无效 3 其他">
+                <mapingcol datatype="NUMBER">VALID_TAG</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_COMPANY" maxlength="1" datatype="Integer" type="COL" remark="人员选择控件是否限制同一公司">
+                <mapingcol datatype="NUMBER">IS_COMPANY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_DEPART" maxlength="1" datatype="Integer" type="COL" remark="人员选择控件是否限制同一部门">
+                <mapingcol datatype="NUMBER">IS_DEPART</mapingcol>
+            </attr>
+            <attr floatlength="0" name="IS_GROUP" maxlength="1" datatype="Integer" type="COL" remark="人员选择控件是否限制同一工作组">
+                <mapingcol datatype="NUMBER">IS_GROUP</mapingcol>
+            </attr>
+            <attr floatlength="0" name="CONNECT_POINT" maxlength="500" datatype="String" type="COL" remark="关联节点">
+                <mapingcol datatype="VARCHAR2">CONNECT_POINT</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

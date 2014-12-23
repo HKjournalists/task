@@ -1,0 +1,54 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/html/extJs/resources/themes/images/access/form-invalid-tip
+svn://20.26.11.20/products
+
+
+
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+form-invalid-tip-default-corners.gif
+file
+
+
+
+
+2014-12-13T03:47:13.795079Z
+b7e84820502da918e3d37d0cb59f7795
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+has-props
+
+form-invalid-tip-default-sides.gif
+file
+
+
+
+
+2014-12-13T03:47:13.798236Z
+74a11edb3a290d1e373bc0d88e6b6c1b
+2014-08-07T01:46:43.644839Z
+1379681
+liuchao
+has-props
+

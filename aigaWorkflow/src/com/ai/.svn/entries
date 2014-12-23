@@ -1,0 +1,40 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aigaWorkflow/src/com/ai
+svn://20.26.11.20/products
+
+
+
+2014-10-20T09:09:14.006694Z
+1499114
+lixb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+teammanage
+dir
+
+filter
+dir
+
+secframe
+dir
+
+webframe
+dir
+

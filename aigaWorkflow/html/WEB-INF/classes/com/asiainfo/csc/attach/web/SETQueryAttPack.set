@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ROOTINFO>
+  <FieldTypeSet Name="SETQueryAttPack" BOName="com.asiainfo.csc.attach.bo.BOQueryAttach" MainField="ATT_ID" Title="com.asiainfo.csc.attach.bo.BOQueryAttach" ActBOName="com.asiainfo.csc.attach.bo.BOQueryAttPack" Package="com.asiainfo.csc.attach.web">
+    <FieldList>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="0" IsEnabled="Y">
+        <Name>ATT_DESC</Name>
+        <BOAttrName>ATT_DESC</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_DESC</ID>
+        <Title>附件描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1024" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_DESC" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_DESC" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="1" IsEnabled="Y">
+        <Name>ATT_ID</Name>
+        <BOAttrName>ATT_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_ID</ID>
+        <Title>附件ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_ID" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="2" IsEnabled="Y">
+        <Name>ATT_NAME</Name>
+        <BOAttrName>ATT_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_NAME</ID>
+        <Title>附件名称</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1024" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_NAME" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="3" IsEnabled="Y">
+        <Name>ATT_PACK_DESC</Name>
+        <BOAttrName>ATT_PACK_DESC</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_PACK_DESC</ID>
+        <Title>附件包描述</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="128" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_PACK_DESC" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_PACK_DESC" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="4" IsEnabled="Y">
+        <Name>ATT_PACK_ID</Name>
+        <BOAttrName>ATT_PACK_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_PACK_ID</ID>
+        <Title>附件包ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_PACK_ID" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_PACK_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="5" IsEnabled="Y">
+        <Name>ATT_PATH</Name>
+        <BOAttrName>ATT_PATH</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_PATH</ID>
+        <Title>附件路径</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1024" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_PATH" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_PATH" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="6" IsEnabled="Y">
+        <Name>ATT_TYPE</Name>
+        <BOAttrName>ATT_TYPE</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_TYPE</ID>
+        <Title>附件类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.aialmJT.attach.web.DSAttachType" hasNull="true" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_TYPE" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="7" IsEnabled="Y">
+        <Name>ATT_TYPE_NAME</Name>
+        <BOAttrName>ATT_TYPE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>ATT_TYPE_NAME</ID>
+        <Title>附件类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="1024" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="ATT_TYPE_NAME" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="ATT_TYPE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="8" IsEnabled="Y">
+        <Name>EMPLOYEE_NAME</Name>
+        <BOAttrName>EMPLOYEE_NAME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>EMPLOYEE_NAME</ID>
+        <Title>提交人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="200" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="EMPLOYEE_NAME" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="EMPLOYEE_NAME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="9" IsEnabled="Y">
+        <Name>OBJ_ID</Name>
+        <BOAttrName>OBJ_ID</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_ID</ID>
+        <Title>对象ID</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="OBJ_ID" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="OBJ_ID" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="10" IsEnabled="Y">
+        <Name>OBJ_NO</Name>
+        <BOAttrName>OBJ_NO</BOAttrName>
+        <BODisplayAttrName />
+        <ID>OBJ_NO</ID>
+        <Title>对象编号</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="OBJ_NO" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="OBJ_NO" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="11" IsEnabled="Y">
+        <Name>OBJ_TYPE</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>OBJ_TYPE</ID>
+        <Title>对象类型</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="12" Decimal="0">Long</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.aialmJT.common.web.DSObjType" hasNull="true" />
+        <DefaultValue />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="OBJ_TYPE" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="OBJ_TYPE" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="12" IsEnabled="Y">
+        <Name>STATUS</Name>
+        <BOAttrName>STATUS</BOAttrName>
+        <BODisplayAttrName />
+        <ID>STATUS</ID>
+        <Title>状态</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="STATUS" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="STATUS" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="13" IsEnabled="Y">
+        <Name>SUBMITTER_TAG</Name>
+        <BOAttrName>SUBMITTER_TAG</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SUBMITTER_TAG</ID>
+        <Title>提交人</Title>
+        <Authority>U</Authority>
+        <EditType>DBEdit</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="SUBMITTER_TAG" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="SUBMITTER_TAG" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="14" IsEnabled="Y">
+        <Name>SUBMIT_LINK</Name>
+        <BOAttrName>SUBMIT_LINK</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SUBMIT_LINK</ID>
+        <Title>提交环节</Title>
+        <Authority>U</Authority>
+        <EditType>DBListBox</EditType>
+        <DataType MaxLength="32" Decimal="0">String</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ListDataSource isDynamic="N" type="0" LSName="com.asiainfo.csc.common.web.DSLinkNoForAttach" hasNull="false" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="SUBMIT_LINK" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="SUBMIT_LINK" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="15" IsEnabled="Y">
+        <Name>SUBMIT_TIME</Name>
+        <BOAttrName>SUBMIT_TIME</BOAttrName>
+        <BODisplayAttrName />
+        <ID>SUBMIT_TIME</ID>
+        <Title>提交时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDate</EditType>
+        <DataType MaxLength="0" Decimal="0">Date</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttPack" Attr="SUBMIT_TIME" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" Attr="SUBMIT_TIME" />
+      </Field>
+      <Field NewFormVisible="true" FormVisible="true" GridVisible="true" DisplaySeq="100" IsEnabled="Y">
+        <Name>SUBMIT_END_TIME</Name>
+        <BOAttrName />
+        <BODisplayAttrName />
+        <ID>SUBMIT_END_TIME</ID>
+        <Title>提交结束时间</Title>
+        <Authority>U</Authority>
+        <EditType>DBDate</EditType>
+        <DataType MaxLength="0" Decimal="0">Date</DataType>
+        <IsNull>N</IsNull>
+        <IsPk>N</IsPk>
+        <IDDataType MaxLength="0" Decimal="0" />
+        <ActBO Name="com.asiainfo.csc.attach.bo.BOQueryAttach" />
+      </Field>
+    </FieldList>
+    <ChildFieldTypeSet />
+  </FieldTypeSet>
+</ROOTINFO>

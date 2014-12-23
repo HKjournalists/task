@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="componentSV" class="com.asiainfo.aiga.component.service.impl.AigaComponentSVImpl">
+		<property name="componentDAO" ref="componentDao"></property>
+		<property name="aigaRCompGuiDAO" ref="rCompGuiDao"></property>
+		<property name="aigaGuiDAO" ref="aigaGuiDao"></property>
+	</bean>
+	
+	<bean id="compTree" class="com.asiainfo.aiga.component.service.impl.AigaCompTree"></bean>
+	<!-- <bean id="compHttp" class="com.asiainfo.aiga.component.httpTrans.AigaComponentHttp">
+		<property name="aigaComponentSV" ref="componentSV"></property>
+	</bean>
+	<bean id="comListener" class="com.asiainfo.aiga.component.httpTrans.AigaCompListener" init-method="initMethod" destroy-method="destoryMethod">
+		<property name="aigaComponentHttp" ref="compHttp"></property>
+	</bean> -->
+</beans>

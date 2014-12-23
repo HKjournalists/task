@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="projectId" mainattr="KIND_NAME">
+        <mapingenty type="query">select distinct a.kind_name  ,staff_id from sys_station_type_kind a ,sys_station_type b,sys_station c, sys_staff_role_author d
+  where a.kind_id=b.kind_id and c.state=1 and b.station_type_id=c.station_type_id and c.organize_id =d.organize_id</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="KIND_NAME" maxlength="100" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">KIND_NAME</mapingcol>
+            </attr>
+            <attr floatlength="0" name="STAFF_ID" maxlength="22" datatype="Long" type="COL">
+                <mapingcol datatype="NUMBER">STAFF_ID</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

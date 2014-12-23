@@ -1,0 +1,15 @@
+
+== TODO List
+* ehcache hibernate.xml
+* back url web.xml
+* error page web.xml
+* mvc:interceptors spring-dispatcher.xml
+* uni-key page valication
+* grid page CRUD
+
+
+
+
+== Done
+* oracle jdbc
+* openSessionInVieFilter web.xml

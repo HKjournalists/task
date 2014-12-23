@@ -1,0 +1,55 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/statistics/dao
+svn://20.26.11.20/products
+
+
+
+2014-11-05T06:10:00.026085Z
+1526869
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+impl
+dir
+
+IStatisticsDAO.java
+file
+
+
+
+
+2014-12-13T03:48:04.440316Z
+fe138af27dab5eabaedf4fadfa27a92e
+2014-11-05T06:10:00.026085Z
+1526869
+wenghy
+
+EntityUtil.java
+file
+
+
+
+
+2014-12-13T03:48:04.445319Z
+6c98586d1a7f050b34df9919e4302b4e
+2014-10-15T09:20:09.369537Z
+1484266
+wenghy
+

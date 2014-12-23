@@ -1,0 +1,171 @@
+package com.lb.app.automation.action;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethod;
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethodType;
+
+import com.alibaba.druid.util.StringUtils;
+import com.lb.app.automation.model.AutoBatch;
+import com.lb.app.automation.model.AutoBatchDetail;
+import com.lb.app.automation.model.AutoModule;
+import com.lb.app.automation.model.AutoPlatformExecuteConfig;
+import com.lb.app.automation.model.AutoScript;
+import com.lb.app.automation.model.AutoSubModule;
+import com.lb.app.automation.service.AutoBatchDetailService;
+import com.lb.app.automation.service.AutoBatchService;
+import com.lb.app.automation.service.AutoModuleService;
+import com.lb.app.automation.service.AutoPlatformExecuteConfigService;
+import com.lb.app.automation.service.AutoScriptService;
+import com.lb.app.common.tree.CheckedNode;
+
+@Service
+public class BatchManageAction {
+
+	final private static Log log = LogFactory.getLog(BatchManageAction.class);
+	
+	@Autowired
+	AutoModuleService moduleService;
+	
+	@Autowired
+	AutoScriptService scriptService;
+	
+	@Autowired
+	AutoBatchService batchService;
+	
+	@Autowired
+	AutoBatchDetailService batchDetailService;
+	
+	@Autowired
+	AutoPlatformExecuteConfigService execconfigService;
+	
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.TREE_LOAD)
+	public List<CheckedNode> getTree(@RequestParam(value = "id", required = false) String id,
+		@RequestParam(value = "batchid", required = false, defaultValue = "defaultValue") String batchid) {
+		log.info("==========================> " + batchid);
+		List<AutoBatchDetail> batch_details = batchDetailService.load(batchid);
+		Set<String> scriptids = new HashSet<String>();
+		for(AutoBatchDetail d : batch_details){
+			scriptids.add(d.getScriptid());
+		}
+		
+		List<CheckedNode> result = new ArrayList<CheckedNode>();
+		List<AutoModule> modules = moduleService.load();
+		for(AutoModule m : modules){
+			CheckedNode n = new CheckedNode();
+			n.id = m.getModuleid();
+			n.leaf = m.getSubmodules().size() <= 0;
+			n.checked = true;
+			n.text = m.getModulename();
+			if(!n.leaf){
+				List<CheckedNode> list_sm = new ArrayList<CheckedNode>();
+				for(AutoSubModule sm : m.getSubmodules()){
+					CheckedNode sn = new CheckedNode();
+					sn.id = sm.getSubmoduleid();
+					List<AutoScript> scripts = scriptService.load(sn.id);
+					sn.leaf = scripts.size()<=0;
+					sn.checked = true;
+					sn.text = sm.getSubmodulename();
+					if(!sn.leaf){
+						List<CheckedNode> list_scr = new ArrayList<CheckedNode>();
+						for(AutoScript s: scripts){
+							CheckedNode ss = new CheckedNode();
+							ss.id = s.getScriptid();
+							ss.leaf = true;
+							if(scriptids.contains(s.getScriptid()))
+								ss.checked = true;
+							else
+								ss.checked = false;
+							if(!ss.checked)
+								sn.checked = false;
+							ss.text = s.getScriptname();
+							list_scr.add(ss);
+						}
+						sn.children = list_scr.toArray(new CheckedNode[list_scr.size()]);
+					}
+					if(!sn.checked)
+						n.checked = false;
+					list_sm.add(sn);
+				}
+				n.children = list_sm.toArray(new CheckedNode[list_sm.size()]);
+			}
+			
+			result.add(n);
+		}
+		return result;
+	}
+	
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.SIMPLE_NAMED)
+	public void saveBatchScript(@RequestParam(value = "batchid", required = false) String batchid,
+		@RequestParam(value = "scriptids", required = false, defaultValue = "defaultValue") String scriptids) {
+		if(!StringUtils.isEmpty(scriptids)){
+			AutoBatch batch = batchService.get(batchid);
+			List<AutoScript> scripts = scriptService.getScriptByIds(scriptids);
+			Set<AutoBatchDetail> has_scripts = batch.getBatchdetails();
+			
+			List<AutoBatchDetail> delete_batchdetails = new ArrayList<AutoBatchDetail>();
+			List<AutoBatchDetail> save_batchdetails = new ArrayList<AutoBatchDetail>();
+			
+			//add delete list
+			for(AutoBatchDetail b : has_scripts){
+				
+				boolean eflag = false;
+				for(AutoScript s : scripts){
+					if(s.getScriptid() == b.getScript().getScriptid()){
+						eflag = true;
+						break;
+					}
+				}
+				if(!eflag){
+					delete_batchdetails.add(b);
+				}
+						
+			}
+			//save list
+			for(AutoScript s:scripts){
+				
+				AutoBatchDetail save_d = null;
+				for(AutoBatchDetail b : has_scripts){
+					if(b.getScript().getScriptid() == s.getScriptid()){
+						save_d = b;
+						break;
+					}
+						
+				}
+				if(save_d == null){
+					save_d = new AutoBatchDetail();
+					save_d.setBatch(batch);
+					save_d.setScript(s);
+					save_d.setScriptname(s.getScriptname());
+					save_d.setSubmodulename(s.getSubmodule().getSubmodulename());
+					save_d.setModulename(s.getSubmodule().getModule().getModulename());
+				}
+				save_batchdetails.add(save_d);
+			}
+			batchDetailService.destroy(delete_batchdetails);
+			batchDetailService.saveOrUpdate(save_batchdetails);
+			
+		}
+		
+	}
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.SIMPLE_NAMED)
+	public void saveExecConfig(@RequestParam(value = "batchid", required = false) String batchid,
+		@RequestParam(value = "platformid", required = false, defaultValue = "defaultValue") String platformid) {
+
+		execconfigService.saveConfig(batchid, platformid);
+	
+	}
+	
+}

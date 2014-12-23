@@ -1,0 +1,42 @@
+Ext.define('SmartApp.controller.User', {
+    extend: 'Ext.app.Controller',
+    models: ['User'],
+    stores: ['UserStore'],
+    views: ['User.UserManage', 'User.UserEdit'],
+
+    init: function () {
+
+        this.control({
+            'usermanageview button[action=search]': {
+                click: this.searchUser
+            },
+            'usermanageview gridpanel#userGrid': {
+                itemclick: this.editUser
+            },
+            'usereditview button[action=save]':{
+                click: this.saveUser
+            }
+        });
+    },
+
+    searchUser: function(){
+        Ext.MessageBox.alert("提醒", "搜索...");
+    },
+
+    editUser: function(view, record, item, index, e){
+
+        var view = Ext.widget('usereditview');
+        //view.down('form').loadRecord(record);  //数据载入
+
+    },
+
+    saveUser: function(button){
+        var win = button.up("window");
+        Ext.MessageBox.alert("提醒", "保存成功");
+        win.close();
+        //this.searchUser();
+
+    }
+
+
+});

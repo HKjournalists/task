@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOPackage" mainattr="OBJ_ID">
+        <mapingenty type="table">ALM_ATT_PACKAGE</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="OBJ_ID" maxlength="12" datatype="Long" type="COL" remark="对象ID">
+                <mapingcol datatype="NUMBER">OBJ_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_TYPE" maxlength="12" datatype="Long" type="COL" remark="对象类型">
+                <mapingcol datatype="NUMBER">OBJ_TYPE</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_PACK_ID" maxlength="12" datatype="Long" type="PK" remark="附件包ID">
+                <mapingcol datatype="NUMBER">ATT_PACK_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_PACK_DESC" maxlength="128" datatype="String" type="COL" remark="附件包描述">
+                <mapingcol datatype="VARCHAR2">ATT_PACK_DESC</mapingcol>
+            </attr>
+            <attr floatlength="0" name="ATT_ID" maxlength="12" datatype="Long" type="COL" remark="附件ID">
+                <mapingcol datatype="NUMBER">ATT_ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="OBJ_NO" maxlength="32" datatype="String" type="COL" remark="对象编号?">
+                <mapingcol datatype="VARCHAR2">OBJ_NO</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

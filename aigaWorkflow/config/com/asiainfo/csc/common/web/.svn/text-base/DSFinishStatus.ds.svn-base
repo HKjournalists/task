@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312"?>
+<UIDataSrc DisType="SelectBox" NeedCache="N">
+    <Name>DSFinishStatus</Name>
+    <Package>com.asiainfo.csc.common.web</Package>
+    <DataSet SetType="STATIC">
+        <OptionList value="1" group="1">已完成</OptionList>
+        <OptionList value="2" group="2">未完成</OptionList>
+    </DataSet>
+</UIDataSrc>

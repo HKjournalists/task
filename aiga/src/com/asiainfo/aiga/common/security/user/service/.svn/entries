@@ -1,0 +1,43 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/common/security/user/service
+svn://20.26.11.20/products
+
+
+
+2014-10-29T05:12:43.916909Z
+1516405
+renzq
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+IUserSV.java
+file
+
+
+
+
+2014-12-13T03:48:10.511405Z
+181ba929cba03b3e57cfc9d7bf64ee20
+2014-10-29T05:12:43.916909Z
+1516405
+renzq
+
+impl
+dir
+

@@ -1,0 +1,159 @@
+
+var rule_store = Ext.create("SmartApp.store.RuleStore");
+Ext.define('SmartApp.view.Case.KeywordView', {
+	extend : 'Ext.panel.Panel',
+	alias : 'widget.keywordview',
+
+	initComponent : function() {
+		var me = this;
+		
+		
+		Ext.apply(me, {
+			border : false,
+			layout : "border",
+
+			items: [{
+				xtype : 'gridpanel',
+				id : 'keywordUpGrid',
+				region : 'north',
+				height : '30%',
+				store: Ext.create("SmartApp.store.KeywordStore"),
+				columns : [Ext.create('Ext.grid.RowNumberer'), {
+                    header : "关键字名称",
+                    dataIndex : "keywordname",
+                    sortable : true,
+                    editor: new Ext.form.TextField({
+                        allowBlank: false
+                    })
+                }, {
+                    header : "版本",
+                    dataIndex : "version",
+                    editor: new Ext.form.TextField()
+                }
+                ],
+                plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+                    clicksToEdit: 1
+                })],
+                tbar: [ {
+                    xtype : 'button',
+                    text : '新增',
+                    iconCls: "Tablerowinsert",
+                    action : "append"
+                }, {
+                    xtype : 'button',
+                    text : '删除',
+                    iconCls: "Tablerowdelete",
+                    action: "delete"
+                },{
+                    xtype : 'button',
+                    text : '刷新',
+                    iconCls: "Tablerefresh",
+                    action: "refresh"
+                },{
+                    xtype : 'button',
+                    text : '保存',
+                    iconCls: "Tablesave",
+                    action: "save"
+                },{
+                    xtype : 'button',
+                    text : '保存并查看细节',
+                    iconCls: "Packagedown",
+                    action : "show"
+                }]
+			},{
+				xtype : 'gridpanel',
+				id : 'keyworddetailDownGrid',
+				region : 'center',
+				title : '关键字细节',
+				store: Ext.create("SmartApp.store.KeywordDetailStore"),
+                plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+                    clicksToEdit: 1
+                })],
+                viewConfig: {
+                	plugins:{
+                		ptype: "gridviewdragdrop",
+                		dragText: "通过拖动排序"
+                	},
+                	listeners: {  
+                        beforedrop: function(node, data, overModel, dropPosition, dropHandlers) {
+                        	 dropHandlers.wait = true;
+                        	 grid_store = overModel.store;
+                        	 //var index = grid_store.find("keyworddetailid", "");
+                        	 var flag = true;
+                        	 for(var index = 0 ; index < grid_store.getCount(); index++){
+                        		 if (grid_store.getAt(index).data.keyworddetailid === ""){
+                        			 dropHandlers.cancelDrop();
+                            		 Ext.MessageBox.alert("提示", "需要将新增的关键字细节信息保存后才能进行拖动.");
+                            		 flag = false;
+                            		 break;
+                        		 }
+                        			 
+                        	 }
+                        	 if (flag === true)
+                        		 dropHandlers.processDrop();
+                        	 
+                        }
+                	}
+                },
+				columns : [Ext.create('Ext.grid.RowNumberer'), 
+				    
+				           
+				    {
+						header: "关键字细节ID",
+						dataIndex: "keyworddetailid"
+				    },{
+                    header : "对象",
+                    dataIndex : "object",
+                    editor: new Ext.form.TextField()
+                        
+                    }, {
+                        header : "操作",
+                        dataIndex : "operation",
+                        editor: new Ext.form.ComboBox({
+                        	store: rule_store,
+                        	displayField: 'operation',
+                        	mode: 'local',
+                        	emptyText: '请选择一个操作..'
+                        	})
+                    }, {
+                        header : "参数",
+                        dataIndex : "parameter",
+                        editor: new Ext.form.TextField()
+                    }, {
+                    header : "失败操作",
+                    dataIndex : "actioniffail",
+                    editor:new Ext.form.ComboBox({
+                    	store: "ActionStore",
+                    	displayField: 'actionname',
+                    	mode: 'local',
+                    	emptyText: '请选择一个处理方式..'
+                    	})
+                    }],
+                    tbar: [ {
+                        xtype : 'button',
+                        text : '新增',
+                        iconCls: "Tablerowinsert",
+                        action : "append"
+                    }, {
+                        xtype : 'button',
+                        text : '删除',
+                        iconCls: "Tablerowdelete",
+                        action: "delete"
+                    },{
+                        xtype : 'button',
+                        text : '刷新',
+                        iconCls: "Tablerefresh",
+                        action: "refresh"
+                    },{
+                        xtype : 'button',
+                        text : '保存',
+                        iconCls: "Tablesave",
+                        action: "save"
+                    },'-','<font color="red">*</font>请通过记录拖动排列顺序后保存']
+			}]
+		});
+
+		me.callParent();
+	}
+
+});

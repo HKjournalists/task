@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sysbolist>
+    <sysbo datasource="UserDataSource" name="BOAigaSpecialDayConfig" mainattr="ID">
+        <mapingenty type="table">AIGA_SPECIALDAY_CONFIG</mapingenty>
+        <datafilter />
+        <attrlist>
+            <attr floatlength="0" name="ID" maxlength="12" datatype="Long" type="PK">
+                <mapingcol datatype="NUMBER">ID</mapingcol>
+            </attr>
+            <attr floatlength="0" name="SPECIAL_DAY" maxlength="20" datatype="DateTime" type="COL">
+                <mapingcol datatype="DATE">SPECIAL_DAY</mapingcol>
+            </attr>
+            <attr floatlength="0" name="MARK" maxlength="1" datatype="String" type="COL">
+                <mapingcol datatype="VARCHAR2">MARK</mapingcol>
+            </attr>
+        </attrlist>
+        <relationlist />
+        <oplist />
+    </sysbo>
+</sysbolist>

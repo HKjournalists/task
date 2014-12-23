@@ -1,0 +1,39 @@
+package com.lb.app.automation.action;
+
+import java.util.List;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethod;
+import ch.ralscha.extdirectspring.annotation.ExtDirectMethodType;
+
+import com.lb.app.automation.model.AutoKeyword;
+import com.lb.app.automation.model.AutoScript;
+import com.lb.app.automation.service.AutoScriptService;
+
+@Service
+public class ScriptAction {
+	final private static Log log = LogFactory.getLog(ScriptAction.class);
+
+	@Autowired
+	AutoScriptService scriptService;
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.STORE_READ)
+	public List<AutoScript> load(String submoduleid) {
+		return scriptService.load(submoduleid);
+	}
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.STORE_MODIFY)
+	public List<AutoScript> saveOrUpdate(List<AutoScript> scripts){
+		log.info("=================================>");
+		return scriptService.saveOrUpdate(scripts);
+	}
+	
+	@ExtDirectMethod(value = ExtDirectMethodType.STORE_MODIFY)
+	public void  destroy(List<AutoScript> scripts){
+		scriptService.destroy(scripts);
+	}
+}

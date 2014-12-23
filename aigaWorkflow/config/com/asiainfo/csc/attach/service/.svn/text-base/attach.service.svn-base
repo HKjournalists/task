@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GB2312"?>
+<module id="">
+  <service id="com.asiainfo.csc.attach.service.AttachService" interface="com.asiainfo.csc.attach.service.interfaces.IAttachService">
+    <impl-define type="singleton" use="true" transaction-type="join" impl-class="com.asiainfo.csc.attach.service.impl.AttachServiceImpl"></impl-define>
+  </service>
+</module>

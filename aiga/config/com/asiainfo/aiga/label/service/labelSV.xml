@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="aigalabelSV" class="com.asiainfo.aiga.label.service.impl.AigaLabelSVImpl">
+		<property name="labelDAO" ref="labelDao"></property>
+		<property name="caseDao" ref="caseDao"></property>
+		<property name="caseLabelRelaSV" ref="aigaCaseLabelRelaSV"></property>
+	</bean>
+	
+	<bean id="labelTree" class="com.asiainfo.aiga.label.service.impl.AigaLabelTree"></bean>
+</beans>

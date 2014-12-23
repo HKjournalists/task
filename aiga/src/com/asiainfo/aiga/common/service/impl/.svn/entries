@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/common/service/impl
+svn://20.26.11.20/products
+
+
+
+2014-12-16T08:43:00.351646Z
+1599388
+wenghy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+CommonPageinationSVImpl.java
+file
+
+
+
+
+2014-12-16T10:50:05.882431Z
+fb549606ca3b4454c1c32bd8b2dcceda
+2014-12-16T08:43:00.351646Z
+1599388
+wenghy
+
+WorkorderChartSVImpl.java
+file
+
+
+
+
+2014-12-13T03:48:10.017970Z
+3e94b43423fbf7e367f3ec4c5ed0d986
+2014-11-07T11:24:42.712667Z
+1534864
+liuchao
+

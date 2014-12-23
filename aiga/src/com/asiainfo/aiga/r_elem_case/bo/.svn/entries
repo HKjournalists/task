@@ -1,0 +1,52 @@
+8
+
+dir
+1601034
+svn://20.26.11.20/products/aitmp/aiga_new/src/com/asiainfo/aiga/r_elem_case/bo
+svn://20.26.11.20/products
+
+
+
+2014-08-28T07:30:54.695691Z
+1419689
+liuchao
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3ce6ec55-9893-0410-b9f9-ab382eb0091d
+
+AigaRElemCase.java
+file
+
+
+
+
+2014-12-13T03:48:11.370642Z
+8d580c8dcfe16a3e2d3978ffd86f4477
+2014-08-28T07:30:54.695691Z
+1419689
+liuchao
+
+AigaRElemCase.hbm.xml
+file
+
+
+
+
+2014-12-13T03:48:11.373856Z
+3aa8d049f6ece9f838e1d7be8aadada5
+2014-08-28T07:30:54.695691Z
+1419689
+liuchao
+

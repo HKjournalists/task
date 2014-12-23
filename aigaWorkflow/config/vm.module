@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<module name="业务模块" html-dir="" java-package="">
+  <initial name="com.ai.appframe2.vm.VMModuleInitial">
+   <configdata>
+        <datasource>UserDataSource</datasource>
+        <defaultqueue>AI</defaultqueue>
+        <publish>false</publish>
+        <queue tasktype="APPFRAME_WORKFLOW"  queueid="AI" threadnum="3" fetchnum="100" start="true" desc="内部引擎调度"/>
+        <timer tasktype="APPFRAME_WORKFLOW_TIMER" queueid="AI"  threadnum="3" fetchnum="100" start="true" desc="任务处理扫描"/>
+        <scanengine tasktype="APPFRAME_SCAN_ENGINE" queueid="AI" threadnum="3" fetchnum="100" start="false" desc="引擎处理扫描"/>
+        <scanbusi tasktype="APPFRAME_SCAN_BUSI" queueid="AI" threadnum="3" fetchnum="100" start="false" desc="业务处理扫描"/>
+        <exception tasktype="EXCEPTION_SCAN" queueid="AI" threadnum="3" fetchnum="100" start="false" desc="异常处理扫描"/>
+    	<warning tasktype="APPFRAME_SCAN_WARNING" queueid="AI" threadnum="3" fetchnum="100" start="false"/>
+    </configdata>
+  </initial>
+  		
+  <service id="com/ai/appframe2/vm/vm.service" use="true"/>
+  <service id="com/ai/comframe/comframe.service" use="true"/>
+  <service id="com/ai/comframe/console/console.service" use="true"/>
+  <service id="com/ai/comframe/wrap/wps/comframe-wps-flow.service" use="true"/>
+  <service id="com/ai/comframe/wrap/fuego/comframe-oracle-fuego.service" use="true"/>
+</module>
+

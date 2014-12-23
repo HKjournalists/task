@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="attachments.Directory" value="E:\ALAMLJB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\bb\WEB-INF\attachments"/>
+  <parameter name="dotNetSoapEncFix" value="true"/>
+  <parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="session"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="request"/>
+    <parameter name="extension" value=".jwr"/>
+   </handler>
+  </requestFlow>
+ </globalConfiguration>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <service name="ALMReqService" provider="java:RPC">
+  <operation name="createReqToAlm" qname="ns1:createReqToAlm" returnQName="createReqToAlmReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://server.ws.bomc.soap.alm.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="reqName" type="xsd:string"/>
+   <parameter name="reqDesc" type="xsd:string"/>
+   <parameter name="prior" type="xsd:int"/>
+   <parameter name="impt" type="xsd:int"/>
+   <parameter name="urgent" type="xsd:int"/>
+   <parameter name="applyStaffID" type="xsd:string"/>
+   <parameter name="submitStaffID" type="xsd:string"/>
+   <parameter name="planTime" type="xsd:dateTime"/>
+   <parameter name="reqType" type="xsd:int"/>
+   <parameter name="sysTag" type="xsd:int"/>
+   <parameter name="subSysTag" type="xsd:int"/>
+  </operation>
+  <parameter name="allowedMethods" value="createReqToAlm"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="wsdlPortType" value="ALMReqService"/>
+  <parameter name="className" value="com.asiainfo.alm.soap.bomc.ws.server.ALMReqService"/>
+  <parameter name="wsdlServicePort" value="ALMReqService"/>
+  <parameter name="wsdlTargetNamespace" value="http://server.ws.bomc.soap.alm.asiainfo.com"/>
+  <parameter name="wsdlServiceElement" value="ALMReqServiceService"/>
+ </service>
+ <service name="ALMVersionService" provider="java:RPC">
+  <operation name="updateVersionStatus" qname="ns1:updateVersionStatus" returnQName="updateVersionStatusReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://server.ws.bomc.soap.alm.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="verNo" type="xsd:string"/>
+   <parameter name="status" type="xsd:string"/>
+  </operation>
+  <operation name="versionFinish" qname="ns2:versionFinish" returnQName="versionFinishReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://server.ws.bomc.soap.alm.asiainfo.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <parameter name="verNo" type="xsd:string"/>
+   <parameter name="result" type="xsd:string"/>
+   <parameter name="remark" type="xsd:string"/>
+  </operation>
+  <parameter name="allowedMethods" value="updateVersionStatus versionFinish"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="wsdlPortType" value="ALMVersionService"/>
+  <parameter name="className" value="com.asiainfo.alm.soap.bomc.ws.server.ALMVersionService"/>
+  <parameter name="wsdlServicePort" value="ALMVersionService"/>
+  <parameter name="wsdlTargetNamespace" value="http://server.ws.bomc.soap.alm.asiainfo.com"/>
+  <parameter name="wsdlServiceElement" value="ALMVersionServiceService"/>
+ </service>
+ <service name="AdminService" provider="java:MSG">
+  <parameter name="allowedMethods" value="AdminService"/>
+  <parameter name="enableRemoteAdmin" value="false"/>
+  <parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <namespace>http://xml.apache.org/axis/wsdd/</namespace>
+ </service>
+ <service name="Version" provider="java:RPC">
+  <parameter name="allowedMethods" value="getVersion"/>
+  <parameter name="className" value="org.apache.axis.Version"/>
+ </service>
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+  <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>
